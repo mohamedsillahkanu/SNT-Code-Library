@@ -49,7 +49,7 @@ with col1:
 
 # Content Display (Right-Hand Side)
 with col2:
-    st.write("## Content")
+    st.write("## Authors: Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin")
 
     # Display content based on the active page
     if st.session_state.active_page == "OVERVIEW":
