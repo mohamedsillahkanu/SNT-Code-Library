@@ -163,6 +163,17 @@ with col2:
             - `Type of HF` - Classification of health facility (e.g., MCHP, CHP, CHC, Hospital)
              """)
 
+
+        st.write("""         
+        - **A.2.3 Reconciling the MFL and the DHIS2 HF List**
+          - **A.2.3.1 Identifying HFs in Both or One List Based on HF Name**
+            - Identify common HFs (accounting for differences in spellings, typos, spaces, capitalization) in both databases using algorithms for fuzzy name matching.
+            - **Output:**
+              - HFs in both DHIS2 and MFL
+              - HFs in MFL but not in DHIS2
+              - HFs in DHIS2 but not in MFL
+             """)
+
         
         # Display R code
         st.write("#### Example R Code")
