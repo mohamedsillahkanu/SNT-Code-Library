@@ -81,7 +81,7 @@ with col2:
     elif st.session_state.active_page == "A.1 SHAPEFILES":
         st.write("### A.1 SHAPEFILES")
         st.write(""" 
-        **Shapefiles** are a popular geospatial vector data format for geographic information system (GIS) software.
+        
 
         **Key Topics:**
         - A.1.1 Import shapefiles
