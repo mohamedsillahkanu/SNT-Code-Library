@@ -149,6 +149,22 @@ with col2:
             - `Type of HF` - Classification of health facility (e.g., District hospital, Teaching hospital, Health post, etc.)
              """)
 
+        st.write(""" 
+        This section contains information on health facilities.
+        **Key Topics:**
+        - **A.2.1 Get MFL from the Malaria Program**
+          - **A.2.1.1 Useful Columns:**
+            - `adm0` - Country
+            - `adm1` - Province/Region
+            - `adm2` - District
+            - `adm3` - Sub-district/Sub-county
+            - `Health Facility (HF)` - Name of the health facility
+            - `Date HF Started Reporting` - Date when the health facility began reporting
+            - `Is HF Still Active?` - Status indicating if the health facility is currently active
+            - `If No, When Did HF Become Inactive?` - Date when the health facility ceased operations
+            - `Type of HF` - Classification of health facility (e.g., District hospital, Teaching hospital, Health post, etc.)
+             """)
+
         
         # Display R code
         st.write("#### Example R Code")
