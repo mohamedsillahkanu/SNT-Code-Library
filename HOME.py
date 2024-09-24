@@ -150,19 +150,18 @@ with col2:
              """)
 
         st.write(""" 
-        This section contains information on health facilities.
-        **Key Topics:**
-        - **A.2.1 Get MFL from the Malaria Program**
-          - **A.2.1.1 Useful Columns:**
-            - `adm0` - Country
-            - `adm1` - Province/Region
-            - `adm2` - District
-            - `adm3` - Sub-district/Sub-county
-            - `Health Facility (HF)` - Name of the health facility
-            - `Date HF Started Reporting` - Date when the health facility began reporting
-            - `Is HF Still Active?` - Status indicating if the health facility is currently active
-            - `If No, When Did HF Become Inactive?` - Date when the health facility ceased operations
-            - `Type of HF` - Classification of health facility (e.g., District hospital, Teaching hospital, Health post, etc.)
+        
+        - A.2.2 Get the DHIS2 Health Facility (HF) List from the Malaria Program
+        - **A.2.2.1 Useful Columns:**
+          - `adm0` - Country
+          - `adm1` - Province/Region
+          - `adm2` - District
+          - `adm3` - Sub-district/Sub-county
+          - `Health Facility (HF)` - Name of the health facility
+          - `Date HF Started Reporting in DHIS2` - Date when the health facility began reporting in DHIS2
+          - `Is HF Still Active?` - Status indicating if the health facility is currently active
+          - `If No, When Did HF Become Inactive?` - Date when the health facility ceased operations
+          - `Type of HF` - Classification of health facility (e.g., MCHP, CHP, CHC, Hospital)
              """)
 
         
