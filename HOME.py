@@ -137,9 +137,18 @@ with col2:
         This section contains information on health facilities.
 
         **Key Topics:**
-        - Health facility locations
-        - Facility types and services
-        - Data sources and cleaning processes
+        - A.2.1 Get MFL from the Malaria Program
+           - A.2.1.1 Useful Columns:
+              -adm0 - country
+              -adm1 - province/ region
+              -adm2 - district
+              -adm3 - sub district/sub-county
+              -Health Facility (HF)
+              -Date HF started reporting
+              -Is HF still active?
+              -If no, when did HF become inactive?
+              -Type of HF (District hospital, teaching hospital, health post, etc.)
+
         """)
 
         # Display R code
