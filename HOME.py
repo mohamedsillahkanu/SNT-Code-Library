@@ -133,8 +133,7 @@ with col2:
 
     elif st.session_state.active_page == "A.2 HEALTH FACILITIES":
         st.write("### A.2 HEALTH FACILITIES")
-        st.write(""" 
-        This section contains information on health facilities.
+        st.write("""         
         **Key Topics:**
         - **A.2.1 Get MFL from the Malaria Program**
           - **A.2.1.1 Useful Columns:**
