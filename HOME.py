@@ -174,6 +174,41 @@ with col2:
               - HFs in DHIS2 but not in MFL
              """)
 
+        st.write("""  
+        - **A.2.3.2 Reconciling Inconsistent HF Type**
+          - Check HF type in both databases (MCHP, CHP, CHC, Hospital) and resolve any inconsistencies.
+        - **A.2.3.3 Reconciling HF `adm1`, `adm2`, and `adm3` Designation**
+          - Check HF `adm1`, `adm2`, and `adm3` designations in both databases and resolve any inconsistencies.
+        - **A.2.4 HF Active/Inactive Status**
+          - **A.2.4.1 Determining Active/Inactive Status from MFL**
+          - **A.2.4.2 Determining Active/Inactive Status from DHIS2**
+          - **A.2.4.3 Determining When HF Ceased Reporting Entirely**
+          - **A.2.4.4 Reconciling Differences in Activity Status from MFL and DHIS2**
+          - **A.2.4.5 Health Facility Reporting Periods**
+            - Active Reporting Periods
+            - Inactive Reporting Periods
+          - **A.2.4.6 Health Facility Reporting Frequency**
+            - Continuously Reporting Health Facilities
+            - Intermittently Reporting Health Facilities (with gaps)
+            - Health Facilities that Reported Only Once
+            - First-Time Reporting Health Facilities
+            - Last-Time Reporting Health Facilities
+            - **Output:**
+              - One HF database (with active and inactive HFs)
+              - Visualization (Heatmap)
+        - **A.2.5 Restricting HFs in Database**
+          - **A.2.5.1 Removing HFs Before They Become Active**
+          - **A.2.5.2 Removing HFs After They Are Permanently Inactive**
+          - **A.2.5.3 Additional Options for Restricting HFs:**
+            - **Output:**
+               - Cleaned HF database
+        - **A.2.6 Summary Outputs**
+          - **A.2.6.1 Summary Data File:** HF Expected to Report by `adm1`/`adm2`/`adm3` Per Year, Per Month
+          - **A.2.6.2 Visualization:** HF Activity Status Over Time (all the horizontal lines)
+          - **A.2.6.3 Visualization:** Total Number of Health Facilities
+        """)
+
+
         
         # Display R code
         st.write("#### Example R Code")
