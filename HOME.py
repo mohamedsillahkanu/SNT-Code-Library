@@ -118,6 +118,10 @@ with col2:
         4. **Displaying the data**: The `head(shape_data)` command is used to display the first few rows of the shapefile data, allowing you to check the structure and contents of the file.
         """)
 
+    sample_output_shapefiles_r = "https://github.com/mohamedsillahkanu/si/blob/99ccc5bd8425859a0a801f01ca713e36edbd0c21/MAP_R.png?raw=true"
+    
+    st.image( sample_output_shapefiles_r, caption="Sample output of Shapefiles")
+
     elif st.session_state.active_page == "A.2 HEALTH FACILITIES":
         st.write("### A.2 HEALTH FACILITIES")
         st.write(""" 
