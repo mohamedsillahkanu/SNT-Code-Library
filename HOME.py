@@ -84,9 +84,11 @@ with col2:
         **Shapefiles** are a popular geospatial vector data format for geographic information system (GIS) software.
 
         **Key Topics:**
-        - Description of shapefiles used
-        - Data sources
-        - Processing steps
+        - A.1.1 Import shapefiles
+        - A.1.2 Rename and match names
+        - A.1.3 Link shapefiles to relevant scales
+        - A.1.1 Import shapefiles
+        - A.1.4 Visualizing shapefiles and making basic maps
         """)
 
         # Display R code
