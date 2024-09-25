@@ -40,7 +40,10 @@ with col1:
         st.button("A.6 LMIS DATA", key="A6_LMIS_data", on_click=navigate_to, args=("A.6 LMIS DATA",))
         st.button("A.7 MODELED DATA", key="A7_Modeled_data", on_click=navigate_to, args=("A.7 MODELED DATA",))
         st.button("A.8 POPULATION DATA", key="A6_Population_data", on_click=navigate_to, args=("A.8 POPULATION DATA",))
-
+        with st.expander("A.1 SHAPEFILES"):
+            st.button("A.1.1 Import Shapefiles", key="A11_Shapefiles", on_click=navigate_to, args=("A.1.1 Import Shapefiles",))
+            st.button("A.1.2 Rename ane match names", key="A12_Health_Facilities", on_click=navigate_to, args=("A.1.2 Rename ane match names",))
+            st.button("A.1.3 Visualizing shapefiles and making basic maps", key="A13_Routine_Case_Data", on_click=navigate_to, args=("A.1.3 Visualizing shapefiles and making basic maps",))
     
 
     with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
