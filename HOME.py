@@ -33,6 +33,7 @@ with col1:
 
     with st.expander("A. DATA ASSEMBLY AND MANAGEMENT"):
         st.button("A.1 SHAPEFILES", key="A1_Shapefiles", on_click=navigate_to, args=("A.1 SHAPEFILES",))
+        
         st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
         st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
         st.button("A.4 DHS DATA", key="A4_DHS_data", on_click=navigate_to, args=("A.4 DHS DATA",))
