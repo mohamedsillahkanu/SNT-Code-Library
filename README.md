@@ -12,8 +12,6 @@
 <details>
   <summary>A. DATA ASSEMBLY AND MANAGEMENT</summary>
   <ul>
-    <li><a href="#data-assembly-and-management">A Data Assembly and Management</a></li>
-    <ul>
       <li><a href="#shapefiles">A.1 Shapefiles</a></li>
       <li><a href="#health-facilities">A.2 Health Facilities</a></li>
       <li><a href="#routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</a></li>
