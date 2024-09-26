@@ -16,9 +16,12 @@ with st.sidebar.expander("Overview", expanded=True):
     """)
 
 with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
-    st.write("""
-    - **A.1 Shapefiles**
+    st.write(""" ### A.1 Shapefiles
       -[A.1.1 Import shapefiles](#import-shapefiles)
+
+    """)
+      -[A.1.1 Import shapefiles](#import-shapefiles)
+st.write("""
     - [A.2 Health Facilities](#health-facilities)
     - [A.3 Routine Case Data from DHIS2](#routine-case-data-from-dhis2)
     - [A.4 DHS Data](#dhs-data)
