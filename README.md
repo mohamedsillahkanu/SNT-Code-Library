@@ -1,138 +1,103 @@
-# Code Library for Sub-National Tailoring
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column TOC</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        .column {
+            width: 50%;
+            padding: 20px;
+        }
+        .toc {
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+        .content {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
 
-**Version:** 11 September 2024  
-**Authors:** Mohamed Kanu, Sammy Oppong, Jaline Gerardin  
+<div class="container">
+    <div class="column toc">
+        <h2>Table of Contents</h2>
 
----
+        <details>
+            <summary>Overview</summary>
+            <ul>
+                <li><a href="#motivation">Motivation</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#target-audience">Target Audience</a></li>
+                <li><a href="#scope">Scope</a></li>
+            </ul>
+        </details>
 
-## Table of Contents
+        <details>
+            <summary>Library Elements</summary>
+            <ul>
+                <li><a href="#a-data-assembly-and-management">A. Data Assembly and Management</a></li>
+                <ul>
+                    <li><a href="#a1-shapefiles">A.1 Shapefiles</a></li>
+                    <li><a href="#a2-health-facilities">A.2 Health Facilities</a></li>
+                    <li><a href="#a3-routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</a></li>
+                    <li><a href="#a4-dhs-data">A.4 DHS Data</a></li>
+                    <li><a href="#a5-population-data">A.5 Population Data</a></li>
+                    <ul>
+                        <li><a href="#a51-extract-population-data-from-raster-population-source-option-1">A.5.1 Extract Population Data from Raster Population Source (Option 1)</a></li>
+                        <li><a href="#a52-extract-population-data-from-countrys-recent-census-option-2">A.5.2 Extract Population Data from Census (Option 2)</a></li>
+                    </ul>
+                </ul>
+            </ul>
+        </details>
+    </div>
 
-<details>
-<summary>Overview</summary>
+    <div class="column content">
+        <h2 id="overview">Overview</h2>
+        <p>Details about the overview go here...</p>
 
-### Overview
-This code library aims to standardize the analytical approaches used in Sub-National Tailoring (SNT), ensuring consistency and quality in data analysis across various programs.
+        <h3 id="motivation">Motivation</h3>
+        <p>Details about the motivation go here...</p>
 
-### Motivation
-SNT is here to stay: many National Malaria Control Programs (NMCPs) have found it useful and are continuing to embrace it and further develop it for their analytical needs. Since 2019, multiple individuals have supported the analysis portions of SNT. In most cases, individuals have built their own code in a variety of languages (Stata, R, and Python), sometimes building on others’ previous code and sometimes re-developed independently.
+        <h3 id="objectives">Objectives</h3>
+        <p>Details about the objectives go here...</p>
 
-As SNT matures, more quality assurance is needed such that NMCPs can be confident that the analysis they use to inform their decisions is of high quality regardless of the individual supporting analyst. The continued rollout of SNT also means that analysis can become more efficient if analysts are better able to build on each other’s work rather than tempted to reinvent what has already been developed. Lastly, SNT analysis can become much more accessible if there is a common resource available to help those with intermediate coding skills quickly access the collective knowledge of the SNT analyst community.
-</details>
+        <h3 id="target-audience">Target Audience</h3>
+        <p>Details about the target audience go here...</p>
 
-<details>
-<summary>Objectives</summary>
+        <h3 id="scope">Scope</h3>
+        <p>Details about the scope go here...</p>
 
-### Objectives
-We will build a code library for SNT analysis to:
-- Ensure that SNT analysts are using similar, correct approaches.
-- Improve efficiency of SNT analysis by minimizing duplication of effort.
-- Promote accessibility of SNT analysis by lowering barriers to entry.
-</details>
+        <h2 id="a-data-assembly-and-management">A. Data Assembly and Management</h2>
+        <p>Details about the data assembly and management go here...</p>
 
-<details>
-<summary>Target Audience</summary>
+        <h3 id="a1-shapefiles">A.1 Shapefiles</h3>
+        <p>Information about shapefiles goes here...</p>
 
-### Target Audience
-Anyone doing this kind of work. We assume some basic knowledge of R, some understanding of the data, and a strong connection to the NMCP.
-</details>
+        <h3 id="a2-health-facilities">A.2 Health Facilities</h3>
+        <p>Information about health facilities goes here...</p>
 
-<details>
-<summary>Scope</summary>
+        <h3 id="a3-routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</h3>
+        <p>Information about DHIS2 routine case data goes here...</p>
 
-### Scope
-All analysis steps of SNT up to but not including mathematical modeling; some related analysis. The code library will be in R and publicly available. It will be quality-assured and well-commented. When multiple algorithmic options could be used, strengths and limitations of each one, along with discussion of when to use each option, as possible. Framing text, and when possible the code comments, will be available in both English and French.
-</details>
+        <h3 id="a4-dhs-data">A.4 DHS Data</h3>
+        <p>Information about DHS data goes here...</p>
 
-<details>
-<summary>Library Elements</summary>
+        <h3 id="a5-population-data">A.5 Population Data</h3>
+        <p>Details about population data go here...</p>
 
-### Library Elements
+        <h4 id="a51-extract-population-data-from-raster-population-source-option-1">A.5.1 Extract Population Data from Raster Population Source (Option 1)</h4>
+        <p>Details about extracting population data from raster sources go here...</p>
 
-#### A. DATA ASSEMBLY AND MANAGEMENT
-- **A.1 Shapefiles**
-  - A.1.1 Import shapefiles
-  - A.1.2 Rename and match names
-  - A.1.3 Link shapefiles to relevant scales
-  - A.1.4 Visualizing shapefiles and making basic maps
-- **A.2 Health Facilities**
-  - A.2.1 Get MFL from the Malaria Program
-    - Useful Columns:
-      - adm0 - country
-      - adm1 - province/region
-      - adm2 - district
-      - adm3 - sub district/sub-county
-      - Health Facility (HF)
-      - Date HF started reporting
-      - Is HF still active?
-      - If no, when did HF become inactive?
-      - Type of HF (District hospital, teaching hospital, health post, etc.)
-  - A.2.2 Get the DHIS2 Health Facility (HF) List from the Malaria Program
-    - Useful Columns:
-      - adm0, adm1, adm2, adm3, Health Facility (HF), Date HF started reporting in DHIS2, Is HF still active? If no, when did HF become inactive? Type of HF (MCHP, CHP, CHC, Hospital)
-  - A.2.3 Reconciling the MFL and the DHIS2 HF list
-    - Identifying HFs in both or one list based on HF name
-      - Output:
-        - HF in both DHIS2 and MFL
-        - HF in MFL but not in DHIS2
-        - HF in DHIS2 but not in MFL
-    - Reconciling inconsistent HF Type (MCHP, CHP, CHC, Hospital)
-    - Reconciling HF adm1, adm2, and adm3 designation
-    - HF active/inactive status
-    - Health Facility Reporting Periods
-    - Health Facility Reporting Frequency
-      - Output: One HF database (with active and inactive HFs)
-      - Visualization (Heatmap)
-  - A.2.5 Restricting HFs in database
-  - A.2.6 Summary outputs
-  - A.2.7 Health facility coordinates
+        <h4 id="a52-extract-population-data-from-countrys-recent-census-option-2">A.5.2 Extract Population Data from Census (Option 2)</h4>
+        <p>Details about extracting population data from the recent census go here...</p>
+    </div>
+</div>
 
-- **A.3 Routine Case Data from DHIS2**
-  - A.3.1 Data extraction from DHIS2
-  - A.3.2 Sanity Checks
-  - A.3.3 Merge Dataset
-  - A.3.4 Data Cleaning
-  - A.3.5 Outlier Detection and Correction
-
-#### B. EPIDEMIOLOGICAL STRATIFICATION
-- **B.1 Reporting Rate per Variable**
-- **B.2 Group and merge data frame**
-- **B.3 Crude Incidence by Year**
-- **B.4 Adjusted Incidence by Year**
-- **B.5 Option to Select Incidence**
-- **B.6 Risk Categorization**
-
-#### C. STRATIFICATION OF OTHER DETERMINANTS
-- **C.1 Access to Care**
-- **C.2 Seasonality**
-- **C.3 Insecticide Resistance**
-- **C.4 Anti-Malaria Drug Resistance**
-
-#### D. REVIEW OF PAST INTERVENTIONS
-- **D.1 EPI Coverage and Dropout Rate**
-- **D.2 IPTp and ANC Coverage**
-- **D.3 PMC (Prevention of Malaria in Pregnancy)**
-- **D.4 SMC (Seasonal Malaria Chemoprevention)**
-- **D.5 Malaria Vaccine**
-- **D.6 ITN Ownership, Access, Usage, and Type**
-- **D.7 ITN Operational Coverage**
-- **D.8 IRS (Indoor Residual Spraying)**
-- **D.9 LSM (Larval Source Management)**
-- **D.10 Assessing the Quality of Case Management**
-
-#### E. Targeting of Interventions
-#### F. Retrospective Analysis
-#### G. Urban Microstratification
-
-</details>
-
----
-
-### How to Contribute
-We welcome contributions from the community! If you'd like to add your own code, improve existing functions, or suggest changes, please create a pull request.
-
-### License
-This code library is publicly available and can be used under the MIT License.
-
----
-
-For any questions or further information, feel free to reach out to the authors or submit an issue on the repository.
+</body>
+</html>
