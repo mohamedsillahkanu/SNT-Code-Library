@@ -78,6 +78,3 @@ with st.expander("G Urban Microstratification"):
     - [G Urban Microstratification](#urban-microstratification)
     """)
 
-# Run the Streamlit app
-if __name__ == "__main__":
-    st.run()
