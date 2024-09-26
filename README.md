@@ -10,7 +10,7 @@
 </details>
 
 <details>
-  <summary>Library Elements</summary>
+  <summary>A. DATA ASSEMBLY AND MANAGEMENT</summary>
   <ul>
     <li><a href="#data-assembly-and-management">A Data Assembly and Management</a></li>
     <ul>
