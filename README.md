@@ -1,103 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two-Column TOC</title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: row;
-        }
-        .column {
-            width: 50%;
-            padding: 20px;
-        }
-        .toc {
-            border-right: 1px solid #ccc;
-            padding-right: 20px;
-        }
-        .content {
-            padding-left: 20px;
-        }
-    </style>
-</head>
-<body>
+# Table of Contents
 
-<div class="container">
-    <div class="column toc">
-        <h2>Table of Contents</h2>
+<details>
+  <summary>Overview</summary>
 
-        <details>
-            <summary>Overview</summary>
-            <ul>
-                <li><a href="#motivation">Motivation</a></li>
-                <li><a href="#objectives">Objectives</a></li>
-                <li><a href="#target-audience">Target Audience</a></li>
-                <li><a href="#scope">Scope</a></li>
-            </ul>
-        </details>
+  - [Motivation](#motivation)
+  - [Objectives](#objectives)
+  - [Target Audience](#target-audience)
+  - [Scope](#scope)
+</details>
 
-        <details>
-            <summary>Library Elements</summary>
-            <ul>
-                <li><a href="#a-data-assembly-and-management">A. Data Assembly and Management</a></li>
-                <ul>
-                    <li><a href="#a1-shapefiles">A.1 Shapefiles</a></li>
-                    <li><a href="#a2-health-facilities">A.2 Health Facilities</a></li>
-                    <li><a href="#a3-routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</a></li>
-                    <li><a href="#a4-dhs-data">A.4 DHS Data</a></li>
-                    <li><a href="#a5-population-data">A.5 Population Data</a></li>
-                    <ul>
-                        <li><a href="#a51-extract-population-data-from-raster-population-source-option-1">A.5.1 Extract Population Data from Raster Population Source (Option 1)</a></li>
-                        <li><a href="#a52-extract-population-data-from-countrys-recent-census-option-2">A.5.2 Extract Population Data from Census (Option 2)</a></li>
-                    </ul>
-                </ul>
-            </ul>
-        </details>
-    </div>
+<details>
+  <summary>Library Elements</summary>
 
-    <div class="column content">
-        <h2 id="overview">Overview</h2>
-        <p>Details about the overview go here...</p>
+  - [A. Data Assembly and Management](#a-data-assembly-and-management)
+    - [A.1 Shapefiles](#a1-shapefiles)
+    - [A.2 Health Facilities](#a2-health-facilities)
+    - [A.3 Routine Case Data from DHIS2](#a3-routine-case-data-from-dhis2)
+    - [A.4 DHS Data](#a4-dhs-data)
+    - [A.5 Population Data](#a5-population-data)
+      - [A.5.1 Extract Population Data from Raster Population Source (Option 1)](#a51-extract-population-data-from-raster-population-source-option-1)
+      - [A.5.2 Extract Population Data from Country's Recent Census (Option 2)](#a52-extract-population-data-from-countrys-recent-census-option-2)
+    - [A.6 Climate Data](#a6-climate-data)
+    - [A.7 LMIS Data](#a7-lmis-data)
+    - [A.8 Modeled Data](#a8-modeled-data)
 
-        <h3 id="motivation">Motivation</h3>
-        <p>Details about the motivation go here...</p>
+  - [B. Epidemiological Stratification](#b-epidemiological-stratification)
+    - [B.1 Reporting Rate per Variable](#b1-reporting-rate-per-variable)
+    - [B.2 Group and Merge Data Frame](#b2-group-and-merge-data-frame)
+    - [B.3 Crude Incidence by Year](#b3-crude-incidence-by-year)
+    - [B.4 Adjusted Incidence by Year](#b4-adjusted-incidence-by-year)
+    - [B.5 Option to Select Incidence](#b5-option-to-select-incidence)
+    - [B.6 Risk Categorization](#b6-risk-categorization)
 
-        <h3 id="objectives">Objectives</h3>
-        <p>Details about the objectives go here...</p>
+</details>
 
-        <h3 id="target-audience">Target Audience</h3>
-        <p>Details about the target audience go here...</p>
+## Overview
+Details about the overview go here...
 
-        <h3 id="scope">Scope</h3>
-        <p>Details about the scope go here...</p>
+## Motivation
+Details about the motivation go here...
 
-        <h2 id="a-data-assembly-and-management">A. Data Assembly and Management</h2>
-        <p>Details about the data assembly and management go here...</p>
+## Objectives
+Details about the objectives go here...
 
-        <h3 id="a1-shapefiles">A.1 Shapefiles</h3>
-        <p>Information about shapefiles goes here...</p>
+## Target Audience
+Details about the target audience go here...
 
-        <h3 id="a2-health-facilities">A.2 Health Facilities</h3>
-        <p>Information about health facilities goes here...</p>
+## Scope
+Details about the scope go here...
 
-        <h3 id="a3-routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</h3>
-        <p>Information about DHIS2 routine case data goes here...</p>
+## A. Data Assembly and Management
+Details about the data assembly and management go here...
 
-        <h3 id="a4-dhs-data">A.4 DHS Data</h3>
-        <p>Information about DHS data goes here...</p>
+### A.1 Shapefiles
+Information about shapefiles goes here...
 
-        <h3 id="a5-population-data">A.5 Population Data</h3>
-        <p>Details about population data go here...</p>
+### A.2 Health Facilities
+Information about health facilities goes here...
 
-        <h4 id="a51-extract-population-data-from-raster-population-source-option-1">A.5.1 Extract Population Data from Raster Population Source (Option 1)</h4>
-        <p>Details about extracting population data from raster sources go here...</p>
+### A.3 Routine Case Data from DHIS2
+Information about DHIS2 routine case data goes here...
 
-        <h4 id="a52-extract-population-data-from-countrys-recent-census-option-2">A.5.2 Extract Population Data from Census (Option 2)</h4>
-        <p>Details about extracting population data from the recent census go here...</p>
-    </div>
-</div>
+### A.4 DHS Data
+Information about DHS data goes here...
 
-</body>
-</html>
+### A.5 Population Data
+Details about population data go here...
+
+#### A.5.1 Extract Population Data from Raster Population Source (Option 1)
+Details about extracting population data from raster sources go here...
+
+#### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
+Details about extracting population data from the recent census go here...
+
+### A.6 Climate Data
+Information about climate data goes here...
+
+### A.7 LMIS Data
+Information about LMIS data goes here...
+
+### A.8 Modeled Data
+Information about modeled data goes here...
+
+## B. Epidemiological Stratification
+Details about epidemiological stratification go here...
+
+### B.1 Reporting Rate per Variable
+Details about reporting rates per variable go here...
+
+### B.2 Group and Merge Data Frame
+Details about grouping and merging the data frame go here...
+
+### B.3 Crude Incidence by Year
+Details about crude incidence by year go here...
+
+### B.4 Adjusted Incidence by Year
+Details about adjusted incidence by year go here...
+
+### B.5 Option to Select Incidence
+Details about options for selecting incidence go here...
+
+### B.6 Risk Categorization
+Details about risk categorization go here...
