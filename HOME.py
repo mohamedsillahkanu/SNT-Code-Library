@@ -5,14 +5,18 @@ st.title("Project Overview")
 
 # Create a sidebar for navigation
 st.sidebar.header("Contents")
-st.sidebar.write("""
-- [Overview](#overview)
-- [Motivation](#motivation)
-- [Objectives](#objectives)
-- [Target Audience](#target-audience)
-- [Scope](#scope)
 
-- A. DATA ASSEMBLY AND MANAGEMENT
+# Collapsible sections for each main category
+with st.sidebar.expander("Overview", expanded=True):
+    st.write("""
+    - [Motivation](#motivation)
+    - [Objectives](#objectives)
+    - [Target Audience](#target-audience)
+    - [Scope](#scope)
+    """)
+
+with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
+    st.write("""
     - [A.1 Shapefiles](#shapefiles)
     - [A.2 Health Facilities](#health-facilities)
     - [A.3 Routine Case Data from DHIS2](#routine-case-data-from-dhis2)
@@ -23,20 +27,26 @@ st.sidebar.write("""
     - [A.6 Climate Data](#climate-data)
     - [A.7 LMIS Data](#lmis-data)
     - [A.8 Modeled Data](#modeled-data)
+    """)
 
-- B. Epidemiological Stratification
+with st.sidebar.expander("B. Epidemiological Stratification", expanded=False):
+    st.write("""
     - [B.1 Reporting Rate per Variable](#reporting-rate-per-variable)
     - [B.2 Group and Merge Data Frame](#group-and-merge-data-frame)
     - [B.3 Crude Incidence by Year](#crude-incidence-by-year)
     - [B.4 Adjusted Incidence by Year](#adjusted-incidence-by-year)
     - [B.5 Option to Select Incidence](#option-to-select-incidence)
     - [B.6 Risk Categorization](#risk-categorization)
+    """)
 
-- C. Stratification of Other Determinants
+with st.sidebar.expander("C. Stratification of Other Determinants", expanded=False):
+    st.write("""
     - [C.1 Access to Care](#access-to-care)
     - [C.2 Seasonality](#seasonality)
+    """)
 
-- D. Review of Past Interventions
+with st.sidebar.expander("D. Review of Past Interventions", expanded=False):
+    st.write("""
     - [D.1 EPI Coverage and Dropout Rate](#epi-coverage-and-dropout-rate)
     - [D.2 IPTp and ANC Coverage](#iptp-and-anc-coverage)
     - [D.3 PMC (Prevention of Malaria in Pregnancy)](#pmc-prevention-of-malaria-in-pregnancy)
@@ -49,16 +59,22 @@ st.sidebar.write("""
     - [D.14 LSM (Larval Source Management)](#lsm-larval-source-management)
         - [D.14.1 LSM Coverage Analysis](#lsm-coverage-analysis)
     - [D.15 Assessing the Quality of Case Management](#assessing-the-quality-of-case-management)
+    """)
 
-- E. Targeting of Interventions
+with st.sidebar.expander("E. Targeting of Interventions", expanded=False):
+    st.write("""
     - [E Targeting of Interventions](#targeting-of-interventions)
+    """)
 
-- F. Retrospective Analysis
+with st.sidebar.expander("F. Retrospective Analysis", expanded=False):
+    st.write("""
     - [F Retrospective Analysis](#retrospective-analysis)
+    """)
 
-- G. Urban Microstratification
+with st.sidebar.expander("G. Urban Microstratification", expanded=False):
+    st.write("""
     - [G Urban Microstratification](#urban-microstratification)
-""")
+    """)
 
 # Main content area
 st.markdown("""
