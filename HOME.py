@@ -77,58 +77,79 @@ with st.sidebar.expander("G. Urban Microstratification", expanded=False):
     - [G Urban Microstratification](#urban-microstratification)
     """)
 
-# Main content area
-st.markdown("""
-## Overview
-### Motivation
-### Objectives
-### Target Audience
-### Scope
+# Create two columns for the TOC and main content
+col1, col2 = st.columns([1, 2])  # Adjust the ratios as needed
 
-## A. DATA ASSEMBLY AND MANAGEMENT
-### A.1 Shapefiles
-### A.2 Health Facilities
-### A.3 Routine Case Data from DHIS2
-### A.4 DHS Data
-### A.5 Population Data
-#### A.5.1 Extract Population Data from Raster Population Source (Option 1)
-#### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
-### A.6 Climate Data
-### A.7 LMIS Data
-### A.8 Modeled Data
+# Populate the first column with the TOC
+with col1:
+    st.sidebar.header("Table of Contents")
+    st.sidebar.markdown("""
+    - [Motivation](#motivation)
+    - [Objectives](#objectives)
+    - [Target Audience](#target-audience)
+    - [Scope](#scope)
+    - [A. DATA ASSEMBLY AND MANAGEMENT](#data-assembly-and-management)
+    - [B. Epidemiological Stratification](#epidemiological-stratification)
+    - [C. Stratification of Other Determinants](#stratification-of-other-determinants)
+    - [D. Review of Past Interventions](#review-of-past-interventions)
+    - [E. Targeting of Interventions](#targeting-of-interventions)
+    - [F. Retrospective Analysis](#retrospective-analysis)
+    - [G. Urban Microstratification](#urban-microstratification)
+    """)
 
-## B. Epidemiological Stratification
-### B.1 Reporting Rate per Variable
-### B.2 Group and Merge Data Frame
-### B.3 Crude Incidence by Year
-### B.4 Adjusted Incidence by Year
-### B.5 Option to Select Incidence
-### B.6 Risk Categorization
+# Populate the second column with the main content
+with col2:
+    st.markdown("""
+    ## Overview
+    ### Motivation
+    ### Objectives
+    ### Target Audience
+    ### Scope
 
-## C. Stratification of Other Determinants
-### C.1 Access to Care
-### C.2 Seasonality
+    ## A. DATA ASSEMBLY AND MANAGEMENT
+    ### A.1 Shapefiles
+    ### A.2 Health Facilities
+    ### A.3 Routine Case Data from DHIS2
+    ### A.4 DHS Data
+    ### A.5 Population Data
+    #### A.5.1 Extract Population Data from Raster Population Source (Option 1)
+    #### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
+    ### A.6 Climate Data
+    ### A.7 LMIS Data
+    ### A.8 Modeled Data
 
-## D. Review of Past Interventions
-### D.1 EPI Coverage and Dropout Rate
-### D.2 IPTp and ANC Coverage
-### D.3 PMC (Prevention of Malaria in Pregnancy)
-### D.4 SMC (Seasonal Malaria Chemoprevention)
-### D.5 Malaria Vaccine
-### D.6 ITN Ownership, Access, Usage, and Type
-### D.7 ITN Operational Coverage
-### D.8 IRS (Indoor Residual Spraying)
-### D.13 School-Based Distribution of ITNs (SBD)
-### D.14 LSM (Larval Source Management)
-#### D.14.1 LSM Coverage Analysis
-### D.15 Assessing the Quality of Case Management
+    ## B. Epidemiological Stratification
+    ### B.1 Reporting Rate per Variable
+    ### B.2 Group and Merge Data Frame
+    ### B.3 Crude Incidence by Year
+    ### B.4 Adjusted Incidence by Year
+    ### B.5 Option to Select Incidence
+    ### B.6 Risk Categorization
 
-## E. Targeting of Interventions
-### E Targeting of Interventions
+    ## C. Stratification of Other Determinants
+    ### C.1 Access to Care
+    ### C.2 Seasonality
 
-## F. Retrospective Analysis
-### F Retrospective Analysis
+    ## D. Review of Past Interventions
+    ### D.1 EPI Coverage and Dropout Rate
+    ### D.2 IPTp and ANC Coverage
+    ### D.3 PMC (Prevention of Malaria in Pregnancy)
+    ### D.4 SMC (Seasonal Malaria Chemoprevention)
+    ### D.5 Malaria Vaccine
+    ### D.6 ITN Ownership, Access, Usage, and Type
+    ### D.7 ITN Operational Coverage
+    ### D.8 IRS (Indoor Residual Spraying)
+    ### D.13 School-Based Distribution of ITNs (SBD)
+    ### D.14 LSM (Larval Source Management)
+    #### D.14.1 LSM Coverage Analysis
+    ### D.15 Assessing the Quality of Case Management
 
-## G. Urban Microstratification
-### G Urban Microstratification
-""")
+    ## E. Targeting of Interventions
+    ### E Targeting of Interventions
+
+    ## F. Retrospective Analysis
+    ### F Retrospective Analysis
+
+    ## G. Urban Microstratification
+    ### G Urban Microstratification
+    """)
