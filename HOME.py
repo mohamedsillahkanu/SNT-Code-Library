@@ -16,11 +16,21 @@ col1, col2 = st.columns([1, 3])
 
 # Define button style to ensure equal length
 button_style = """<style>
-    .stButton { 
+    .clickable {
+        display: inline-block;
         width: 100%;  /* Set the width to 100% for equal length */
         height: 50px;  /* Set a fixed height for buttons */
         border-radius: 5px;  /* Modify the border radius for less roundness */
-    }  
+        text-align: center;
+        padding: 10px;
+        background-color: #007BFF;  /* Button color */
+        color: white;  /* Text color */
+        text-decoration: none;  /* Remove underline */
+        margin-bottom: 10px;  /* Space between clickable items */
+    }
+    .clickable:hover {
+        background-color: #0056b3;  /* Darker button color on hover */
+    }
 </style>"""
 
 # Apply button styling
@@ -30,27 +40,27 @@ st.markdown(button_style, unsafe_allow_html=True)
 with col1:
     st.write("## Table of Contents")
 
-    # Using clickable buttons to navigate to sections
-    st.button("OVERVIEW", key="overview", on_click=navigate_to, args=("OVERVIEW",))
+    # Using clickable text to navigate to sections
+    st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'OVERVIEW\');">OVERVIEW</a>', unsafe_allow_html=True)
 
     with st.expander("#### A. Data assembly and Management"):
         st.write("### A.1 Shapefiles")
-        st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
-        st.button("Rename and match names", key="rename_and_match_names", on_click=navigate_to, args=("Rename and match names",))
-        st.button("Link shapefiles to relevant scales", key="link_shapefiles", on_click=navigate_to, args=("Link shapefiles to relevant scales",))
-                 
-        st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
-        st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
-        st.button("A.4 DHS DATA", key="A4_DHS_data", on_click=navigate_to, args=("A.4 DHS DATA",))
-        st.button("A.5 CLIMATE DATA", key="A5_Climate_data", on_click=navigate_to, args=("A.5 CLIMATE DATA",))
-        st.button("A.6 LMIS DATA", key="A6_LMIS_data", on_click=navigate_to, args=("A.6 LMIS DATA",))
-        st.button("A.7 MODELED DATA", key="A7_Modeled_data", on_click=navigate_to, args=("A.7 MODELED DATA",))
-        st.button("A.8 POPULATION DATA", key="A8_Population_data", on_click=navigate_to, args=("A.8 POPULATION DATA",))
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Import shapefiles\');">Import shapefiles</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Rename and match names\');">Rename and match names</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Link shapefiles to relevant scales\');">Link shapefiles to relevant scales</a>', unsafe_allow_html=True)
+
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.2 HEALTH FACILITIES\');">A.2 HEALTH FACILITIES</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.3 ROUTINE CASE DATA FROM DHIS2\');">A.3 ROUTINE CASE DATA FROM DHIS2</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.4 DHS DATA\');">A.4 DHS DATA</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.5 CLIMATE DATA\');">A.5 CLIMATE DATA</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.6 LMIS DATA\');">A.6 LMIS DATA</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.7 MODELED DATA\');">A.7 MODELED DATA</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.8 POPULATION DATA\');">A.8 POPULATION DATA</a>', unsafe_allow_html=True)
 
     with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
         st.write("### Epidemiological stratification")
-        st.button("B.1 REPORTING RATE PER VARIABLE", key="B1_Reporting_Rate", on_click=navigate_to, args=("B.1 REPORTING RATE PER VARIABLE",))
-        st.button("B.2 GROUP AND MERGE DATA FRAME", key="B2_Group_Merge", on_click=navigate_to, args=("B.2 GROUP AND MERGE DATA FRAME",))
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'B.1 REPORTING RATE PER VARIABLE\');">B.1 REPORTING RATE PER VARIABLE</a>', unsafe_allow_html=True)
+        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'B.2 GROUP AND MERGE DATA FRAME\');">B.2 GROUP AND MERGE DATA FRAME</a>', unsafe_allow_html=True)
 
 # Content Display (Right-Hand Side)
 with col2:
