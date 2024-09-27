@@ -33,7 +33,7 @@ with col1:
         st.write("### A.1 Shapefiles")
         st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
         st.button("Rename and match names", key="rename_and_match_names", on_click=navigate_to, args=("Rename and match names",))
-        st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
+        st.button("Link shapefiles to relevant scales", key="link_shapefiles", on_click=navigate_to, args=("Link shapefiles to relevant scales",))
                  
         st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
         st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
@@ -59,7 +59,16 @@ with col2:
         """)
 
     elif st.session_state.active_page == "Import shapefiles":
-        st.write("#### Example R Code to Read a Shapefile")
+        st.write("#### Import shapefile")
+
+         # Explanation of the R code
+        st.write("#### Code Explanation:")
+        st.write("""
+        1. **Installing the `sf` package**: Ensure that the `sf` package is installed for handling shapefiles in R.
+        2. **Loading the library**: Use `library(sf)` to load the `sf` package.
+        3. **Reading the shapefile**: Use `st_read()` to read the shapefile into `shape_data`.
+        4. **Displaying the data**: Use `head(shape_data)` to display the first few rows of the data.
+        """)
         st.code("""
         # Install and load the sf package
         install.packages("sf")
@@ -76,14 +85,6 @@ with col2:
 
         """, language="r")
 
-        # Explanation of the R code
-        st.write("#### Code Explanation:")
-        st.write("""
-        1. **Installing the `sf` package**: Ensure that the `sf` package is installed for handling shapefiles in R.
-        2. **Loading the library**: Use `library(sf)` to load the `sf` package.
-        3. **Reading the shapefile**: Use `st_read()` to read the shapefile into `shape_data`.
-        4. **Displaying the data**: Use `head(shape_data)` to display the first few rows of the data.
-        """)
 
         sample_output_shapefiles_r = "https://github.com/mohamedsillahkanu/si/blob/99ccc5bd8425859a0a801f01ca713e36edbd0c21/MAP_R.png?raw=true"
 
