@@ -1,49 +1,29 @@
-# Shapefile Project Documentation
+# Project Title
 
-Welcome to the **Shapefiles** project documentation. This repository provides step-by-step instructions on how to work with shapefiles, from importing to visualizing them on basic maps.
+Welcome to the project repository! Below you'll find useful links to important documentation and pages related to this project.
 
----
+## Quick Links
+<p align="right">
+  <a href="https://example.com/page1">Page 1</a><br>
+  <a href="https://example.com/page2">Page 2</a><br>
+  <a href="https://example.com/page3">Page 3</a><br>
+  <a href="https://example.com/page4">Page 4</a>
+</p>
 
-## A.1 Shapefiles
+## About the Project
 
-### A.1.1 [Import Shapefiles](./docs/import_shapefiles.html)
-Learn how to import shapefiles into your workspace.
+This project is designed to [brief description of the project]. It is structured to provide an easy workflow for data management, cleaning, analysis, and visualization.
 
-### A.1.2 [Rename and Match Names](./docs/rename_match_names.html)
-Steps to rename and match shapefile names to your dataset.
+## Features
+- Feature 1
+- Feature 2
+- Feature 3
 
-### A.1.3 [Link Shapefiles to Relevant Scales](./docs/link_scales.html)
-Understand how to link shapefiles to different scales for accurate geographical representation.
+## Installation
 
-### A.1.4 [Visualizing Shapefiles and Making Basic Maps](./docs/visualize_maps.html)
-Use visualization tools to create basic maps using shapefiles.
+To set up the project, clone the repository and install the required dependencies:
 
----
-
-## 📊 Quarto Interactive Pages
-
-- [Import Shapefiles - Interactive](./docs/import_shapefiles.qmd)
-- [Rename and Match Names - Interactive](./docs/rename_match_names.qmd)
-- [Link Shapefiles to Relevant Scales - Interactive](./docs/link_scales.qmd)
-- [Visualizing Shapefiles and Basic Maps - Interactive](./docs/visualize_maps.qmd)
-
----
-
-### 📄 Key Features
-- **Comprehensive Documentation**: Step-by-step tutorials for handling shapefiles.
-- **Interactive Quarto Reports**: Dynamic visualizations to better understand shapefile data.
-- **Map Visualizations**: Create basic maps from shapefiles.
-
----
-
-### Sample Map Visualization
-
-![Map Demo](./images/map_demo.png)
-
----
-
-### 💡 How to Work with Quarto
-
-1. Install Quarto:
-   ```bash
-   quarto install
+```bash
+git clone https://github.com/username/repository.git
+cd repository
+pip install -r requirements.txt
