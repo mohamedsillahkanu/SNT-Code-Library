@@ -14,9 +14,13 @@ def navigate_to(page):
 # Create two columns (one for TOC, one for content)
 col1, col2 = st.columns([1, 3])
 
-# Define button style to ensure equal length and rectangular shape
+# Define button style to ensure equal length
 button_style = """<style>
-    .stButton { width: 300px; border-radius: 0; }  /* Set a fixed width for buttons and remove rounded corners */
+    .stButton { 
+        width: 100%;  /* Set the width to 100% for equal length */
+        height: 50px;  /* Set a fixed height for buttons */
+        border-radius: 5px;  /* Modify the border radius for less roundness */
+    }  
 </style>"""
 
 # Apply button styling
@@ -62,11 +66,11 @@ with col2:
         # Explanation of the R code
         st.write("#### Code Explanation:")
         st.write("""1. **Installing the `sf` package**: Ensure that the `sf` package is installed for handling shapefiles in R.
-        2. **Loading the library**: Use `library(sf)` to load the `sf` package.
-        3. **Reading the shapefile**: Use `st_read()` to read the shapefile into `shape_data`.
-        4. **Displaying the data**: Use `head(shape_data)` to display the first few rows of the data.""")
-
-        st.code("""R
+2. **Loading the library**: Use `library(sf)` to load the `sf` package.
+3. **Reading the shapefile**: Use `st_read()` to read the shapefile into `shape_data`.
+4. **Displaying the data**: Use `head(shape_data)` to display the first few rows of the data.
+        """)
+        st.code("""
         # Install and load the sf package
         install.packages("sf")
         library(sf)
@@ -88,7 +92,5 @@ with col2:
         st.write("### A.2 HEALTH FACILITIES")
         st.write("**Key Topics:**")
         st.write("""- **A.2.1 Get MFL from the Malaria Program**
-        - **A.2.2 Get the DHIS2 Health Facility (HF) List from the Malaria Program**
-        - **A.2.3 Reconciling the MFL and the DHIS2 HF List**""")
-
-        # Further content for A.2 HEALTH FACILITIES can be added here...
+- **A.2.2 Get the DHIS2 Health Facility (HF) List from the Malaria Program**
+- **A.2.3 Reconciling the MFL and the DHIS2 HF List**""")
