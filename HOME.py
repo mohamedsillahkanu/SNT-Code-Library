@@ -14,53 +14,31 @@ def navigate_to(page):
 # Create two columns (one for TOC, one for content)
 col1, col2 = st.columns([1, 3])
 
-# Define button style to ensure equal length
-button_style = """<style>
-    .clickable {
-        display: inline-block;
-        width: 100%;  /* Set the width to 100% for equal length */
-        height: 50px;  /* Set a fixed height for buttons */
-        border-radius: 5px;  /* Modify the border radius for less roundness */
-        text-align: center;
-        padding: 10px;
-        background-color: #007BFF;  /* Button color */
-        color: white;  /* Text color */
-        text-decoration: none;  /* Remove underline */
-        margin-bottom: 10px;  /* Space between clickable items */
-    }
-    .clickable:hover {
-        background-color: #0056b3;  /* Darker button color on hover */
-    }
-</style>"""
-
-# Apply button styling
-st.markdown(button_style, unsafe_allow_html=True)
-
 # Table of Contents (Left-Hand Side)
 with col1:
     st.write("## Table of Contents")
 
     # Using clickable text to navigate to sections
-    st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'OVERVIEW\');">OVERVIEW</a>', unsafe_allow_html=True)
+    st.markdown('[OVERVIEW](#)', unsafe_allow_html=True)
 
     with st.expander("#### A. Data assembly and Management"):
         st.write("### A.1 Shapefiles")
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Import shapefiles\');">Import shapefiles</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Rename and match names\');">Rename and match names</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'Link shapefiles to relevant scales\');">Link shapefiles to relevant scales</a>', unsafe_allow_html=True)
+        st.markdown('[Import shapefiles](#)', unsafe_allow_html=True)
+        st.markdown('[Rename and match names](#)', unsafe_allow_html=True)
+        st.markdown('[Link shapefiles to relevant scales](#)', unsafe_allow_html=True)
 
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.2 HEALTH FACILITIES\');">A.2 HEALTH FACILITIES</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.3 ROUTINE CASE DATA FROM DHIS2\');">A.3 ROUTINE CASE DATA FROM DHIS2</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.4 DHS DATA\');">A.4 DHS DATA</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.5 CLIMATE DATA\');">A.5 CLIMATE DATA</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.6 LMIS DATA\');">A.6 LMIS DATA</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.7 MODELED DATA\');">A.7 MODELED DATA</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'A.8 POPULATION DATA\');">A.8 POPULATION DATA</a>', unsafe_allow_html=True)
+        st.markdown('[A.2 HEALTH FACILITIES](#)', unsafe_allow_html=True)
+        st.markdown('[A.3 ROUTINE CASE DATA FROM DHIS2](#)', unsafe_allow_html=True)
+        st.markdown('[A.4 DHS DATA](#)', unsafe_allow_html=True)
+        st.markdown('[A.5 CLIMATE DATA](#)', unsafe_allow_html=True)
+        st.markdown('[A.6 LMIS DATA](#)', unsafe_allow_html=True)
+        st.markdown('[A.7 MODELED DATA](#)', unsafe_allow_html=True)
+        st.markdown('[A.8 POPULATION DATA](#)', unsafe_allow_html=True)
 
     with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
         st.write("### Epidemiological stratification")
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'B.1 REPORTING RATE PER VARIABLE\');">B.1 REPORTING RATE PER VARIABLE</a>', unsafe_allow_html=True)
-        st.markdown('<a class="clickable" href="#" onclick="window.parent.navigate_to(\'B.2 GROUP AND MERGE DATA FRAME\');">B.2 GROUP AND MERGE DATA FRAME</a>', unsafe_allow_html=True)
+        st.markdown('[B.1 REPORTING RATE PER VARIABLE](#)', unsafe_allow_html=True)
+        st.markdown('[B.2 GROUP AND MERGE DATA FRAME](#)', unsafe_allow_html=True)
 
 # Content Display (Right-Hand Side)
 with col2:
