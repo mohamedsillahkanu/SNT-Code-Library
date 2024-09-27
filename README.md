@@ -1,4 +1,4 @@
-# FE-2023-quarto-website
-A quarto website for the 2023 Faculty Enrichment Program
+# SNT Code Library
+SNT code library
 
 [view latest deployment](https://mohamedsillahkanu.github.io/SNT-Code-Library/)
