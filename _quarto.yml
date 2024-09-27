@@ -1,0 +1,73 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Faculty Enrichment Program in Applied Malaria Modeling"
+  reader-mode: true
+  favicon: numalaria_logo.png
+  sidebar: 
+    style: floating   
+    title: "Faculty Enrichment Program in Applied Malaria Modeling"
+    logo: numalaria_logo.png
+    background: white
+    foreground: dark
+    collapse-level: 1
+    search: true
+    contents:  
+      - section: "2023 Program"
+        contents: 
+          - index.qmd
+          - program/program_resources/pre_program_checklist.qmd
+          - program/program_resources/program_materials/2023_program_handbook.qmd
+          - program/program_resources/program_materials/nu_team_best_practices.qmd
+          - text: Example Exercises
+            href: https://github.com/numalariamodeling/FE-2023-examples
+          - resources/articles/journal_club.qmd
+          - program/program_resources/session_recordings.qmd
+      - section: "EMOD How-To Guides"
+        contents: 
+          - guides/install_guide.qmd
+          - guides/simulation_guide.qmd
+          - guides/demographics_guide.qmd
+          - guides/climate_guide.qmd
+          - guides/vector_guide.qmd
+          - guides/diagnostic_guide.qmd
+          - guides/intervention_guide.qmd
+          - guides/report_guide.qmd
+          - guides/analyzer_guide.qmd
+          - guides/properties_guide.qmd
+      - section: "Additional Resources"            
+        contents: 
+          - resources/articles.qmd
+          - resources/coding_resources.qmd
+          - resources/data_sources.qmd
+          - resources/science_communication.qmd
+      - text: "Quick Links:"      
+      - text: "--- EMOD Documentation"
+        url: https://docs.idmod.org/projects/emod-malaria/en/latest/
+      - text: "--- NU Malaria Modeling"
+        url: https://numalariamodeling.org
+      - text: "--- AMMnet"
+        url: https://ammnet.org/
+      - text: "<br><span style='color: red; font-weight:bold;'>Voir le Site en Français</span>" 
+        url: https://numalariamodeling.github.io/FE-2023-site-web-francais/
+
+    tools: 
+      - icon: github
+        menu: 
+          - text: Website Source Code
+            url: https://github.com/numalariamodeling/FE-2023-quarto-website
+          - text: Example Exercises
+            url: https://github.com/numalariamodeling/FE-2023-examples
+  page-footer:
+    center: © NU Malaria Modeling 2023
+      
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+
+editor: source
