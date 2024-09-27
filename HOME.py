@@ -30,8 +30,10 @@ with col1:
     st.button("OVERVIEW", key="overview", on_click=navigate_to, args=("OVERVIEW",))
 
     with st.expander("A. Data assembly and Management"):
-        st.write("A.1 Shapefiles")
+        st.write("#### A.1 Shapefiles")
         st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
+
+        
                  
         st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
         st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
