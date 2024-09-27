@@ -56,79 +56,66 @@ with st.sidebar.expander("D. Review of Past Interventions", expanded=False):
     - [D.6 ITN Ownership, Access, Usage, and Type](#itn-ownership-access-usage-and-type)
     - [D.7 ITN Operational Coverage](#itn-operational-coverage)
     - [D.8 IRS (Indoor Residual Spraying)](#irs-indoor-residual-spraying)
-    - [D.13 School-Based Distribution of ITNs (SBD)](#school-based-distribution-of-itns-sbd)
-    - [D.14 LSM (Larval Source Management)](#lsm-larval-source-management)
-        - [D.14.1 LSM Coverage Analysis](#lsm-coverage-analysis)
-    - [D.15 Assessing the Quality of Case Management](#assessing-the-quality-of-case-management)
+    - [D.9 School-Based Distribution of ITNs (SBD)](#school-based-distribution-of-itns-sbd)
+    - [D.10 LSM (Larval Source Management)](#lsm-larval-source-management)
+        - [D.10.1 LSM Coverage Analysis](#lsm-coverage-analysis)
+    - [D.11 Assessing the Quality of Case Management](#assessing-the-quality-of-case-management)
     """)
 
 with st.sidebar.expander("E. Targeting of Interventions", expanded=False):
     st.write("""
-    - [E Targeting of Interventions](#targeting-of-interventions)
+    - [E.1 Targeting of Interventions](#targeting-of-interventions)
     """)
 
 with st.sidebar.expander("F. Retrospective Analysis", expanded=False):
     st.write("""
-    - [F Retrospective Analysis](#retrospective-analysis)
+    - [F.1 Retrospective Analysis](#retrospective-analysis)
     """)
 
 with st.sidebar.expander("G. Urban Microstratification", expanded=False):
     st.write("""
-    - [G Urban Microstratification](#urban-microstratification)
+    - [G.1 Urban Microstratification](#urban-microstratification)
     """)
 
+# Section selection
+section = st.sidebar.selectbox("Select a section to view", [
+    "Overview", 
+    "A.1 Shapefiles", 
+    "A.1.1 Import shapefiles", 
+    "A.2 Health Facilities", 
+    "A.3 Routine Case Data from DHIS2", 
+    "A.4 DHS Data", 
+    "A.5 Population Data", 
+    "A.6 Climate Data", 
+    "A.7 LMIS Data", 
+    "A.8 Modeled Data",
+    "B. Epidemiological Stratification",
+    "C. Stratification of Other Determinants",
+    "D. Review of Past Interventions",
+    "E. Targeting of Interventions",
+    "F. Retrospective Analysis",
+    "G. Urban Microstratification"
+])
+
 # Main content area
-st.markdown("""
-## Overview
-### Motivation
-### Objectives
-### Target Audience
-### Scope
+if section == "Overview":
+    st.markdown("## Overview Content")
+    st.write("Detailed information about motivation, objectives, target audience, and scope.")
 
-## A. DATA ASSEMBLY AND MANAGEMENT
-### A.1 Shapefiles
-### A.2 Health Facilities
-### A.3 Routine Case Data from DHIS2
-### A.4 DHS Data
-### A.5 Population Data
-#### A.5.1 Extract Population Data from Raster Population Source (Option 1)
-#### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
-### A.6 Climate Data
-### A.7 LMIS Data
-### A.8 Modeled Data
+elif section == "A.1 Shapefiles":
+    st.markdown("## A.1 Shapefiles Content")
+    st.write("Information about shapefiles.")
 
-## B. Epidemiological Stratification
-### B.1 Reporting Rate per Variable
-### B.2 Group and Merge Data Frame
-### B.3 Crude Incidence by Year
-### B.4 Adjusted Incidence by Year
-### B.5 Option to Select Incidence
-### B.6 Risk Categorization
+elif section == "A.1.1 Import shapefiles":
+    st.markdown("## A.1.1 Import shapefiles Content")
+    st.write("Instructions for importing shapefiles.")
 
-## C. Stratification of Other Determinants
-### C.1 Access to Care
-### C.2 Seasonality
+elif section == "A.2 Health Facilities":
+    st.markdown("## A.2 Health Facilities Content")
+    st.write("Information regarding health facilities.")
 
-## D. Review of Past Interventions
-### D.1 EPI Coverage and Dropout Rate
-### D.2 IPTp and ANC Coverage
-### D.3 PMC (Prevention of Malaria in Pregnancy)
-### D.4 SMC (Seasonal Malaria Chemoprevention)
-### D.5 Malaria Vaccine
-### D.6 ITN Ownership, Access, Usage, and Type
-### D.7 ITN Operational Coverage
-### D.8 IRS (Indoor Residual Spraying)
-### D.13 School-Based Distribution of ITNs (SBD)
-### D.14 LSM (Larval Source Management)
-#### D.14.1 LSM Coverage Analysis
-### D.15 Assessing the Quality of Case Management
+elif section == "A.3 Routine Case Data from DHIS2":
+    st.markdown("## A.3 Routine Case Data from DHIS2 Content")
+    st.write("Details about routine case data from DHIS2.")
 
-## E. Targeting of Interventions
-### E Targeting of Interventions
-
-## F. Retrospective Analysis
-### F Retrospective Analysis
-
-## G. Urban Microstratification
-### G Urban Microstratification
-""") 
+# Continue adding `elif` for each section as needed
