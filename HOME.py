@@ -14,31 +14,51 @@ def navigate_to(page):
 # Create two columns (one for TOC, one for content)
 col1, col2 = st.columns([1, 3])
 
+# Define button style to ensure equal length
+button_style = """<style>
+    .stButton { 
+        width: auto;  /* Set the width to auto */
+        height: auto;  /* Set a fixed height for buttons */
+        border: none;  /* Remove border */
+        background-color: transparent;  /* Make background transparent */
+        color: #1f77b4;  /* Change text color to blue */
+        text-align: left; /* Align text to the left */
+        font-size: 16px; /* Adjust font size */
+        cursor: pointer; /* Show pointer on hover */
+    }
+    .stButton:hover {
+        text-decoration: underline; /* Underline text on hover */
+    }
+</style>"""
+
+# Apply button styling
+st.markdown(button_style, unsafe_allow_html=True)
+
 # Table of Contents (Left-Hand Side)
 with col1:
     st.write("## Table of Contents")
 
-    # Using clickable text to navigate to sections
-    st.markdown('[OVERVIEW](#)', unsafe_allow_html=True)
+    # Using buttons styled as links to navigate to sections
+    st.button("OVERVIEW", key="overview", on_click=navigate_to, args=("OVERVIEW",))
 
     with st.expander("#### A. Data assembly and Management"):
         st.write("### A.1 Shapefiles")
-        st.markdown('[Import shapefiles](#)', unsafe_allow_html=True)
-        st.markdown('[Rename and match names](#)', unsafe_allow_html=True)
-        st.markdown('[Link shapefiles to relevant scales](#)', unsafe_allow_html=True)
+        st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
+        st.button("Rename and match names", key="rename_and_match_names", on_click=navigate_to, args=("Rename and match names",))
+        st.button("Link shapefiles to relevant scales", key="link_shapefiles", on_click=navigate_to, args=("Link shapefiles to relevant scales",))
 
-        st.markdown('[A.2 HEALTH FACILITIES](#)', unsafe_allow_html=True)
-        st.markdown('[A.3 ROUTINE CASE DATA FROM DHIS2](#)', unsafe_allow_html=True)
-        st.markdown('[A.4 DHS DATA](#)', unsafe_allow_html=True)
-        st.markdown('[A.5 CLIMATE DATA](#)', unsafe_allow_html=True)
-        st.markdown('[A.6 LMIS DATA](#)', unsafe_allow_html=True)
-        st.markdown('[A.7 MODELED DATA](#)', unsafe_allow_html=True)
-        st.markdown('[A.8 POPULATION DATA](#)', unsafe_allow_html=True)
+        st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
+        st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
+        st.button("A.4 DHS DATA", key="A4_DHS_data", on_click=navigate_to, args=("A.4 DHS DATA",))
+        st.button("A.5 CLIMATE DATA", key="A5_Climate_data", on_click=navigate_to, args=("A.5 CLIMATE DATA",))
+        st.button("A.6 LMIS DATA", key="A6_LMIS_data", on_click=navigate_to, args=("A.6 LMIS DATA",))
+        st.button("A.7 MODELED DATA", key="A7_Modeled_data", on_click=navigate_to, args=("A.7 MODELED DATA",))
+        st.button("A.8 POPULATION DATA", key="A8_Population_data", on_click=navigate_to, args=("A.8 POPULATION DATA",))
 
     with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
         st.write("### Epidemiological stratification")
-        st.markdown('[B.1 REPORTING RATE PER VARIABLE](#)', unsafe_allow_html=True)
-        st.markdown('[B.2 GROUP AND MERGE DATA FRAME](#)', unsafe_allow_html=True)
+        st.button("B.1 REPORTING RATE PER VARIABLE", key="B1_Reporting_Rate", on_click=navigate_to, args=("B.1 REPORTING RATE PER VARIABLE",))
+        st.button("B.2 GROUP AND MERGE DATA FRAME", key="B2_Group_Merge", on_click=navigate_to, args=("B.2 GROUP AND MERGE DATA FRAME",))
 
 # Content Display (Right-Hand Side)
 with col2:
