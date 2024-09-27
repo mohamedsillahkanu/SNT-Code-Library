@@ -1,69 +1,78 @@
 import streamlit as st
+import geopandas as gpd
+import matplotlib.pyplot as plt
 
-# Title and favicon
-st.set_page_config(page_title="Faculty Enrichment Program in Applied Malaria Modeling")
-                   
+# Function to import shapefiles
+def import_shapefile(uploaded_file):
+    return gpd.read_file(uploaded_file)
 
-# Sidebar Configuration
-st.sidebar.title("Faculty Enrichment Program in Applied Malaria Modeling")
+# Function to rename and match names
+def rename_and_match(gdf, column_mapping):
+    gdf.rename(columns=column_mapping, inplace=True)
+    return gdf
 
-st.sidebar.write("### Quick Links:")
-st.sidebar.markdown("[--- EMOD Documentation](https://docs.idmod.org/projects/emod-malaria/en/latest/)")
-st.sidebar.markdown("[--- NU Malaria Modeling](https://numalariamodeling.org)")
-st.sidebar.markdown("[--- AMMnet](https://ammnet.org/)")
-st.sidebar.markdown("<br><span style='color: red; font-weight:bold;'>Voir le Site en Français</span>", unsafe_allow_html=True)
-st.sidebar.markdown("[French Website](https://numalariamodeling.github.io/FE-2023-site-web-francais/)")
+# Function to link shapefiles to relevant scales
+def link_shapefiles_to_scales(gdf, scale_data):
+    # Example linking logic (customize as needed)
+    gdf['linked_scale'] = gdf['some_column'].map(scale_data)
+    return gdf
 
-# Main Content
-st.title("Faculty Enrichment Program in Applied Malaria Modeling")
+# Function to visualize shapefiles
+def visualize_shapefile(gdf):
+    fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+    gdf.plot(ax=ax, color='lightblue', edgecolor='black')
+    plt.title('Shapefile Visualization')
+    plt.axis('off')
+    st.pyplot(fig)
 
-# Sections
-section = st.sidebar.radio("Select a Section:", 
-                            ["2023 Program", "EMOD How-To Guides", "Additional Resources"])
+# Main Streamlit app
+def main():
+    st.sidebar.title("Shapefile Management App")
+    
+    # Navigation buttons
+    option = st.sidebar.radio("Choose an option:", 
+                               ("Import Shapefile", "Rename and Match Names", 
+                                "Link Shapefiles to Scales", "Visualize Shapefile"))
 
-if section == "2023 Program":
-    st.header("2023 Program")
-    st.write("## Program Resources")
-    st.markdown("### Pre-Program Checklist")
-    st.markdown("[Pre-Program Checklist](program/program_resources/pre_program_checklist.qmd)")
-    st.markdown("### Program Handbook")
-    st.markdown("[2023 Program Handbook](program/program_resources/program_materials/2023_program_handbook.qmd)")
-    st.markdown("### Best Practices")
-    st.markdown("[NU Team Best Practices](program/program_resources/program_materials/nu_team_best_practices.qmd)")
-    st.markdown("### Example Exercises")
-    st.markdown("[Example Exercises](https://github.com/numalariamodeling/FE-2023-examples)")
-    st.markdown("### Journal Club")
-    st.markdown("[Journal Club](resources/articles/journal_club.qmd)")
-    st.markdown("### Session Recordings")
-    st.markdown("[Session Recordings](program/program_resources/session_recordings.qmd)")
+    if option == "Import Shapefile":
+        st.subheader("Import Shapefile")
+        uploaded_file = st.file_uploader("Choose a shapefile", type=["shp"])
+        if uploaded_file:
+            gdf = import_shapefile(uploaded_file)
+            st.write("Shapefile loaded successfully.")
+            st.write(gdf.head())
 
-elif section == "EMOD How-To Guides":
-    st.header("EMOD How-To Guides")
-    guides = [
-        "Install Guide",
-        "Simulation Guide",
-        "Demographics Guide",
-        "Climate Guide",
-        "Vector Guide",
-        "Diagnostic Guide",
-        "Intervention Guide",
-        "Report Guide",
-        "Analyzer Guide",
-        "Properties Guide",
-    ]
-    for guide in guides:
-        st.markdown(f"[{guide}](guides/{guide.lower().replace(' ', '_')}.qmd)")
+    elif option == "Rename and Match Names":
+        st.subheader("Rename and Match Names")
+        # Placeholder for gdf, you need to manage state or pass gdf around
+        column_mapping = st.text_input("Enter column mapping as JSON", '{"old_name": "new_name"}')
+        if st.button("Rename"):
+            if 'gdf' in locals():
+                import json
+                mapping = json.loads(column_mapping)
+                gdf = rename_and_match(gdf, mapping)
+                st.write("Columns renamed successfully.")
+                st.write(gdf.head())
+            else:
+                st.error("Load a shapefile first.")
 
-elif section == "Additional Resources":
-    st.header("Additional Resources")
-    resources = [
-        "Articles",
-        "Coding Resources",
-        "Data Sources",
-        "Science Communication"
-    ]
-    for resource in resources:
-        st.markdown(f"[{resource}](resources/{resource.lower().replace(' ', '_')}.qmd)")
+    elif option == "Link Shapefiles to Scales":
+        st.subheader("Link Shapefiles to Relevant Scales")
+        # Placeholder for gdf and scale_data
+        scale_data_input = st.text_input("Enter scale data as JSON", '{"value": "scale"}')
+        if st.button("Link Scales"):
+            if 'gdf' in locals():
+                scale_data = json.loads(scale_data_input)
+                gdf = link_shapefiles_to_scales(gdf, scale_data)
+                st.write("Shapefiles linked to scales successfully.")
+                st.write(gdf.head())
+            else:
+                st.error("Load a shapefile first.")
 
-# Footer
-st.markdown("© NU Malaria Modeling 2023")
+    elif option == "Visualize Shapefile":
+        st.subheader("Visualize Shapefile")
+        if 'gdf' in locals():
+            visualize_shapefile(gdf)
+        else:
+            st.error("Load a shapefile first.")
+
