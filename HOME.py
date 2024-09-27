@@ -61,7 +61,7 @@ with col2:
         st.write("""SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs...""")
 
     elif st.session_state.active_page == "Import shapefiles":
-        st.write(#### A.1 Import shapefiles)
+        st.write("#### A.1 Import shapefiles")
         st.write("""Explanation
         To work with shapefiles in R, you can use the sf package. This package provides functions to read, manipulate, and visualize spatial data.
         
