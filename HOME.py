@@ -48,6 +48,7 @@ with col1:
         st.button("A.8 POPULATION DATA", key="A8_Population_data", on_click=navigate_to, args=("A.8 POPULATION DATA",))
 
     with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
+        st.write("### Epidemiological stratification")
         st.button("B.1 REPORTING RATE PER VARIABLE", key="B1_Reporting_Rate", on_click=navigate_to, args=("B.1 REPORTING RATE PER VARIABLE",))
         st.button("B.2 GROUP AND MERGE DATA FRAME", key="B2_Group_Merge", on_click=navigate_to, args=("B.2 GROUP AND MERGE DATA FRAME",))
 
