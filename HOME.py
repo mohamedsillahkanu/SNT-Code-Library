@@ -32,8 +32,8 @@ with col1:
     with st.expander("#### A. Data assembly and Management"):
         st.write("### A.1 Shapefiles")
         st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
-
-        
+        st.button("Rename and match names", key="rename_and_match_names", on_click=navigate_to, args=("Rename and match names",))
+        st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
                  
         st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
         st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
@@ -59,29 +59,21 @@ with col2:
         """)
 
     elif st.session_state.active_page == "Import shapefiles":
-        st.write("### A.1 SHAPEFILES")
-        st.write("""
-        **Key Topics:**
-        - A.1.1 Import shapefiles
-        - A.1.2 Rename and match names
-        - A.1.3 Visualizing shapefiles and making basic maps
-        """)
-
-        # Display R code
         st.write("#### Example R Code to Read a Shapefile")
         st.code("""
-        # Install the 'sf' package if not already installed
-        # install.packages("sf")
-
-        # Load the library
+        # Install and load the sf package
+        install.packages("sf")
         library(sf)
 
-        # Read the shapefile into an R object
-        shapefile_path <- "path_to_your_shapefile.shp"
-        shape_data <- st_read(shapefile_path)
+        # Import the shapefile
+        shapefile_data <- st_read("path_to_shapefile/your_shapefile.shp")
 
-        # Display the first few rows of the shapefile data
-        head(shape_data)
+        # View the first few rows of the data
+        print(head(shapefile_data))
+
+        # Plot the shapefile data
+        plot(shapefile_data)
+
         """, language="r")
 
         # Explanation of the R code
