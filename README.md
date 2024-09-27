@@ -1,69 +1,90 @@
-import streamlit as st
+<details>
+  <summary>Overview</summary>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#target-audience">Target Audience</a></li>
+    <li><a href="#scope">Scope</a></li>
+  </ul>
+</details>
 
-# Set page configuration
-st.set_page_config(layout="wide")
+<details>
+  <summary>A. DATA ASSEMBLY AND MANAGEMENT</summary>
+  <ul>
+      <li><a href="#shapefiles">A.1 Shapefiles</a></li>
+      <li><a href="#health-facilities">A.2 Health Facilities</a></li>
+      <li><a href="#routine-case-data-from-dhis2">A.3 Routine Case Data from DHIS2</a></li>
+      <li><a href="#dhs-data">A.4 DHS Data</a></li>
+      <li><a href="#population-data">A.5 Population Data</a></li>
+      <ul>
+        <li><a href="#extract-population-data-from-raster-population-source-option-1">A.5.1 Extract Population Data from Raster Population Source (Option 1)</a></li>
+        <li><a href="#extract-population-data-from-countrys-recent-census-option-2">A.5.2 Extract Population Data from Country's Recent Census (Option 2)</a></li>
+      </ul>
+      <li><a href="#climate-data">A.6 Climate Data</a></li>
+      <li><a href="#lmis-data">A.7 LMIS Data</a></li>
+      <li><a href="#modeled-data">A.8 Modeled Data</a></li>
+    </ul>
+  </ul>
+</details>
 
-# Initialize session state to track the active page and selected section
-if 'active_page' not in st.session_state:
-    st.session_state.active_page = 'TOC'  # Default to Table of Contents page
-if 'selected_section' not in st.session_state:
-    st.session_state.selected_section = None  # No section selected initially
+<details>
+  <summary>B Epidemiological Stratification</summary>
+  <ul>
+    <li><a href="#reporting-rate-per-variable">B.1 Reporting Rate per Variable</a></li>
+    <li><a href="#group-and-merge-data-frame">B.2 Group and Merge Data Frame</a></li>
+    <li><a href="#crude-incidence-by-year">B.3 Crude Incidence by Year</a></li>
+    <li><a href="#adjusted-incidence-by-year">B.4 Adjusted Incidence by Year</a></li>
+    <li><a href="#option-to-select-incidence">B.5 Option to Select Incidence</a></li>
+    <li><a href="#risk-categorization">B.6 Risk Categorization</a></li>
+  </ul>
+</details>
 
-# Function to navigate to a different page
-def navigate_to(page, section=None):
-    st.session_state.active_page = page
-    st.session_state.selected_section = section
+<details>
+  <summary>C Stratification of Other Determinants</summary>
+  <ul>
+    <li><a href="#access-to-care">C.1 Access to Care</a></li>
+    <li><a href="#seasonality">C.2 Seasonality</a></li>
+  </ul>
+</details>
 
-# Display Table of Contents on the first page
-if st.session_state.active_page == 'TOC':
-    st.title("Table of Contents")
-    st.markdown("<details><summary>Overview</summary><ul>"
-                "<li><a href='#' onclick='navigate_to(\"Overview\")'>Overview</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"Motivation\")'>Motivation</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"Objectives\")'>Objectives</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"Target Audience\")'>Target Audience</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"Scope\")'>Scope</a></li>"
-                "</ul></details>", unsafe_allow_html=True)
+<details>
+  <summary>D Review of Past Interventions</summary>
+  <ul>
+    <li><a href="#epi-coverage-and-dropout-rate">D.1 EPI Coverage and Dropout Rate</a></li>
+    <li><a href="#iptp-and-anc-coverage">D.2 IPTp and ANC Coverage</a></li>
+    <li><a href="#pmc-prevention-of-malaria-in-pregnancy">D.3 PMC (Prevention of Malaria in Pregnancy)</a></li>
+    <li><a href="#smc-seasonal-malaria-chemoprevention">D.4 SMC (Seasonal Malaria Chemoprevention)</a></li>
+    <li><a href="#malaria-vaccine">D.5 Malaria Vaccine</a></li>
+    <li><a href="#itn-ownership-access-usage-and-type">D.6 ITN Ownership, Access, Usage, and Type</a></li>
+    <li><a href="#itn-operational-coverage">D.7 ITN Operational Coverage</a></li>
+    <li><a href="#irs-indoor-residual-spraying">D.8 IRS (Indoor Residual Spraying)</a></li>
+    <li><a href="#school-based-distribution-of-itns-sbd">D.13 School-Based Distribution of ITNs (SBD)</a></li>
+    <li><a href="#lsm-larval-source-management">D.14 LSM (Larval Source Management)</a></li>
+    <ul>
+      <li><a href="#lsm-coverage-analysis">D.14.1 LSM Coverage Analysis</a></li>
+    </ul>
+    <li><a href="#assessing-the-quality-of-case-management">D.15 Assessing the Quality of Case Management</a></li>
+  </ul>
+</details>
 
-    st.markdown("<details><summary>A. DATA ASSEMBLY AND MANAGEMENT</summary><ul>"
-                "<li><a href='#' onclick='navigate_to(\"A1 Shapefiles\")'>A.1 Shapefiles</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A2 Health Facilities\")'>A.2 Health Facilities</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A3 Routine Case Data from DHIS2\")'>A.3 Routine Case Data from DHIS2</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A4 DHS Data\")'>A.4 DHS Data</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A5 Population Data\")'>A.5 Population Data</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A6 Climate Data\")'>A.6 Climate Data</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A7 LMIS Data\")'>A.7 LMIS Data</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"A8 Modeled Data\")'>A.8 Modeled Data</a></li>"
-                "</ul></details>", unsafe_allow_html=True)
+<details>
+  <summary>E Targeting of Interventions</summary>
+  <ul>
+    <li><a href="#targeting-of-interventions">E Targeting of Interventions</a></li>
+  </ul>
+</details>
 
-    st.markdown("<details><summary>B Epidemiological Stratification</summary><ul>"
-                "<li><a href='#' onclick='navigate_to(\"B1 Reporting Rate per Variable\")'>B.1 Reporting Rate per Variable</a></li>"
-                "<li><a href='#' onclick='navigate_to(\"B2 Group and Merge Data Frame\")'>B.2 Group and Merge Data Frame</a></li>"
-                "</ul></details>", unsafe_allow_html=True)
+<details>
+  <summary>F Retrospective Analysis</summary>
+  <ul>
+    <li><a href="#retrospective-analysis">F Retrospective Analysis</a></li>
+  </ul>
+</details>
 
-    # Add more sections as needed...
-
-    st.button("View Selected Section", on_click=navigate_to, args=("Content",))
-
-# Display the content of the selected section on the second page
-if st.session_state.active_page == 'Content':
-    if st.session_state.selected_section == "Overview":
-        st.title("Overview")
-        st.write("## This is the overview section.")
-    elif st.session_state.selected_section == "Motivation":
-        st.title("Motivation")
-        st.write("## This section explains the motivation behind the project.")
-    elif st.session_state.selected_section == "Objectives":
-        st.title("Objectives")
-        st.write("## Here are the objectives of the study.")
-    elif st.session_state.selected_section == "A1 Shapefiles":
-        st.title("A.1 Shapefiles")
-        st.write("## Content related to shapefiles goes here.")
-    elif st.session_state.selected_section == "A2 Health Facilities":
-        st.title("A.2 Health Facilities")
-        st.write("## Content related to health facilities goes here.")
-    # Add content for more sections as needed...
-
-    # Option to go back to TOC
-    st.button("Back to Table of Contents", on_click=navigate_to, args=("TOC",))
-
+<details>
+  <summary>G Urban Microstratification</summary>
+  <ul>
+    <li><a href="#urban-microstratification">G Urban Microstratification</a></li>
+  </ul>
+</details> 
