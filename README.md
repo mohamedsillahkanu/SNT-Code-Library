@@ -1,29 +1,25 @@
-# Project Title
+# Documentation
 
-Welcome to the project repository! Below you'll find useful links to important documentation and pages related to this project.
+## Table of Contents (Left-hand side)
 
-## Quick Links
-<p align="right">
-  <a href="https://example.com/page1">Page 1</a><br>
-  <a href="https://example.com/page2">Page 2</a><br>
-  <a href="https://example.com/page3">Page 3</a><br>
-  <a href="https://example.com/page4">Page 4</a>
-</p>
+- **A.1 Shapefile** [Shapefile Page](#shapefile-page)
 
-## About the Project
+---
 
-This project is designed to [brief description of the project]. It is structured to provide an easy workflow for data management, cleaning, analysis, and visualization.
+## Content
 
-## Features
-- Feature 1
-- Feature 2
-- Feature 3
+### Shapefile Page (Right-hand side)
 
-## Installation
+The **Shapefile Page** provides information about how to work with shapefiles in this project.
 
-To set up the project, clone the repository and install the required dependencies:
+- **What is a shapefile?**
+  A shapefile is a popular geospatial vector data format for geographic information system (GIS) software.
 
-```bash
-git clone https://github.com/username/repository.git
-cd repository
-pip install -r requirements.txt
+- **How to use it in the project:**
+  - Step 1: Load the shapefile using your preferred method.
+  - Step 2: Integrate it with your analysis pipeline.
+
+---
+## More Information
+
+For more details, explore the shapefile page using the [Shapefile Page link](#shapefile-page).
