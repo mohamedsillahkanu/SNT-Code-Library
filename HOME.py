@@ -3,10 +3,10 @@ import streamlit as st
 # Set up the app title
 st.title("Project Overview")
 
-# Create two columns: one for the Table of Contents (TOC) and the other for content
+# Create two columns: one for the Table of Contents (TOC) and the other for the content
 toc_col, page_col = st.columns([1, 3])
 
-# Initialize the session state to track which section is expanded
+# Initialize session state to track which section is selected
 if "selected_page" not in st.session_state:
     st.session_state.selected_page = "Overview"
 
@@ -14,44 +14,41 @@ if "selected_page" not in st.session_state:
 with toc_col:
     st.header("Contents")
 
-    # Expandable sections for the Table of Contents
+    # Expandable TOC sections without buttons
     with st.expander("Overview", expanded=(st.session_state.selected_page == "Overview")):
-        if st.button("Overview"):
-            st.session_state.selected_page = "Overview"
-
+        st.session_state.selected_page = "Overview"
+    
     with st.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=(st.session_state.selected_page.startswith("A."))):
-        if st.button("A.1 Shapefiles"):
+        if st.checkbox("A.1 Shapefiles", value=(st.session_state.selected_page == "A.1 Shapefiles")):
             st.session_state.selected_page = "A.1 Shapefiles"
-        if st.button("A.2 Health Facilities"):
+        if st.checkbox("A.2 Health Facilities", value=(st.session_state.selected_page == "A.2 Health Facilities")):
             st.session_state.selected_page = "A.2 Health Facilities"
-        if st.button("A.3 Routine Case Data from DHIS2"):
+        if st.checkbox("A.3 Routine Case Data from DHIS2", value=(st.session_state.selected_page == "A.3 Routine Case Data from DHIS2")):
             st.session_state.selected_page = "A.3 Routine Case Data from DHIS2"
-        if st.button("A.4 DHS Data"):
+        if st.checkbox("A.4 DHS Data", value=(st.session_state.selected_page == "A.4 DHS Data")):
             st.session_state.selected_page = "A.4 DHS Data"
-        if st.button("A.5 Population Data"):
+        if st.checkbox("A.5 Population Data", value=(st.session_state.selected_page == "A.5 Population Data")):
             st.session_state.selected_page = "A.5 Population Data"
-        if st.button("A.6 Climate Data"):
+        if st.checkbox("A.6 Climate Data", value=(st.session_state.selected_page == "A.6 Climate Data")):
             st.session_state.selected_page = "A.6 Climate Data"
-        if st.button("A.7 LMIS Data"):
+        if st.checkbox("A.7 LMIS Data", value=(st.session_state.selected_page == "A.7 LMIS Data")):
             st.session_state.selected_page = "A.7 LMIS Data"
-        if st.button("A.8 Modeled Data"):
+        if st.checkbox("A.8 Modeled Data", value=(st.session_state.selected_page == "A.8 Modeled Data")):
             st.session_state.selected_page = "A.8 Modeled Data"
 
     with st.expander("B. Epidemiological Stratification", expanded=(st.session_state.selected_page.startswith("B."))):
-        if st.button("B.1 Reporting Rate per Variable"):
+        if st.checkbox("B.1 Reporting Rate per Variable", value=(st.session_state.selected_page == "B.1 Reporting Rate per Variable")):
             st.session_state.selected_page = "B.1 Reporting Rate per Variable"
-        if st.button("B.2 Group and Merge Data Frame"):
+        if st.checkbox("B.2 Group and Merge Data Frame", value=(st.session_state.selected_page == "B.2 Group and Merge Data Frame")):
             st.session_state.selected_page = "B.2 Group and Merge Data Frame"
-        if st.button("B.3 Crude Incidence by Year"):
+        if st.checkbox("B.3 Crude Incidence by Year", value=(st.session_state.selected_page == "B.3 Crude Incidence by Year")):
             st.session_state.selected_page = "B.3 Crude Incidence by Year"
-        if st.button("B.4 Adjusted Incidence by Year"):
+        if st.checkbox("B.4 Adjusted Incidence by Year", value=(st.session_state.selected_page == "B.4 Adjusted Incidence by Year")):
             st.session_state.selected_page = "B.4 Adjusted Incidence by Year"
-        if st.button("B.5 Option to Select Incidence"):
+        if st.checkbox("B.5 Option to Select Incidence", value=(st.session_state.selected_page == "B.5 Option to Select Incidence")):
             st.session_state.selected_page = "B.5 Option to Select Incidence"
-        if st.button("B.6 Risk Categorization"):
+        if st.checkbox("B.6 Risk Categorization", value=(st.session_state.selected_page == "B.6 Risk Categorization")):
             st.session_state.selected_page = "B.6 Risk Categorization"
-
-    # Add more sections as needed...
 
 # Main content area where only the selected section is displayed
 with page_col:
