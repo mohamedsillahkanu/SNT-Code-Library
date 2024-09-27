@@ -61,15 +61,16 @@ with col2:
         st.write("""SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs...""")
 
     elif st.session_state.active_page == "Import shapefiles":
-        st.write("#### Import shapefile")
-
-        # Explanation of the R code
-        st.write("#### Code Explanation:")
-        st.write("""1. **Installing the `sf` package**: Ensure that the `sf` package is installed for handling shapefiles in R.
-2. **Loading the library**: Use `library(sf)` to load the `sf` package.
-3. **Reading the shapefile**: Use `st_read()` to read the shapefile into `shape_data`.
-4. **Displaying the data**: Use `head(shape_data)` to display the first few rows of the data.
+        st.write("""
+        A.1.1 Import Shapefiles
+        Explanation: To work with shapefiles in R, you can use the sf package. This package provides functions to read, manipulate, and visualize spatial data.
+        
+        **Steps:**
+        1. Install and load the sf package if you haven't already.
+        2. Use the st_read() function to import the shapefile.
         """)
+
+        st.write(" #### Code Snippet")
         st.code("""
         # Install and load the sf package
         install.packages("sf")
