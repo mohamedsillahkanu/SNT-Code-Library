@@ -16,12 +16,9 @@ with st.sidebar.expander("Overview", expanded=True):
     """)
 
 with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
-    st.write("""  
+    st.write("""
     - [A.1 Shapefiles](#shapefiles)
-      -[A.1.1 Import shapefiles](#import-shapefiles)
-
-      
-st.write("""
+        - [A.1.1 Import shapefiles](#import-shapefiles)
     - [A.2 Health Facilities](#health-facilities)
     - [A.3 Routine Case Data from DHIS2](#routine-case-data-from-dhis2)
     - [A.4 DHS Data](#dhs-data)
@@ -135,7 +132,3 @@ st.markdown("""
 ## G. Urban Microstratification
 ### G Urban Microstratification
 """)
-
-# Run the Streamlit app
-if __name__ == "__main__":
-    st.run()
