@@ -61,9 +61,9 @@ with col2:
         st.write("""SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs...""")
 
     elif st.session_state.active_page == "Import shapefiles":
-        st.write("""
-        A.1.1 Import Shapefiles
-        Explanation: To work with shapefiles in R, you can use the sf package. This package provides functions to read, manipulate, and visualize spatial data.
+        st.write(#### A.1 Import shapefiles)
+        st.write(### Explanation:)
+        To work with shapefiles in R, you can use the sf package. This package provides functions to read, manipulate, and visualize spatial data.
         
         **Steps:**
         1. Install and load the sf package if you haven't already.
@@ -85,9 +85,6 @@ with col2:
         # Plot the shapefile data
         plot(shapefile_data)
         """, language="r")
-
-        sample_output_shapefiles_r = "https://github.com/mohamedsillahkanu/si/blob/99ccc5bd8425859a0a801f01ca713e36edbd0c21/MAP_R.png?raw=true"
-        st.image(sample_output_shapefiles_r, caption="Sample output of Shapefiles")
 
     elif st.session_state.active_page == "A.2 HEALTH FACILITIES":
         st.write("### A.2 HEALTH FACILITIES")
