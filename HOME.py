@@ -1,8 +1,8 @@
 import streamlit as st
 
 # Title and favicon
-st.set_page_config(page_title="Faculty Enrichment Program in Applied Malaria Modeling", 
-                   page_icon="numalaria_logo.png")
+st.set_page_config(page_title="Faculty Enrichment Program in Applied Malaria Modeling")
+                   
 
 # Sidebar Configuration
 st.sidebar.title("Faculty Enrichment Program in Applied Malaria Modeling")
