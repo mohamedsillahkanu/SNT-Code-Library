@@ -1,68 +1,87 @@
-# Web Application with Sidebar and Main Page
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+        .content {
+            padding: 15px;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
 
-This web application features a sidebar with collapsible sections and a main page for displaying content. The collapsible features in the sidebar make the navigation more intuitive and organized.
+<div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data-upload">Data Upload</a></li>
+        <li><a href="#data-processing">Data Processing</a>
+            <ul>
+                <li><a href="#cleaning-data">Cleaning Data</a></li>
+                <li><a href="#outlier-detection">Outlier Detection</a></li>
+            </ul>
+        </li>
+        <li><a href="#visualizations">Visualizations</a>
+            <ul>
+                <li><a href="#line-chart">Line Chart</a></li>
+                <li><a href="#bar-chart">Bar Chart</a></li>
+                <li><a href="#pie-chart">Pie Chart</a></li>
+            </ul>
+        </li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#license">License</a></li>
+    </ul>
+</div>
 
-## Table of Contents
-- [Overview](#overview)
-- [Sidebar Structure](#sidebar-structure)
-  - [Collapsible Features](#collapsible-features)
-- [Main Page Structure](#main-page-structure)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [License](#license)
+<div class="content">
+    <h1>Project Title</h1>
+    <p>This is a description of your project. Below is a sidebar-like navigation structure.</p>
 
----
+    <h2 id="overview">Overview</h2>
+    <p>This project allows you to upload data, process it, and generate visualizations.</p>
 
-## Overview
+    <h2 id="data-upload">Data Upload</h2>
+    <p>You can upload CSV or Excel files to work with in this project.</p>
 
-This application is built to display data or content on the main page while offering easy navigation through collapsible sections in the sidebar. The layout is designed to be clean and simple, providing an intuitive user experience.
+    <h2 id="data-processing">Data Processing</h2>
+    
+    <h3 id="cleaning-data">Cleaning Data</h3>
+    <p>Explain how data cleaning is done in your project.</p>
 
----
+    <h3 id="outlier-detection">Outlier Detection</h3>
+    <p>Describe the method for detecting outliers in your dataset.</p>
 
-## Sidebar Structure
+    <h2 id="visualizations">Visualizations</h2>
+    <p>This section explains the types of visualizations available.</p>
 
-The sidebar contains collapsible sections to help organize various functionalities or categories. It provides easy access to different features and options.
+    <h3 id="line-chart">Line Chart</h3>
+    <p>How to generate a line chart.</p>
 
-### Collapsible Features
+    <h3 id="bar-chart">Bar Chart</h3>
+    <p>Steps for generating a bar chart.</p>
 
-The sidebar consists of the following collapsible sections:
+    <h3 id="pie-chart">Pie Chart</h3>
+    <p>Explanation for creating pie charts.</p>
 
-1. **Data Upload**:
-    - Upload CSV or Excel files.
-    - Clear uploaded files.
-2. **Data Processing**:
-    - Data cleaning options.
-    - Outlier detection.
-    - Aggregation.
-3. **Visualizations**:
-    - Generate charts and plots.
-    - Customize the visualization options.
-4. **Settings**:
-    - Change preferences.
-    - Reset to defaults.
+    <h2 id="settings">Settings</h2>
+    <p>Explain any custom settings available in the application.</p>
 
----
+    <h2 id="license">License</h2>
+    <p>Include license information here.</p>
+</div>
 
-## Main Page Structure
-
-The main page is where the output of the application is displayed. This includes data tables, charts, and results from any processing or visualization selected in the sidebar. 
-
-The main page is designed to be dynamic, updating based on user selections from the sidebar.
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x (for Streamlit)
-- Required packages (listed in `requirements.txt`)
-
-### Installation
-
-Clone the repository and install the required dependencies:
-
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-pip install -r requirements.txt
+</body>
+</html>
