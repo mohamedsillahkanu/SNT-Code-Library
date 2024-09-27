@@ -8,7 +8,7 @@ st.sidebar.header("Contents")
 
 # Collapsible sections for each main category
 with st.sidebar.expander("Overview", expanded=True):
-    st.write(""" 
+    st.write("""
     - [Motivation](#motivation)
     - [Objectives](#objectives)
     - [Target Audience](#target-audience)
@@ -16,7 +16,7 @@ with st.sidebar.expander("Overview", expanded=True):
     """)
 
 with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
-    st.write(""" 
+    st.write("""
     - [A.1 Shapefiles](#shapefiles)
         - [A.1.1 Import shapefiles](#import-shapefiles)
     - [A.2 Health Facilities](#health-facilities)
@@ -31,7 +31,7 @@ with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
     """)
 
 with st.sidebar.expander("B. Epidemiological Stratification", expanded=False):
-    st.write(""" 
+    st.write("""
     - [B.1 Reporting Rate per Variable](#reporting-rate-per-variable)
     - [B.2 Group and Merge Data Frame](#group-and-merge-data-frame)
     - [B.3 Crude Incidence by Year](#crude-incidence-by-year)
@@ -41,13 +41,13 @@ with st.sidebar.expander("B. Epidemiological Stratification", expanded=False):
     """)
 
 with st.sidebar.expander("C. Stratification of Other Determinants", expanded=False):
-    st.write(""" 
+    st.write("""
     - [C.1 Access to Care](#access-to-care)
     - [C.2 Seasonality](#seasonality)
     """)
 
 with st.sidebar.expander("D. Review of Past Interventions", expanded=False):
-    st.write(""" 
+    st.write("""
     - [D.1 EPI Coverage and Dropout Rate](#epi-coverage-and-dropout-rate)
     - [D.2 IPTp and ANC Coverage](#iptp-and-anc-coverage)
     - [D.3 PMC (Prevention of Malaria in Pregnancy)](#pmc-prevention-of-malaria-in-pregnancy)
@@ -63,120 +63,72 @@ with st.sidebar.expander("D. Review of Past Interventions", expanded=False):
     """)
 
 with st.sidebar.expander("E. Targeting of Interventions", expanded=False):
-    st.write(""" 
+    st.write("""
     - [E Targeting of Interventions](#targeting-of-interventions)
     """)
 
 with st.sidebar.expander("F. Retrospective Analysis", expanded=False):
-    st.write(""" 
+    st.write("""
     - [F Retrospective Analysis](#retrospective-analysis)
     """)
 
 with st.sidebar.expander("G. Urban Microstratification", expanded=False):
-    st.write(""" 
+    st.write("""
     - [G Urban Microstratification](#urban-microstratification)
     """)
 
-# Create a dropdown or radio button to select which content to display
-selected_section = st.selectbox("Select a section to view:", [
-    "Overview",
-    "A. DATA ASSEMBLY AND MANAGEMENT",
-    "B. Epidemiological Stratification",
-    "C. Stratification of Other Determinants",
-    "D. Review of Past Interventions",
-    "E. Targeting of Interventions",
-    "F. Retrospective Analysis",
-    "G. Urban Microstratification"
-])
+# Main content area
+st.markdown("""
+## Overview
+### Motivation
+### Objectives
+### Target Audience
+### Scope
 
-# Create two columns for the TOC and main content
-col1, col2 = st.columns([1, 2])  # Adjust the ratios as needed
+## A. DATA ASSEMBLY AND MANAGEMENT
+### A.1 Shapefiles
+### A.2 Health Facilities
+### A.3 Routine Case Data from DHIS2
+### A.4 DHS Data
+### A.5 Population Data
+#### A.5.1 Extract Population Data from Raster Population Source (Option 1)
+#### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
+### A.6 Climate Data
+### A.7 LMIS Data
+### A.8 Modeled Data
 
-# Populate the first column with the TOC
-with col1:
-    st.sidebar.header("Table of Contents")
-    st.sidebar.markdown("""
-    - [Motivation](#motivation)
-    - [Objectives](#objectives)
-    - [Target Audience](#target-audience)
-    - [Scope](#scope)
-    - [A. DATA ASSEMBLY AND MANAGEMENT](#data-assembly-and-management)
-    - [B. Epidemiological Stratification](#epidemiological-stratification)
-    - [C. Stratification of Other Determinants](#stratification-of-other-determinants)
-    - [D. Review of Past Interventions](#review-of-past-interventions)
-    - [E. Targeting of Interventions](#targeting-of-interventions)
-    - [F. Retrospective Analysis](#retrospective-analysis)
-    - [G. Urban Microstratification](#urban-microstratification)
-    """)
+## B. Epidemiological Stratification
+### B.1 Reporting Rate per Variable
+### B.2 Group and Merge Data Frame
+### B.3 Crude Incidence by Year
+### B.4 Adjusted Incidence by Year
+### B.5 Option to Select Incidence
+### B.6 Risk Categorization
 
-# Populate the second column with the main content based on selection
-with col2:
-    if selected_section == "Overview":
-        st.markdown("""
-        ## Overview
-        ### Motivation
-        ### Objectives
-        ### Target Audience
-        ### Scope
-        """)
-    elif selected_section == "A. DATA ASSEMBLY AND MANAGEMENT":
-        st.markdown("""
-        ## A. DATA ASSEMBLY AND MANAGEMENT
-        ### A.1 Shapefiles
-        ### A.2 Health Facilities
-        ### A.3 Routine Case Data from DHIS2
-        ### A.4 DHS Data
-        ### A.5 Population Data
-        #### A.5.1 Extract Population Data from Raster Population Source (Option 1)
-        #### A.5.2 Extract Population Data from Country's Recent Census (Option 2)
-        ### A.6 Climate Data
-        ### A.7 LMIS Data
-        ### A.8 Modeled Data
-        """)
-    elif selected_section == "B. Epidemiological Stratification":
-        st.markdown("""
-        ## B. Epidemiological Stratification
-        ### B.1 Reporting Rate per Variable
-        ### B.2 Group and Merge Data Frame
-        ### B.3 Crude Incidence by Year
-        ### B.4 Adjusted Incidence by Year
-        ### B.5 Option to Select Incidence
-        ### B.6 Risk Categorization
-        """)
-    elif selected_section == "C. Stratification of Other Determinants":
-        st.markdown("""
-        ## C. Stratification of Other Determinants
-        ### C.1 Access to Care
-        ### C.2 Seasonality
-        """)
-    elif selected_section == "D. Review of Past Interventions":
-        st.markdown("""
-        ## D. Review of Past Interventions
-        ### D.1 EPI Coverage and Dropout Rate
-        ### D.2 IPTp and ANC Coverage
-        ### D.3 PMC (Prevention of Malaria in Pregnancy)
-        ### D.4 SMC (Seasonal Malaria Chemoprevention)
-        ### D.5 Malaria Vaccine
-        ### D.6 ITN Ownership, Access, Usage, and Type
-        ### D.7 ITN Operational Coverage
-        ### D.8 IRS (Indoor Residual Spraying)
-        ### D.13 School-Based Distribution of ITNs (SBD)
-        ### D.14 LSM (Larval Source Management)
-        #### D.14.1 LSM Coverage Analysis
-        ### D.15 Assessing the Quality of Case Management
-        """)
-    elif selected_section == "E. Targeting of Interventions":
-        st.markdown("""
-        ## E. Targeting of Interventions
-        ### E Targeting of Interventions
-        """)
-    elif selected_section == "F. Retrospective Analysis":
-        st.markdown("""
-        ## F. Retrospective Analysis
-        ### F Retrospective Analysis
-        """)
-    elif selected_section == "G. Urban Microstratification":
-        st.markdown("""
-        ## G. Urban Microstratification
-        ### G Urban Microstratification
-        """)
+## C. Stratification of Other Determinants
+### C.1 Access to Care
+### C.2 Seasonality
+
+## D. Review of Past Interventions
+### D.1 EPI Coverage and Dropout Rate
+### D.2 IPTp and ANC Coverage
+### D.3 PMC (Prevention of Malaria in Pregnancy)
+### D.4 SMC (Seasonal Malaria Chemoprevention)
+### D.5 Malaria Vaccine
+### D.6 ITN Ownership, Access, Usage, and Type
+### D.7 ITN Operational Coverage
+### D.8 IRS (Indoor Residual Spraying)
+### D.13 School-Based Distribution of ITNs (SBD)
+### D.14 LSM (Larval Source Management)
+#### D.14.1 LSM Coverage Analysis
+### D.15 Assessing the Quality of Case Management
+
+## E. Targeting of Interventions
+### E Targeting of Interventions
+
+## F. Retrospective Analysis
+### F Retrospective Analysis
+
+## G. Urban Microstratification
+### G Urban Microstratification
+""") 
