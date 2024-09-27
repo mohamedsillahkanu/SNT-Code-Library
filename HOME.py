@@ -1,157 +1,278 @@
 import streamlit as st
 
-# Set the title of the app
-st.title("Project Overview")
+# Setting page configuration
+st.set_page_config(layout="wide")
 
-# Create a sidebar for navigation
-st.sidebar.header("Contents")
+# Initialize session state for tracking which page is active
+if 'active_page' not in st.session_state:
+    st.session_state.active_page = 'OVERVIEW'  # Set OVERVIEW as the default landing page
 
-# Collapsible sections for each main category
-with st.sidebar.expander("Overview", expanded=True):
-    st.write("""
-    - [Motivation](#motivation)
-    - [Objectives](#objectives)
-    - [Target Audience](#target-audience)
-    - [Scope](#scope)
-    """)
+# Function to navigate to a different page and update the URL query parameters
+def navigate_to(page):
+    st.session_state.active_page = page
+    # Set the query parameters in the URL
+    st.query_params['page'] = page  # Use st.query_params to set the query parameter
 
-with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
-    st.write("""
-    - [A.1 Shapefiles](#a1-shapefiles)
-        - [A.1.1 Import shapefiles](#a11-import-shapefiles)
-    - [A.2 Health Facilities](#a2-health-facilities)
-    - [A.3 Routine Case Data from DHIS2](#a3-routine-case-data-from-dhis2)
-    - [A.4 DHS Data](#a4-dhs-data)
-    - [A.5 Population Data](#a5-population-data)
-        - [A.5.1 Extract Population Data from Raster Population Source (Option 1)](#a51-extract-population-data-from-raster-population-source-option-1)
-        - [A.5.2 Extract Population Data from Country's Recent Census (Option 2)](#a52-extract-population-data-from-countrys-recent-census-option-2)
-    - [A.6 Climate Data](#a6-climate-data)
-    - [A.7 LMIS Data](#a7-lmis-data)
-    - [A.8 Modeled Data](#a8-modeled-data)
-    """)
+# Create two columns (one for TOC, one for content)
+col1, col2 = st.columns([1, 3])
 
-with st.sidebar.expander("B. Epidemiological Stratification", expanded=False):
-    st.write("""
-    - [B.1 Reporting Rate per Variable](#b1-reporting-rate-per-variable)
-    - [B.2 Group and Merge Data Frame](#b2-group-and-merge-data-frame)
-    - [B.3 Crude Incidence by Year](#b3-crude-incidence-by-year)
-    - [B.4 Adjusted Incidence by Year](#b4-adjusted-incidence-by-year)
-    - [B.5 Option to Select Incidence](#b5-option-to-select-incidence)
-    - [B.6 Risk Categorization](#b6-risk-categorization)
-    """)
+# Define button style to ensure equal length
+button_style = """<style>
+    .stButton { width: 300px; }  /* Set a fixed width for buttons */
+</style>"""
 
-with st.sidebar.expander("C. Stratification of Other Determinants", expanded=False):
-    st.write("""
-    - [C.1 Access to Care](#c1-access-to-care)
-    - [C.2 Seasonality](#c2-seasonality)
-    """)
+# Apply button styling
+st.markdown(button_style, unsafe_allow_html=True)
 
-with st.sidebar.expander("D. Review of Past Interventions", expanded=False):
-    st.write("""
-    - [D.1 EPI Coverage and Dropout Rate](#d1-epi-coverage-and-dropout-rate)
-    - [D.2 IPTp and ANC Coverage](#d2-iptp-and-anc-coverage)
-    - [D.3 PMC (Prevention of Malaria in Pregnancy)](#d3-pmc-prevention-of-malaria-in-pregnancy)
-    - [D.4 SMC (Seasonal Malaria Chemoprevention)](#d4-smc-seasonal-malaria-chemoprevention)
-    - [D.5 Malaria Vaccine](#d5-malaria-vaccine)
-    - [D.6 ITN Ownership, Access, Usage, and Type](#d6-itn-ownership-access-usage-and-type)
-    - [D.7 ITN Operational Coverage](#d7-itn-operational-coverage)
-    - [D.8 IRS (Indoor Residual Spraying)](#d8-irs-indoor-residual-spraying)
-    - [D.9 School-Based Distribution of ITNs (SBD)](#d9-school-based-distribution-of-itns-sbd)
-    - [D.10 LSM (Larval Source Management)](#d10-larval-source-management)
-        - [D.10.1 LSM Coverage Analysis](#d101-lsm-coverage-analysis)
-    - [D.11 Assessing the Quality of Case Management](#d11-assessing-the-quality-of-case-management)
-    """)
+# Table of Contents (Left-Hand Side)
+with col1:
+    st.write("## Table of Contents")
 
-with st.sidebar.expander("E. Targeting of Interventions", expanded=False):
-    st.write("""
-    - [E.1 Targeting of Interventions](#e1-targeting-of-interventions)
-    """)
+    # Using clickable text to navigate to sections with consistent button width
+    st.button("OVERVIEW", key="overview", on_click=navigate_to, args=("OVERVIEW",))
 
-with st.sidebar.expander("F. Retrospective Analysis", expanded=False):
-    st.write("""
-    - [F.1 Retrospective Analysis](#f1-retrospective-analysis)
-    """)
+    with st.expander("A. Data assembly and Management"):
+        st.write("#### A.1 Shapefiles)
+        st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
 
-with st.sidebar.expander("G. Urban Microstratification", expanded=False):
-    st.write("""
-    - [G.1 Urban Microstratification](#g1-urban-microstratification)
-    """)
+                 
+               
+        st.button("A.2 HEALTH FACILITIES", key="A2_Health_Facilities", on_click=navigate_to, args=("A.2 HEALTH FACILITIES",))
+        st.button("A.3 ROUTINE CASE DATA FROM DHIS2", key="A3_Routine_Case_Data", on_click=navigate_to, args=("A.3 ROUTINE CASE DATA FROM DHIS2",))
+        st.button("A.4 DHS DATA", key="A4_DHS_data", on_click=navigate_to, args=("A.4 DHS DATA",))
+        st.button("A.5 CLIMATE DATA", key="A5_Climate_data", on_click=navigate_to, args=("A.5 CLIMATE DATA",))
+        st.button("A.6 LMIS DATA", key="A6_LMIS_data", on_click=navigate_to, args=("A.6 LMIS DATA",))
+        st.button("A.7 MODELED DATA", key="A7_Modeled_data", on_click=navigate_to, args=("A.7 MODELED DATA",))
+        st.button("A.8 POPULATION DATA", key="A6_Population_data", on_click=navigate_to, args=("A.8 POPULATION DATA",))
+        with st.expander("A.1 SHAPEFILES"):
+            st.button("A.1.1 Import Shapefiles", key="A11_Shapefiles", on_click=navigate_to, args=("A.1.1 Import Shapefiles",))
+            st.button("A.1.2 Rename ane match names", key="A12_Health_Facilities", on_click=navigate_to, args=("A.1.2 Rename ane match names",))
+            st.button("A.1.3 Visualizing shapefiles and making basic maps", key="A13_Routine_Case_Data", on_click=navigate_to, args=("A.1.3 Visualizing shapefiles and making basic maps",))
 
-# Main content area
-st.markdown("<a id='motivation'></a>", unsafe_allow_html=True)
-st.markdown("## Motivation")
-st.write("Detailed information about motivation.")
 
-st.markdown("<a id='objectives'></a>", unsafe_allow_html=True)
-st.markdown("## Objectives")
-st.write("Detailed information about objectives.")
+    with st.expander("B. EPIDEMIOLOGICAL STRATIFICATION"):
+        st.button("B.1 REPORTING RATE PER VARIABLE", key="B1_Reporting_Rate", on_click=navigate_to, args=("B.1 REPORTING RATE PER VARIABLE",))
+        st.button("B.2 GROUP AND MERGE DATA FRAME", key="B2_Group_Merge", on_click=navigate_to, args=("B.2 GROUP AND MERGE DATA FRAME",))
 
-st.markdown("<a id='target-audience'></a>", unsafe_allow_html=True)
-st.markdown("## Target Audience")
-st.write("Detailed information about target audience.")
+# Content Display (Right-Hand Side)
+with col2:
+    st.write("## Authors: Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin")
 
-st.markdown("<a id='scope'></a>", unsafe_allow_html=True)
-st.markdown("## Scope")
-st.write("Detailed information about the scope.")
+    # Display content based on the active page
+    if st.session_state.active_page == "OVERVIEW":
+        st.write("### MOTIVATION")
+        st.write("""
+        SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs. Since 2019, multiple individuals have supported the analysis portions of SNT. In most cases, individuals have built their own code in a variety of languages (Stata, R, and Python), sometimes building on others’ previous code and sometimes re-developed independently.
 
-st.markdown("<a id='a1-shapefiles'></a>", unsafe_allow_html=True)
-st.markdown("## A.1 Shapefiles")
-st.write("Information about shapefiles.")
+        As SNT matures, more quality assurance is needed such that NMCPs can be confident that the analysis they use to inform their decisions is of high quality regardless of the individual supporting analyst. The continued rollout of SNT also means that analysis can become more efficient if analysts are better able to build on each other’s work rather than tempted to reinvent what has already been developed. Lastly, SNT analysis can become much more accessible if there is a common resource available to help those with intermediate coding skills quickly access the collective knowledge of the SNT analyst community.
+        """)
 
-st.markdown("<a id='a11-import-shapefiles'></a>", unsafe_allow_html=True)
-st.markdown("## A.1.1 Import shapefiles")
-st.write("Instructions for importing shapefiles.")
+        st.write("### OBJECTIVES")
+        st.write("""
+        We will build a code library for SNT analysis to:
 
-st.markdown("<a id='a2-health-facilities'></a>", unsafe_allow_html=True)
-st.markdown("## A.2 Health Facilities")
-st.write("Information regarding health facilities.")
+        - Ensure that SNT analysts are using similar, correct approaches.
+        - Improve efficiency of SNT analysis by minimizing duplication of effort.
+        - Promote accessibility of SNT analysis by lowering barriers to entry.
+        """)
 
-st.markdown("<a id='a3-routine-case-data-from-dhis2'></a>", unsafe_allow_html=True)
-st.markdown("## A.3 Routine Case Data from DHIS2")
-st.write("Details about routine case data from DHIS2.")
+        st.write("### TARGET AUDIENCE")
+        st.write("""
+        Anyone doing this kind of work. We assume some basic knowledge of R, some understanding of the data, and a strong connection to the NMCP.
+        """)
 
-st.markdown("<a id='a4-dhs-data'></a>", unsafe_allow_html=True)
-st.markdown("## A.4 DHS Data")
-st.write("Information about DHS data.")
+        st.write("### SCOPE")
+        st.write("""
+        All analysis steps of SNT up to but not including mathematical modeling; some related analysis.
 
-st.markdown("<a id='a5-population-data'></a>", unsafe_allow_html=True)
-st.markdown("## A.5 Population Data")
-st.write("Details about population data.")
+        The code library will be in R and publicly available. It will be quality-assured and well-commented.
 
-st.markdown("<a id='a6-climate-data'></a>", unsafe_allow_html=True)
-st.markdown("## A.6 Climate Data")
-st.write("Information about climate data.")
+        When multiple algorithmic options could be used, strengths and limitations of each one, along with discussion of when to use each option, as possible.
 
-st.markdown("<a id='a7-lmis-data'></a>", unsafe_allow_html=True)
-st.markdown("## A.7 LMIS Data")
-st.write("Information about LMIS data.")
+        Framing text, and when possible the code comments, will be available in both English and French.
+        """)
 
-st.markdown("<a id='a8-modeled-data'></a>", unsafe_allow_html=True)
-st.markdown("## A.8 Modeled Data")
-st.write("Details about modeled data.")
+    elif st.session_state.active_page == "Import shapefiles":
+        st.write("### A.1 SHAPEFILES")
+        st.write("""
 
-st.markdown("<a id='b1-reporting-rate-per-variable'></a>", unsafe_allow_html=True)
-st.markdown("## B.1 Reporting Rate per Variable")
-st.write("Details about reporting rate per variable.")
 
-st.markdown("<a id='b2-group-and-merge-data-frame'></a>", unsafe_allow_html=True)
-st.markdown("## B.2 Group and Merge Data Frame")
-st.write("Instructions for grouping and merging data frames.")
+        **Key Topics:**
+        - A.1.1 Import shapefiles
+        - A.1.2 Rename and match names
+        - A.1.3 Link shapefiles to relevant scales
+        - A.1.1 Import shapefiles
+        - A.1.4 Visualizing shapefiles and making basic maps
+        """)
 
-st.markdown("<a id='b3-crude-incidence-by-year'></a>", unsafe_allow_html=True)
-st.markdown("## B.3 Crude Incidence by Year")
-st.write("Details about crude incidence by year.")
+        # Display R code
+        st.write("#### Example R Code to Read a Shapefile")
+        st.code("""
+        # Install the 'sf' package if not already installed
+        # install.packages("sf")
 
-st.markdown("<a id='b4-adjusted-incidence-by-year'></a>", unsafe_allow_html=True)
-st.markdown("## B.4 Adjusted Incidence by Year")
-st.write("Details about adjusted incidence by year.")
+        # Load the library
+        library(sf)
 
-st.markdown("<a id='b5-option-to-select-incidence'></a>", unsafe_allow_html=True)
-st.markdown("## B.5 Option to Select Incidence")
-st.write("Options for selecting incidence.")
+        # Read the shapefile into an R object
+        shapefile_path <- "path_to_your_shapefile.shp"
+        shape_data <- st_read(shapefile_path)
 
-st.markdown("<a id='b6-risk-categorization'></a>", unsafe_allow_html=True)
-st.markdown("## B.6 Risk Categorization")
-st.write("Details about risk categorization.")
+        # Display the first few rows of the shapefile data
+        head(shape_data)
+        """, language="r")
 
-# Continue adding content for each section as needed...
+        # Explanation of the R code
+        st.write("#### Code Explanation:")
+        st.write("""
+        1. **Installing the `sf` package**: The code starts by ensuring that the `sf` package, which is used for handling shapefiles in R, is installed. If it's not installed, you would uncomment the `install.packages("sf")` line to install it.
+
+        2. **Loading the library**: The `library(sf)` function is used to load the `sf` package into the current R session.
+
+        3. **Reading the shapefile**: The `st_read()` function is called to read the shapefile, where `shapefile_path` is the location of your `.shp` file. This reads the shapefile into the `shape_data` object, which is a data frame-like object containing geospatial information.
+
+        4. **Displaying the data**: The `head(shape_data)` command is used to display the first few rows of the shapefile data, allowing you to check the structure and contents of the file.
+        """)
+
+        sample_output_shapefiles_r = "https://github.com/mohamedsillahkanu/si/blob/99ccc5bd8425859a0a801f01ca713e36edbd0c21/MAP_R.png?raw=true"
+
+        st.image( sample_output_shapefiles_r, caption="Sample output of Shapefiles")
+
+    elif st.session_state.active_page == "A.2 HEALTH FACILITIES":
+        st.write("### A.2 HEALTH FACILITIES")
+        st.write("""
+        **Key Topics:**
+        - **A.2.1 Get MFL from the Malaria Program**
+          - **A.2.1.1 Useful Columns:**
+            - `adm0` - Country
+            - `adm1` - Province/Region
+            - `adm2` - District
+            - `adm3` - Sub-district/Sub-county
+            - `Health Facility (HF)` - Name of the health facility
+            - `Date HF Started Reporting` - Date when the health facility began reporting
+            - `Is HF Still Active?` - Status indicating if the health facility is currently active
+            - `If No, When Did HF Become Inactive?` - Date when the health facility ceased operations
+            - `Type of HF` - Classification of health facility (e.g., District hospital, Teaching hospital, Health post, etc.)
+             """)
+
+        st.write("""
+
+        - **A.2.2 Get the DHIS2 Health Facility (HF) List from the Malaria Program**
+          - **A.2.2.1 Useful Columns:**
+            - `adm0` - Country
+            - `adm1` - Province/Region
+            - `adm2` - District
+            - `adm3` - Sub-district/Sub-county
+            - `Health Facility (HF)` - Name of the health facility
+            - `Date HF Started Reporting in DHIS2` - Date when the health facility began reporting in DHIS2
+            - `Is HF Still Active?` - Status indicating if the health facility is currently active
+            - `If No, When Did HF Become Inactive?` - Date when the health facility ceased operations
+            - `Type of HF` - Classification of health facility (e.g., MCHP, CHP, CHC, Hospital)
+             """)
+
+
+        st.write("""
+        - **A.2.3 Reconciling the MFL and the DHIS2 HF List**
+          - **A.2.3.1 Identifying HFs in Both or One List Based on HF Name**
+            - Identify common HFs (accounting for differences in spellings, typos, spaces, capitalization) in both databases using algorithms for fuzzy name matching.
+            - **Output:**
+              - HFs in both DHIS2 and MFL
+              - HFs in MFL but not in DHIS2
+              - HFs in DHIS2 but not in MFL
+             """)
+
+        st.write("""
+        - **A.2.3.2 Reconciling Inconsistent HF Type**
+          - Check HF type in both databases (MCHP, CHP, CHC, Hospital) and resolve any inconsistencies.
+        - **A.2.3.3 Reconciling HF `adm1`, `adm2`, and `adm3` Designation**
+          - Check HF `adm1`, `adm2`, and `adm3` designations in both databases and resolve any inconsistencies.
+        - **A.2.4 HF Active/Inactive Status**
+          - **A.2.4.1 Determining Active/Inactive Status from MFL**
+          - **A.2.4.2 Determining Active/Inactive Status from DHIS2**
+          - **A.2.4.3 Determining When HF Ceased Reporting Entirely**
+          - **A.2.4.4 Reconciling Differences in Activity Status from MFL and DHIS2**
+          - **A.2.4.5 Health Facility Reporting Periods**
+            - Active Reporting Periods
+            - Inactive Reporting Periods
+          - **A.2.4.6 Health Facility Reporting Frequency**
+            - Continuously Reporting Health Facilities
+            - Intermittently Reporting Health Facilities (with gaps)
+            - Health Facilities that Reported Only Once
+            - First-Time Reporting Health Facilities
+            - Last-Time Reporting Health Facilities
+            - **Output:**
+              - One HF database (with active and inactive HFs)
+              - Visualization (Heatmap)
+        - **A.2.5 Restricting HFs in Database**
+          - **A.2.5.1 Removing HFs Before They Become Active**
+          - **A.2.5.2 Removing HFs After They Are Permanently Inactive**
+          - **A.2.5.3 Additional Options for Restricting HFs:**
+            - **Output:**
+               - Cleaned HF database
+        - **A.2.6 Summary Outputs**
+          - **A.2.6.1 Summary Data File:** HF Expected to Report by `adm1`/`adm2`/`adm3` Per Year, Per Month
+          - **A.2.6.2 Visualization:** HF Activity Status Over Time (all the horizontal lines)
+          - **A.2.6.3 Visualization:** Total Number of Health Facilities
+        """)
+
+
+
+        # Display R code
+        st.write("#### Example R Code")
+        st.code("""
+        # Install the 'sf' package if not already installed
+        # install.packages("sf")
+
+        # Load the library
+        library(sf)
+
+        # Read the shapefile into an R object
+        shapefile_path <- "path_to_your_shapefile.shp"
+        shape_data <- st_read(shapefile_path)
+
+        # Display the first few rows of the shapefile data
+        head(shape_data)
+        """, language="r")
+
+        # Explanation of the R code
+        st.write("#### Code Explanation:")
+        st.write("""
+        1. **Installing the `sf` package**: The code starts by ensuring that the `sf` package, which is used for handling shapefiles in R, is installed. If it's not installed, you would uncomment the `install.packages("sf")` line to install it.
+
+        2. **Loading the library**: The `library(sf)` function is used to load the `sf` package into the current R session.
+
+        3. **Reading the shapefile**: The `st_read()` function is called to read the shapefile, where `shapefile_path` is the location of your `.shp` file. This reads the shapefile into the `shape_data` object, which is a data frame-like object containing geospatial information.
+
+        4. **Displaying the data**: The `head(shape_data)` command is used to display the first few rows of the shapefile data, allowing you to check the structure and contents of the file.
+        """)
+
+        sample_output_shapefiles_r = "https://github.com/mohamedsillahkanu/si/blob/99ccc5bd8425859a0a801f01ca713e36edbd0c21/MAP_R.png?raw=true"
+
+        st.image( sample_output_shapefiles_r, caption="Sample output of Shapefiles")
+
+
+
+    elif st.session_state.active_page == "A.3 ROUTINE CASE DATA FROM DHIS2":
+        st.write("### A.3 ROUTINE CASE DATA FROM DHIS2")
+        st.write("""
+        This section discusses routine case data from DHIS2.
+
+        **Key Topics:**
+        - Data extraction
+        - Data cleaning and transformation
+        - Analysis methods
+        """)
+
+    elif st.session_state.active_page == "B.1 REPORTING RATE PER VARIABLE":
+        st.write("### B.1 REPORTING RATE PER VARIABLE")
+        st.write("""
+        This section covers reporting rates for different variables.
+        """)
+
+    elif st.session_state.active_page == "B.2 GROUP AND MERGE DATA FRAME":
+        st.write("### B.2 GROUP AND MERGE DATA FRAME")
+        st.write("""
+        This section details how to group and merge data frames.
+        """)
+
+# Add more sections and pages as needed.
