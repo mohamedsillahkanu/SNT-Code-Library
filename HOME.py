@@ -6,7 +6,7 @@ st.set_page_config(page_title="Faculty Enrichment Program in Applied Malaria Mod
 
 # Sidebar Configuration
 st.sidebar.title("Faculty Enrichment Program in Applied Malaria Modeling")
-st.sidebar.image("numalaria_logo.png", use_column_width=True)
+
 st.sidebar.write("### Quick Links:")
 st.sidebar.markdown("[--- EMOD Documentation](https://docs.idmod.org/projects/emod-malaria/en/latest/)")
 st.sidebar.markdown("[--- NU Malaria Modeling](https://numalariamodeling.org)")
