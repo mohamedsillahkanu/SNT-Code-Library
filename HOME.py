@@ -77,35 +77,30 @@ with st.sidebar.expander("G. Urban Microstratification", expanded=False):
     - [G Urban Microstratification](#urban-microstratification)
     """)
 
-# Create two columns for the TOC and main content
-col1, col2 = st.columns([1, 2])  # Adjust the ratios as needed
+# Create a selectbox for main content navigation
+selected_section = st.sidebar.selectbox("Select a Section", [
+    "Overview",
+    "A. DATA ASSEMBLY AND MANAGEMENT",
+    "B. Epidemiological Stratification",
+    "C. Stratification of Other Determinants",
+    "D. Review of Past Interventions",
+    "E. Targeting of Interventions",
+    "F. Retrospective Analysis",
+    "G. Urban Microstratification"
+])
 
-# Populate the first column with the TOC
-with col1:
-    st.sidebar.header("Table of Contents")
-    st.sidebar.markdown("""
-    - [Motivation](#motivation)
-    - [Objectives](#objectives)
-    - [Target Audience](#target-audience)
-    - [Scope](#scope)
-    - [A. DATA ASSEMBLY AND MANAGEMENT](#data-assembly-and-management)
-    - [B. Epidemiological Stratification](#epidemiological-stratification)
-    - [C. Stratification of Other Determinants](#stratification-of-other-determinants)
-    - [D. Review of Past Interventions](#review-of-past-interventions)
-    - [E. Targeting of Interventions](#targeting-of-interventions)
-    - [F. Retrospective Analysis](#retrospective-analysis)
-    - [G. Urban Microstratification](#urban-microstratification)
-    """)
-
-# Populate the second column with the main content
-with col2:
+# Populate the second column with the main content based on selection
+if selected_section == "Overview":
     st.markdown("""
     ## Overview
     ### Motivation
     ### Objectives
     ### Target Audience
     ### Scope
+    """)
 
+elif selected_section == "A. DATA ASSEMBLY AND MANAGEMENT":
+    st.markdown("""
     ## A. DATA ASSEMBLY AND MANAGEMENT
     ### A.1 Shapefiles
     ### A.2 Health Facilities
@@ -117,7 +112,10 @@ with col2:
     ### A.6 Climate Data
     ### A.7 LMIS Data
     ### A.8 Modeled Data
+    """)
 
+elif selected_section == "B. Epidemiological Stratification":
+    st.markdown("""
     ## B. Epidemiological Stratification
     ### B.1 Reporting Rate per Variable
     ### B.2 Group and Merge Data Frame
@@ -125,11 +123,17 @@ with col2:
     ### B.4 Adjusted Incidence by Year
     ### B.5 Option to Select Incidence
     ### B.6 Risk Categorization
+    """)
 
+elif selected_section == "C. Stratification of Other Determinants":
+    st.markdown("""
     ## C. Stratification of Other Determinants
     ### C.1 Access to Care
     ### C.2 Seasonality
+    """)
 
+elif selected_section == "D. Review of Past Interventions":
+    st.markdown("""
     ## D. Review of Past Interventions
     ### D.1 EPI Coverage and Dropout Rate
     ### D.2 IPTp and ANC Coverage
@@ -143,13 +147,22 @@ with col2:
     ### D.14 LSM (Larval Source Management)
     #### D.14.1 LSM Coverage Analysis
     ### D.15 Assessing the Quality of Case Management
+    """)
 
+elif selected_section == "E. Targeting of Interventions":
+    st.markdown("""
     ## E. Targeting of Interventions
     ### E Targeting of Interventions
+    """)
 
+elif selected_section == "F. Retrospective Analysis":
+    st.markdown("""
     ## F. Retrospective Analysis
     ### F Retrospective Analysis
+    """)
 
+elif selected_section == "G. Urban Microstratification":
+    st.markdown("""
     ## G. Urban Microstratification
     ### G Urban Microstratification
     """)
