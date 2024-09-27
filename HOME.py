@@ -16,7 +16,9 @@ with st.sidebar.expander("Overview", expanded=True):
     """)
 
 with st.sidebar.expander("A. DATA ASSEMBLY AND MANAGEMENT", expanded=False):
-    st.write(""" ### A.1 Shapefiles
+    st.write(""" 
+        ### A.1 Shapefiles
+    
       -[A.1.1 Import shapefiles](#import-shapefiles)
 
     """)
