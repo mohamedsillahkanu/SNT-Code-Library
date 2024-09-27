@@ -29,8 +29,8 @@ with col1:
     # Using clickable buttons to navigate to sections
     st.button("OVERVIEW", key="overview", on_click=navigate_to, args=("OVERVIEW",))
 
-    with st.expander("A. Data assembly and Management"):
-        st.write("#### A.1 Shapefiles")
+    with st.expander("#### A. Data assembly and Management"):
+        st.write("### A.1 Shapefiles")
         st.button("Import shapefiles", key="import_shapefiles", on_click=navigate_to, args=("Import shapefiles",))
 
         
