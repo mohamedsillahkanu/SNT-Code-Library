@@ -7,17 +7,17 @@
             font-family: Arial, sans-serif;
         }
         .sidebar {
-            width: 200px;
-            padding: 15px;
-            background-color: #f4f4f4;
-            border-right: 1px solid #ccc;
-            height: 100vh;
-            position: sticky;
-            top: 0;
+            width: 200px; /* Set width for sidebar */
+            padding: 15px; /* Add some padding */
+            background-color: #f4f4f4; /* Background color */
+            border-right: 1px solid #ccc; /* Border on the right */
+            height: 100vh; /* Full height */
+            position: sticky; /* Stick to the top */
+            top: 0; /* Position from the top */
         }
         .content {
-            padding: 15px;
-            flex: 1;
+            padding: 15px; /* Add padding */
+            flex: 1; /* Take up remaining space */
         }
     </style>
 </head>
