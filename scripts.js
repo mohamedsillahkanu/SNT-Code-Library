@@ -1,33 +1,56 @@
-function toggleMenu(header) {
-    const submenu = header.nextElementSibling; // Get the submenu
-    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+function toggleMenu(menuHeader) {
+    const submenu = menuHeader.nextElementSibling;
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
 }
 
-function loadContent(page, link) {
-    const mainContent = document.querySelector('.main-content');
-    const links = document.querySelectorAll('.menu-link');
+function loadContent(page) {
+    const content = {
+        overview: `
+            <h2>Overview</h2>
+            <p>This is an overview of the project. Here you can find links to different pages and functionalities.</p>
+        `,
+        page1: `
+            <h2>Importing Shapefiles in R</h2>
+            <pre id="codeBlock">
+                <code>
+# Load necessary library
+library(sf) # Load the necessary library
 
-    // Remove active class from all links
-    links.forEach(l => l.classList.remove('active'));
-    
-    // Add active class to the clicked link
-    link.classList.add('active');
+# Read shapefile
+shapefile <- st_read("path/to/your/shapefile.shp") # Read the shapefile
 
-    if (page.endsWith('.qmd')) {
-        // Handle Quarto file loading if necessary
-        fetch(page)
-            .then(response => response.text())
-            .then(data => {
-                // If you're using Quarto, you'll need to process the markdown into HTML
-                mainContent.innerHTML = data; // Load the HTML into the main content area
-            })
-            .catch(error => console.error('Error loading page:', error));
-    } else {
-        fetch(page)
-            .then(response => response.text())
-            .then(data => {
-                mainContent.innerHTML = data; // Load the HTML into the main content area
-            })
-            .catch(error => console.error('Error loading page:', error));
-    }
+# Print the shapefile
+print(shapefile) # Print the shapefile
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+            <p>This R code loads the 'sf' library, reads a shapefile, and prints its contents.</p>
+            <h3>R Code Explanation</h3>
+            <p>The 'sf' package is used to work with spatial data in R.</p>
+        `,
+        page2: `
+            <h2>Page 2 Content</h2>
+            <p>This is the content for Page 2.</p>
+        `,
+        quartoExample: `
+            <h2>Quarto Example</h2>
+            <p>This is an example of Quarto.</p>
+        `,
+    };
+
+    document.getElementById('content').innerHTML = content[page];
+}
+
+// Load the overview content when the page opens
+window.onload = function() {
+    loadContent('overview');
+};
+
+function copyCode() {
+    const codeBlock = document.getElementById("codeBlock").innerText;
+    navigator.clipboard.writeText(codeBlock).then(() => {
+        alert("Code copied to clipboard!");
+    }).catch(err => {
+        console.error('Error copying text: ', err);
+    });
 }
