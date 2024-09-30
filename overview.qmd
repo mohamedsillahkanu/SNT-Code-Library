@@ -1,0 +1,70 @@
+---
+title: "Program Overview"
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+---
+
+### Mission
+
+*Malaria burden remains high in Sub-Saharan Africa despite two decades of intense intervention. Regular analysis and use of public health data will lead to more effective control through evidence-based decision making.*
+
+**Our long-term goal is to train a critical mass of modeling scientists who are:**
+
+::: {.callout-note icon="false"}
+## 1. Retained within Sub-Saharan Africa
+
+:::
+
+::: {.callout-note icon="false"}
+## 2. Training the next generation of modelers
+:::
+
+::: {.callout-note icon="false"}
+## 3. Working closely with local malaria control programs to provide operational support
+:::
+
+::: {.callout-note icon="false"}
+## 4. Competitive in obtaining grants from international funding agencies
+:::
+
+::: {.callout-note icon="false"}
+## 5. Closely networked with each other across Africa and with international partners
+:::
+
+*To help achieve this goal, Northwestern University's malaria modeling team is offering an* **18-week intensive in-person training program** *in applied malaria modeling for Sub-Saharan African mathematical modeling faculty - with or without public health backgrounds - tailored to their experience and needs.*
+
+*Training is focused on applied modeling with EMOD, an open-source malaria transmission modeling software that is currently used to support malaria programs. Participants will design their own research question and focal training project using EMOD that will form the basis of a Specific Aims page (grant proposal summary page) to be developed during the program.*
+
+### Program Highlights
+
+::: {.callout-important icon="false"}
+## Multi-modal training in applied malaria modeling
+
+Hands-on tutorials and exercises focused on model configuration and analysis, supplemented by lectures and journal clubs, to enable participants to independently carry out their focal projects. Participants will run models using Northwestern's high performance computing cluster.
+:::
+
+::: {.callout-important icon="false"}
+#### Training in written and oral scientific communication
+
+Iterative revisions of draft documents and oral presentations, with feedback from program director, peers, and other Northwestern modelers.
+
+-   Project Specific Aims page
+-   NIH-Style Investigator "Biosketch"
+-   3 Research Talks (Project Proposal, Work-in-Progress, and Final Presentation)
+:::
+
+::: {.callout-important icon="false"}
+#### Dedicated mentorship
+
+Weekly 1-on-1 meetings with program director and an assigned partner from Northwestern's team of modelers.
+:::
+
+::: {.callout-important icon="false"}
+#### Building connections with a global community of malaria modelers
+
+-   Join and participation in the Applied Malaria Modeling Network (AMMnet)\
+-   Connect with faculty enrichment program alumni
+-   Attend the American Society of Tropical Medicine & Hygiene (ASTMH) 2023 Annual Meeting in Chicago, and the AMMnet Pre-ASTMH Modeling Meeting
+:::
