@@ -16,7 +16,10 @@
         </div>
         <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
         <div class="menu">
-            <p class="menu-header" onclick="loadContent('overview')"><span class="menu-text">Overview</span></p>
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Overview</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('overview')"><span class="link-text">Overview</span></a></li>
+            </ul>
         </div>
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Menu 1</span></p>
