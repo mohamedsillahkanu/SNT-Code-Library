@@ -1,0 +1,35 @@
+---
+title: "Mission"
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+---
+
+*Malaria burden remains high in Sub-Saharan Africa despite two decades of intense intervention. Regular analysis and use of public health data will lead to more effective control through evidence-based decision making.*
+
+**Our long-term goal is to train a critical mass of modeling scientists who are:**
+
+::: {.callout-note appearance="minimal"}
+## 1. Retained within Sub-Saharan Africa
+:::
+
+::: {.callout-note appearance="minimal"}
+## 2. Training the next generation of modelers
+:::
+
+::: {.callout-note appearance="minimal"}
+## 3. Working closely with local malaria control programs to provide operational support
+:::
+
+::: {.callout-note appearance="minimal"}
+## 4. Competitive in obtaining grants from international funding agencies
+:::
+
+::: {.callout-note appearance="minimal"}
+## 5. Closely networked with each other across Africa and with international partners
+:::
+
+*To help achieve this goal, Northwestern University's malaria modeling team is offering an* **18-week intensive in-person training program** *in applied malaria modeling for Sub-Saharan African mathematical modeling faculty - with or without public health backgrounds - tailored to their experience and needs.*
+
+*Training is focused on applied modeling with EMOD, an open-source malaria transmission modeling software that is currently used to support malaria programs. Participants will design their own research question and focal training project using EMOD that will form the basis of a Specific Aims page (grant proposal summary page) to be developed during the program.*

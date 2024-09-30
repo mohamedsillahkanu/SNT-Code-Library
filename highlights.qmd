@@ -1,0 +1,31 @@
+---
+title: "Program Highlights"
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+---
+
+::: {.callout-important appearance="minimal"}
+## 1. Multi-modal training in applied malaria modeling
+
+Hands-on tutorials and exercises focused on model configuration and analysis, supplemented by lectures and journal clubs, to enable participants to independently carry out their focal projects. Participants will run models on Northwestern's high performance computing cluster.
+:::
+
+::: {.callout-important appearance="minimal"}
+## 2. Training in written and oral scientific communication
+
+Iterative revisions of written Specific Aims and oral presentations, with feedback from program director, peers, and other Northwestern modelers.
+:::
+
+::: {.callout-important appearance="minimal"}
+## 3. Dedicated mentorship
+
+Weekly 1-on-1 meetings with program director and an assigned partner from Northwestern's team of modelers.
+:::
+
+::: {.callout-important appearance="minimal"}
+## 4. Building connections with a global community of malaria modelers
+
+Membership and participation in the Applied Malaria Modeling Network (AMMnet); connections with faculty enrichment program alumni; attendance at the American Society of Tropical Medicine & Hygiene (ASTMH) 2023 Annual Meeting in Chicago
+:::
