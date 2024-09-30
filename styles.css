@@ -5,10 +5,11 @@ body {
 }
 
 .sidebar {
-    background-color: lightskyblue; /* Light sky blue background */
+    background-color: #add8e6; /* Light blue color */
     width: 33.33%; /* 1/3 of the page */
-    border-right: 5px solid white; /* White separator */
     float: left;
+    border-right: 5px solid white; /* White separator */
+    padding: 20px;
 }
 
 .main-content {
@@ -38,5 +39,5 @@ body {
 }
 
 .menu-link.active {
-    color: red; /* Active link color */
+    color: red; /* Change color to red when active */
 }
