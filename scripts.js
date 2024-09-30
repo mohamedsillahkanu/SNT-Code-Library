@@ -22,4 +22,3 @@ function loadContent(page) {
   xhttp.open("GET", page, true);
   xhttp.send();
 }
-
