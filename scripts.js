@@ -16,3 +16,13 @@ function loadContent(page, element) {
   // Add 'active' class to the clicked link
   element.classList.add("active");
 }
+
+// Function to toggle the submenu visibility
+function toggleMenu(header) {
+  const submenu = header.nextElementSibling; // Get the next sibling (submenu)
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none"; // Collapse
+  } else {
+    submenu.style.display = "block"; // Expand
+  }
+}
