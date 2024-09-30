@@ -1,0 +1,12 @@
+---
+title: "Full 2023 Program Handbook"
+weight: 1
+format: 
+  html: 
+    toc: true
+    toc-depth: 5
+    
+page-layout: article
+---
+
+<iframe src="./2023_Course_Handbook_en.pdf" title="foo" width="960" height="900"></iframe>
