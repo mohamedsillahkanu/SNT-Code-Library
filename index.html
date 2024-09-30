@@ -10,24 +10,24 @@
 
   <!-- Sidebar with collapsible menu -->
   <div class="sidebar">
-    <button class="collapsible">Menu 1</button>
-    <div class="content">
+    <div class="menu">
+      <p class="menu-header">Menu 1</p>
       <ul>
-        <li><a href="#" onclick="loadContent('page1.html')">Page 1</a></li>
-        <li><a href="#" onclick="loadContent('page2.html')">Page 2</a></li>
+        <li><a href="#" class="menu-link" onclick="loadContent('page1.html', this)">Page 1</a></li>
+        <li><a href="#" class="menu-link" onclick="loadContent('page2.html', this)">Page 2</a></li>
       </ul>
     </div>
 
-    <button class="collapsible">Menu 2</button>
-    <div class="content">
+    <div class="menu">
+      <p class="menu-header">Menu 2</p>
       <ul>
-        <li><a href="#" onclick="loadContent('page3.html')">Page 3</a></li>
-        <li><a href="#" onclick="loadContent('page4.html')">Page 4</a></li>
+        <li><a href="#" class="menu-link" onclick="loadContent('page3.html', this)">Page 3</a></li>
+        <li><a href="#" class="menu-link" onclick="loadContent('page4.html', this)">Page 4</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- Main content area where other pages will be loaded -->
+  <!-- Main content area -->
   <div class="main-content">
     <h1>Welcome to My Project</h1>
     <div id="page-content">
