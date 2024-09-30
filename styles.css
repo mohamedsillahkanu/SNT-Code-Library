@@ -9,8 +9,8 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-  background-color: #ADD8E6;
-  color: white;
+  background-color: lightskyblue; /* Light sky blue background */
+  color: black; /* Text color */
   width: 33.33%; /* 1/3 of the page */
   height: 100vh;
   padding-top: 20px;
@@ -20,7 +20,7 @@ body {
 }
 
 .menu-header {
-  color: #fff;
+  cursor: pointer; /* Pointer cursor for clickable header */
   padding-left: 15px;
   margin: 10px 0;
   font-weight: bold;
@@ -30,6 +30,7 @@ body {
 .menu ul {
   list-style-type: none;
   padding: 0;
+  display: none; /* Hide submenu by default */
 }
 
 .menu ul li {
@@ -38,14 +39,15 @@ body {
 
 .menu-link {
   text-decoration: none;
-  color: white;
+  color: black;
   display: block;
   padding: 10px 15px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-link:hover {
-  background-color: #ADD8E6;
+  background-color: #444;
+  color: white;
 }
 
 .menu-link.active {
