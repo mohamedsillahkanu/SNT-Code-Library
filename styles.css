@@ -59,6 +59,7 @@ body {
     padding: 20px;
     border-left: 20px solid black; /* Thick black vertical line */
     display: flex; /* use flexbox */
+    height: 100%;
 
 
 }
