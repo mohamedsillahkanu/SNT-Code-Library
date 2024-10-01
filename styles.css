@@ -102,8 +102,8 @@ button {
 .buttons {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally */
-    margin-top: 20px;
+    align-items: right; /* Center buttons horizontally */
+    margin-top: 5px;
 }
 
 /* Button styles */
