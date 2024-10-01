@@ -98,3 +98,33 @@ button {
 }
 
 
+/* Button container */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    margin-top: 20px;
+}
+
+/* Button styles */
+.button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Button size */
+    margin: 10px 0; /* Spacing between buttons (vertical margin) */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    width: 200px; /* Adjust the width of the button */
+    text-align: center; /* Center text inside the button */
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
