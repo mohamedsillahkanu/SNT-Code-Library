@@ -190,22 +190,6 @@ document.querySelector('.search-bar').addEventListener('input', function() {
 
 
 
-function loadContent(page) {
-    // Remove 'active' class from all menu links
-    const menuLinks = document.querySelectorAll('.menu-link');
-    menuLinks.forEach(link => link.classList.remove('active'));
-
-    // Add 'active' class to the clicked menu link
-    const selectedLink = document.querySelector(`[onclick="loadContent('${page}')"]`);
-    selectedLink.classList.add('active');
-
-    // Load the content (you can replace this with your actual content loading logic)
-    document.getElementById('content').innerHTML = page + " content loaded.";
-
-    // Update the URL with the submenu title
-    history.pushState(null, '', `#${page}`);
-}
-
 
 
 
