@@ -34,14 +34,43 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h2>Importing Shapefiles in R</h2>
             <pre id="codeBlock">
                 <code>
-# Load necessary library
-library(sf) # Load the necessary library
 
-# Read shapefile
-shapefile <- st_read("path/to/your/shapefile.shp") # Read the shapefile
+# Install  necessary libraries
+install.packages(c("sf", "ggplot2", "dplyr"))
 
-# Print the shapefile
-print(shapefile) # Print the shapefile
+# Load necessary libraries
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+# 1. Import Shapefiles
+import_shapefile <- function(filepath) {
+    shapefile <- st_read(filepath)  # Read the shapefile
+    return(shapefile)  # Return the loaded shapefile
+}
+
+# 2. Rename and Match Names
+rename_shapefile_columns <- function(shapefile, new_names) {
+    colnames(shapefile) <- new_names  # Rename columns
+    return(shapefile)  # Return the renamed shapefile
+}
+
+# 3. Link Shapefiles to Relevant Scales
+link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
+    linked_shapefile <- shapefile %>%
+        left_join(scales_df, by = link_col)  # Merge shapefile with scales
+    return(linked_shapefile)  # Return the linked shapefile
+}
+
+# 4. Visualizing Shapefiles and Making Basic Maps
+visualize_shapefile <- function(shapefile) {
+    ggplot(data = shapefile) +
+        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
+        theme_minimal() +
+        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
+}
+
+
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
