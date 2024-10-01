@@ -1,70 +1,94 @@
----
-title: "Program Overview"
-format: 
-  html:
-    toc: true
-    toc-depth: 4
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage with Sidebar</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
 
-### Mission
+<div class="container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
+            <h2 class="sidebar-title">Code Library for Subnational Tailoring</h2>
+        </div>
 
-*Malaria burden remains high in Sub-Saharan Africa despite two decades of intense intervention. Regular analysis and use of public health data will lead to more effective control through evidence-based decision making.*
+        <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
+        
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Overview</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('overview')"><span class="link-text">Overview</span></a></li>
+            </ul>
+        </div>
 
-**Our long-term goal is to train a critical mass of modeling scientists who are:**
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">A Data Assembly and Management</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('pop')"><span class="link-text">A.5 Population Data</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li>
+            </ul>
+        </div>
 
-::: {.callout-note icon="false"}
-## 1. Retained within Sub-Saharan Africa
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">B. Epidemiological Stratification</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('repoting-rate')"><span class="link-text">B.1 Reporting Rate per Variable</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('group-merge-df')"><span class="link-text">B.2 Group and Merge Data Frame</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('crude-indcidence')"><span class="link-text">B.3 Crude Incidence by Year</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('adjusted-incidence')"><span class="link-text">B.4 Adjusted Incidence by Year</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('option-incidence')"><span class="link-text">B.5 Option to Select Incidence</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('risk-categorization')"><span class="link-text">B.6 Risk Categorization</span></a></li>
+            </ul>
+        </div>
 
-:::
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">C. Stratification of Other Determinants</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('access-to-care')"><span class="link-text">C.1 Access to Care</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('seasonality')"><span class="link-text">C.2 Seasonality</span></a></li>
+            </ul>
+        </div>
 
-::: {.callout-note icon="false"}
-## 2. Training the next generation of modelers
-:::
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">D. Review of Past Interventions</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('epi')"><span class="link-text">D.1 EPI Coverage and Dropout Rate</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('iptp')"><span class="link-text">D.2 IPTp and ANC Coverage</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('pmc')"><span class="link-text">D.3 PMC (Perennial Malaria Chemoprevention)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('smc')"><span class="link-text">D.4 SMC (Seasonal Malaria Chemoprevention)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('vaccine')"><span class="link-text">D.5 Malaria Vaccine</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('itn')"><span class="link-text">D.6 ITN Coverage, Ownership, Access, Usage, and Type</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('irs')"><span class="link-text">D.7 IRS (Indoor Residual Spraying)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('mda')"><span class="link-text">D.8 MDA (Mass Drug Administration)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('iptsc')"><span class="link-text">D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('pdmc')"><span class="link-text">D.10 PDMC (Post-discharge Malaria Chemoprevention)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('lsm')"><span class="link-text">D.11 LSM (Larval Source Management)</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('assessing-quality-management')"><span class="link-text">D.12 Assessing the Quality of Case Management</span></a></li>          
+            </ul>
+        </div>
+    </div>
 
-::: {.callout-note icon="false"}
-## 3. Working closely with local malaria control programs to provide operational support
-:::
+    <div class="main-content">
+        <div id="content">
+            <!-- Overview content will be loaded here -->
+        </div>
+        
+        <div class="buttons">
+            <a href="#step-by-step" class="button">Step by Step</a>
+            <a href="#full-code" class="button">Full Code</a>
+        </div>
+    </div>
+</div>
 
-::: {.callout-note icon="false"}
-## 4. Competitive in obtaining grants from international funding agencies
-:::
-
-::: {.callout-note icon="false"}
-## 5. Closely networked with each other across Africa and with international partners
-:::
-
-*To help achieve this goal, Northwestern University's malaria modeling team is offering an* **18-week intensive in-person training program** *in applied malaria modeling for Sub-Saharan African mathematical modeling faculty - with or without public health backgrounds - tailored to their experience and needs.*
-
-*Training is focused on applied modeling with EMOD, an open-source malaria transmission modeling software that is currently used to support malaria programs. Participants will design their own research question and focal training project using EMOD that will form the basis of a Specific Aims page (grant proposal summary page) to be developed during the program.*
-
-### Program Highlights
-
-::: {.callout-important icon="false"}
-## Multi-modal training in applied malaria modeling
-
-Hands-on tutorials and exercises focused on model configuration and analysis, supplemented by lectures and journal clubs, to enable participants to independently carry out their focal projects. Participants will run models using Northwestern's high performance computing cluster.
-:::
-
-::: {.callout-important icon="false"}
-#### Training in written and oral scientific communication
-
-Iterative revisions of draft documents and oral presentations, with feedback from program director, peers, and other Northwestern modelers.
-
--   Project Specific Aims page
--   NIH-Style Investigator "Biosketch"
--   3 Research Talks (Project Proposal, Work-in-Progress, and Final Presentation)
-:::
-
-::: {.callout-important icon="false"}
-#### Dedicated mentorship
-
-Weekly 1-on-1 meetings with program director and an assigned partner from Northwestern's team of modelers.
-:::
-
-::: {.callout-important icon="false"}
-#### Building connections with a global community of malaria modelers
-
--   Join and participation in the Applied Malaria Modeling Network (AMMnet)\
--   Connect with faculty enrichment program alumni
--   Attend the American Society of Tropical Medicine & Hygiene (ASTMH) 2023 Annual Meeting in Chicago, and the AMMnet Pre-ASTMH Modeling Meeting
-:::
+<script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
