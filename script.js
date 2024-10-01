@@ -6,8 +6,12 @@ function toggleMenu(menuHeader) {
 function loadContent(page) {
     const content = {
         overview: `
-            <h2>Overview</h2>
-            <p>This is an overview of the project. Here you can find links to different pages and functionalities.</p>
+            <h1>Overview</h1>
+            <h2>Motivation</h2>
+            <p>SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs. Since 2019, multiple individuals have supported the analysis portions of SNT. In most cases, individuals have built their own code in a variety of languages (Stata, R, and Python), sometimes building on others’ previous code and sometimes re-developed independently.
+
+As SNT matures, more quality assurance is needed such that NMCPs can be confident that the analysis they use to inform their decisions is of high quality regardless of the individual supporting analyst. The continued rollout of SNT also means that analysis can become more efficient if analysts are better able to build on each other’s work rather than tempted to reinvent what has already been developed. Lastly, SNT analysis can become much more accessible if there is a common resource available to help those with intermediate coding skills quickly access the collective knowledge of the SNT analyst community.
+.</p>
         `,
         page1: `
             <h2>Importing Shapefiles in R</h2>
