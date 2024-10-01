@@ -143,9 +143,7 @@ visualize_shapefile <- function(shapefile) {
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
-            <p>This R code loads the 'sf' library, reads a shapefile, and prints its contents.</p>
-            <h3>R Code Explanation</h3>
-            <p>The 'sf' package is used to work with spatial data in R.</p>
+           
         `,
         hf: `
             <h2>Page 2 Content</h2>
