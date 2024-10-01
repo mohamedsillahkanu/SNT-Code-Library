@@ -11,12 +11,10 @@ body {
 
 .sidebar {
     width: 33.33%;
-    background-color: white; /* Changed sidebar color to white */
+    background-color: gray; /* Changed sidebar color to white */
     padding: 10px;
-    border-right: 5px solid black; /* Thick black vertical line */
-    display: flex; /* Use flexbox for sidebar */
-    flex-direction: column; /* Arrange children vertically */
-    
+  
+   
 }
 
 .sidebar-header {
