@@ -171,3 +171,23 @@ function copyCode() {
         console.error('Error copying text: ', err);
     });
 }
+
+
+
+
+function loadContent(contentId) {
+    // Remove 'active' class from all menu links
+    const menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach(link => link.classList.remove('active'));
+
+    // Add 'active' class to the clicked menu link
+    const selectedLink = document.querySelector(`[onclick="loadContent('${contentId}')"]`);
+    selectedLink.classList.add('active');
+
+    // Load the content (you can replace this with your actual content loading logic)
+    document.getElementById('content').innerHTML = contentId + " content loaded.";
+
+    // Update URL with the submenu title
+    history.pushState(null, '', `#${contentId}`);
+}
+
