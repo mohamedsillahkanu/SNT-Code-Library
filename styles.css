@@ -94,3 +94,35 @@ button {
     background-color:black;
     height: auto;
 }
+
+
+
+
+
+.buttons {
+    position: absolute;         /* Position buttons at the top right */
+    top: 20px;
+    right: 20px;
+}
+
+.button {
+    display: inline-block;      /* Allow buttons to sit next to each other */
+    margin: 5px;               /* Space between buttons */
+    padding: 10px 15px;        /* Padding inside buttons */
+    background-color: #007BFF; /* Button color */
+    color: white;              /* Text color */
+    text-decoration: none;      /* Remove underline */
+    border-radius: 5px;        /* Rounded corners */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+#step-by-step, #full-code {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;  /* Light background for sections */
+    border: 1px solid #ddd;      /* Light border for sections */
+}
