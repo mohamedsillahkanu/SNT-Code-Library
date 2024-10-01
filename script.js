@@ -174,3 +174,20 @@ function copyCode() {
 
 
 
+document.querySelector('.search-bar').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-link, .menu-header');
+    
+    menuItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+            item.style.display = 'block'; // Show matching items
+        } else {
+            item.style.display = 'none'; // Hide non-matching items
+        }
+    });
+});
+
+
+
+
