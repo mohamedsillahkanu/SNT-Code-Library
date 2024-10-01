@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
+    
+    height: 100%; /* Ensure the height of the html and body is 100% */
 }
 
 .container {
@@ -17,6 +19,8 @@ body {
     display: flex; /* Use flexbox for sidebar */
     flex-direction: column; /* Arrange children vertically */
     justify-content: flex-start; /* Align items to the top */
+    
+    height: 100vh; /* Set height of sidebar to full viewport height */
 }
 
 .sidebar-header {
@@ -57,6 +61,9 @@ body {
 .main-content {
     width: 66.67%;
     padding: 20px;
+
+    flex-grow: 1; /* Allow main content to take remaining space */
+    padding: 10px; /* Padding for the main content area */
 }
 
 /* Style for the code block */
