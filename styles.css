@@ -57,11 +57,7 @@ body {
 .main-content {
     width: 66.67%;
     padding: 20px;
-    border-left: 20px solid black; /* Thick black vertical line */
     display: flex; /* use flexbox */
-    height: 100%;
-
-
 }
 
 /* Style for the code block */
