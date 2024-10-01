@@ -14,6 +14,9 @@ body {
     background-color: white; /* Changed sidebar color to white */
     padding: 10px;
     border-right: 5px solid black; /* Thick black vertical line */
+    display: flex; /* Use flexbox for sidebar */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: flex-start; /* Align items to the top */
 }
 
 .sidebar-header {
