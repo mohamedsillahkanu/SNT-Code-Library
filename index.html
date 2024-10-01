@@ -12,25 +12,22 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Logo" class="sidebar-logo">
-            <h2 class="sidebar-title">SNT Code Library</h2>
+            <h2 class="sidebar-title">My Project</h2>
         </div>
         <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
-        
-        <!-- Overview Menu -->
         <div class="menu">
-            <p class="menu-header" onclick="loadContent('overview')"><span class="menu-text">Overview</span></p>
-        </div>
-        
-        <!-- Data Assembly Menu -->
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">A Data Assembly and Management</span></p>
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Overview</span></p>
             <ul class="submenu">
-                <li><a href="#" class="menu-link" onclick="loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a></li>
-                <li><a href="#" class="menu-link" onclick="loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('overview')"><span class="link-text">Overview</span></a></li>
             </ul>
         </div>
-        
-        <!-- Menu 2 -->
+        <div class="menu">
+            <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Menu 1</span></p>
+            <ul class="submenu">
+                <li><a href="#" class="menu-link" onclick="loadContent('page1')"><span class="link-text">Page 1</span></a></li>
+                <li><a href="#" class="menu-link" onclick="loadContent('page2')"><span class="link-text">Page 2</span></a></li>
+            </ul>
+        </div>
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)"><span class="menu-text">Menu 2</span></p>
             <ul class="submenu">
@@ -38,10 +35,9 @@
             </ul>
         </div>
     </div>
-
     <div class="main-content">
         <div id="content">
-            <!-- Overview content will be loaded here by default -->
+            <!-- Overview content will be loaded here -->
         </div>
     </div>
 </div>
