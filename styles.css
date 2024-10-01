@@ -1,82 +1,55 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-}
-
+/* Main container styling */
 .container {
     display: flex;
-    height: 100vh;
 }
 
 .sidebar {
-    width: 33.33%;
-    background-color: white; /* Changed sidebar color to white */
+    width: 250px;
+    background-color: white;
+    border-right: 2px solid black; /* Thick black vertical line */
     padding: 10px;
-    border-right: 5px solid black; /* Thick black vertical line */
 }
 
 .sidebar-header {
     text-align: center;
-}
-
-.sidebar-logo {
-    width: 80%;
+    margin-bottom: 20px;
 }
 
 .search-bar {
-    width: 90%; /* Shortened the width of the search bar */
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.menu {
-    margin: 10px 0;
-}
-
-.submenu {
-    list-style-type: none;
-    padding: 0;
-    display: none;
-}
-
-.submenu li {
-    margin: 5px 0;
+    width: 90%; /* Shortened search bar */
+    margin: 10px auto;
+    padding: 5px;
 }
 
 .menu-header {
     cursor: pointer;
     font-weight: bold;
+    margin: 10px 0;
 }
 
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 15px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px 0;
+}
+
+.menu-link:hover {
+    color: blue;
+}
+
+.selected {
+    color: red; /* Red text for the current selection */
+}
+
+/* Main content styling */
 .main-content {
-    width: 66.67%;
     padding: 20px;
-}
-
-/* Style for the code block */
-pre {
-    background-color: lightgray;
-    padding: 10px;
-    overflow: auto;
-    position: relative; /* Add position relative for button positioning */
-}
-
-.copy-button {
-    position: absolute; /* Position button at the top right */
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button {
-    cursor: pointer;
-    margin-top: 10px;
+    width: 100%;
 }
