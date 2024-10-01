@@ -6,6 +6,8 @@ function toggleMenu(menuHeader) {
 function loadContent(page) {
     const content = {
         overview: `
+            <h3 class="sidebar-title">Version: 27 September 2024 </h3>
+            <h3 class="sidebar-title">Authors: Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin </h3>
             <h2>Overview</h2>
             <h3>Motivation</h3>
             <p>SNT is here to stay: many NMCPs have found it useful and are continuing to embrace it and further develop it for their analytical needs. Since 2019, multiple individuals have supported the analysis portions of SNT. In most cases, individuals have built their own code in a variety of languages (Stata, R, and Python), sometimes building on others’ previous code and sometimes re-developed independently.
