@@ -130,15 +130,4 @@ button {
 
 
 
-/* Default menu link style */
-.menu-link {
-    color: #000; /* Default text color */
-    text-decoration: none;
-}
-
-/* Highlight the active link */
-.menu-link.active {
-    color: red; /* Active link color */
-}
-
 
