@@ -5,7 +5,7 @@ function toggleMenu(menuHeader) {
 
 function loadContent(page) {
     const content = {
-        #overview: `
+        overview: `
             <h3 class="sidebar-title">Version: 27 September 2024 </h3>
             <h3 class="sidebar-title">Authors: Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin </h3>
             <h2>Overview</h2>
