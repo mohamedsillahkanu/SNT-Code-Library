@@ -110,7 +110,7 @@ button {
 .button {
     background-color: #007bff; /* Primary button color */
     color: white; /* Text color */
-    padding: 10px 20px; /* Button size */
+    padding: 5px 5px; /* Button size */
     margin: 10px 0; /* Spacing between buttons (vertical margin) */
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners */
@@ -119,7 +119,7 @@ button {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth hover transition */
     width: 500px; /* Adjust the width of the button */
-    text-align: center; /* Center text inside the button */
+    text-align: left; /* Center text inside the button */
 }
 
 /* Hover effect */
