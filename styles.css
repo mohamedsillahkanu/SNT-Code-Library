@@ -107,6 +107,20 @@ button {
 }
 
 
+.french-link {
+    color: red; /* Red text */
+    text-decoration: none; /* No underline */
+    font-size: 16px; /* Font size */
+    display: block; /* Makes the link behave like a block element */
+    margin: 20px auto; /* Margin for spacing */
+    text-align: center; /* Center the text */
+}
+
+.french-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
 
 
 
