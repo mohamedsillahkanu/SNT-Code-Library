@@ -118,6 +118,18 @@ button {
 }
 
 
+.menu-header {
+    cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.menu-indicator {
+    margin-right: 5px; /* Space between indicator and text */
+}
+
+.submenu {
+    padding-left: 20px; /* Indentation for submenu items */
+}
+
 
 
 
