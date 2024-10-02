@@ -108,7 +108,7 @@ button {
 
 
 .link-text {
-    color: red; /* Red text */
+    color: blue; /* Red text */
     text-decoration: none; /* No underline */
     display: block; /* Makes the link behave like a block element */
     padding: 10px 0; /* Padding for spacing */
@@ -117,7 +117,6 @@ button {
 .link-text:hover {
     text-decoration: underline; /* Underline on hover */
 }
-
 
 
 
