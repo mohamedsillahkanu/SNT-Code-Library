@@ -10,14 +10,17 @@ body {
     height: 100vh;
 }
 
-.sidebar {
-    width: 33.33%;
-    background-color: white; /* Changed sidebar color to white */
-    padding: 10px;
-    height: 100%;
 
-  
-   
+
+.sidebar {
+    width: 33.33%; 
+    background-color: white; /* Sidebar color */
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    overflow-y: auto; /* Add scroll functionality */
+    max-height: 100vh; /* Restrict height to viewport height */
 }
 
 .sidebar-header {
@@ -57,10 +60,12 @@ body {
     font-weight: bold;
 }
 
+
 .main-content {
-    width: 66.67%;
+    flex-grow: 1; /* Main content takes the rest of the space */
     padding: 20px;
-    display: flex; /* use flexbox */
+    overflow-y: auto; /* Allows scrolling for main content */
+    height: 100vh; /* Ensure full height for the main content */
 }
 
 /* Style for the code block */
