@@ -108,6 +108,7 @@ button {
 
 .menu-link {
     color: blue;
+    text-decoration: none; /* This removes the underline */
 }
 
 
