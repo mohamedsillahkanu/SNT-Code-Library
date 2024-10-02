@@ -189,4 +189,16 @@ document.querySelector('.search-bar').addEventListener('input', function() {
 });
 
 
+// Function to handle link selection
+function selectLink(selectedLink) {
+    // Remove 'selected' class from all links
+    var links = document.getElementsByClassName('menu-link');
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('selected');
+    }
+    // Add 'selected' class to the clicked link
+    selectedLink.classList.add('selected');
+}
+
+
 
