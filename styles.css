@@ -107,10 +107,19 @@ button {
 }
 
 .menu-link {
-    color: red;
+    color: blue;
     text-decoration: none; /* This removes the underline */    
 }
 
+.menu-link {
+    color: black; /* Original color */
+    text-decoration: none;
+}
+
+
+.menu-link.selected {
+    color: red; /* Color when selected */
+}
 
 
 
