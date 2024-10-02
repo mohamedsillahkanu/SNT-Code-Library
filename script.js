@@ -201,3 +201,16 @@ function selectLink(selectedLink) {
     selectedLink.classList.add('selected');
 }
 
+
+
+function toggleMenu(menuHeader) {
+    var submenu = menuHeader.nextElementSibling; // Get the submenu
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+        submenu.style.display = "block"; // Show the submenu
+        menuHeader.querySelector('.menu-indicator').textContent = 'v'; // Change indicator to 'v'
+    } else {
+        submenu.style.display = "none"; // Hide the submenu
+        menuHeader.querySelector('.menu-indicator').textContent = '>'; // Change indicator back to '>'
+    }
+}
+
