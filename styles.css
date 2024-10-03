@@ -65,6 +65,7 @@ body {
     display: flex;
     justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
     align-items: center; /* Vertically aligns the text and the indicator */
+    background-color: transparent;
 }
 
 
