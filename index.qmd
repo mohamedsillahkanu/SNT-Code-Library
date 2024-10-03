@@ -102,7 +102,7 @@
 
     </div>
     <div class="content">
-        
+        <!-- Overview content will be loaded here -->
     </div>
 </div>
 
