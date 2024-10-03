@@ -17,10 +17,9 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
             <h3>Objectives</h3>
             <p>We will build a code library for SNT analysis to:
-
-1. Improve quality and reproducibility of SNT analysis by ensuring that analysts are using similar, correct approaches
-2. Improve efficiency of SNT analysis by minimizing duplication of effort
-3. Promote accessibility of SNT analysis by lowering barriers to entry.</p>
+            <p>1. Improve quality and reproducibility of SNT analysis by ensuring that analysts are using similar, correct approaches.</p>
+            <p>2. Improve efficiency of SNT analysis by minimizing duplication of effort.</p>
+            <p>3. Promote accessibility of SNT analysis by lowering barriers to entry.</p>
 
 
             <h3>Target audience</h3>
@@ -101,7 +100,7 @@ visualize_shapefile <- function(shapefile) {
             </code></pre>
             <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
 
-            <h2>Full code</h2>
+            <h3>Full code</h3>
             <pre id="codeBlock">
                 <code>
 
