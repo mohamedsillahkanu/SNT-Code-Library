@@ -102,8 +102,7 @@
 
     </div>
     <div class="content">
-        <h1>Bienvenue à la Bibliothèque de Code pour le Taillage Sous-National</h1>
-        <p>Cette bibliothèque contient des informations et des ressources sur le taillage sous-national, y compris des codes pour analyser des données sur les interventions de lutte contre le paludisme et d'autres déterminants de la santé.</p>
+        
     </div>
 </div>
 
