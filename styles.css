@@ -43,7 +43,7 @@ body {
 
 
 .menu {
-    margin: 4px 0;
+    margin: 10px 0;
 }
 
 .submenu {
@@ -53,7 +53,7 @@ body {
 }
 
 .submenu li {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .menu-header {
