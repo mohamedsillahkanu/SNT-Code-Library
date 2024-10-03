@@ -40,7 +40,9 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <pre><code>
 # Install necessary libraries
 install.packages(c("sf", "ggplot2", "dplyr"))
-            </code></pre>
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
 
             <h3>Step 2: Load Necessary Libraries</h3>
