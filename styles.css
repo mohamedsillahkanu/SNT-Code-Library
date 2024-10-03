@@ -65,9 +65,6 @@ body {
     display: flex;
     justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
     align-items: center; /* Vertically aligns the text and the indicator */
-    padding: 10px;
-    
-    margin-bottom: 5px;
 }
 
 
@@ -143,7 +140,7 @@ button {
 .menu-indicator {
     /* You can customize the indicator's styles here */
     font-weight: bold; /* Make the indicator bold (optional) */
-    color: blue;
+    color: black;
 }
 
 
