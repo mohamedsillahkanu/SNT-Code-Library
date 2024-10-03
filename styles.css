@@ -137,6 +137,12 @@ button {
     color: blue;
 }
 
+
+.menu-header .menu-indicator {
+    font-size: 18px;
+    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
+}
+
     
 
 
