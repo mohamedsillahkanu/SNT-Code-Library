@@ -32,8 +32,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         `,
         shapefiles: `
         
-            <h4>A. Data Assembly and Manangement>A.1 Shapefiles</h4>
-            <h2>Step by step approach</h2>
+            <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
+            <h3>Step by step approach</h3>
             <p>This section explains the workflow of importing and managing shapefiles using R.</p>
 
             <h3>Step 1: Install Necessary Libraries</h3>
