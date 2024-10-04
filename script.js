@@ -198,7 +198,7 @@ Code block
 Code block
 
 
-}
+
             </code></pre>
             <p></p>
 
@@ -209,7 +209,7 @@ Code block
 
 
 Code block
-}
+
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
@@ -222,7 +222,7 @@ Code block
 Code block
 
 
-}
+
             </code></pre>
             <p></p>
 
@@ -236,7 +236,7 @@ Code block
 Code block
 
 
-}
+
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
@@ -277,7 +277,7 @@ Code block
 
 
 
-}
+
 
 
                 </code>
