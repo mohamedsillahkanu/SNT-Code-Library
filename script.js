@@ -169,8 +169,8 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 1: </h3>
             <p></p>
             <pre><code>
-# 
-# Code block
+
+Code block
 
             
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
@@ -179,9 +179,9 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 2: </h3>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# 
 
-# Code block
+
+Code block
 
 
 
@@ -191,11 +191,11 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 3: </h3>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# 
 
 
 
-# Code block
+
+Code block
 
 
 }
@@ -205,10 +205,10 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 4: </h3>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# 
 
 
-# Code block
+
+Code block
 }
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
@@ -216,10 +216,10 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 5: </h3>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# 
 
 
-# Code block
+
+Code block
 
 
 }
@@ -229,11 +229,11 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 6: </h3>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# 
 
 
 
-# Code block
+
+Code block
 
 
 }
@@ -245,7 +245,6 @@ visualize_shapefile <- function(shapefile) {
             <pre id="codeBlock">
                 <code>
 
-# 
 
 
 
@@ -255,7 +254,8 @@ visualize_shapefile <- function(shapefile) {
 
 
 
-# Code block
+
+Code block
 
 
 
@@ -292,30 +292,8 @@ visualize_shapefile <- function(shapefile) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
     };
 
     document.getElementById('content').innerHTML = content[page];
