@@ -214,71 +214,72 @@ visualize_shapefile <- function(shapefile) {
 # Code block
 }
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
+            <p></p>
 
-            <h3>Step 5: Link Shapefiles to Relevant Scales</h3>
-            <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
+            <h3>Step 5: </h3>
+            <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
+# 
+
+
+# Code block
+
+
 }
             </code></pre>
-            <p>This function performs a left join between the shapefile and a data frame containing scale information based on a specified linking column.</p>
+            <p></p>
 
-            <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
-            <p>Finally, you can visualize the shapefile using <code>ggplot2</code>. Here’s a function to do that:</p>
+            <h3>Step 6: </h3>
+            <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
-        theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
+# 
+
+
+
+# Code block
+
+
 }
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
+            <p></p>
 
             <h3 id="fullCode">Full code</h3>
           
             <pre id="codeBlock">
                 <code>
 
-# Install  necessary libraries
-install.packages(c("sf", "ggplot2", "dplyr"))
+# 
 
-# Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
 
-# Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
-}
 
-# Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
-}
 
-# Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
-}
 
-# Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
-        theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
+
+
+
+
+# Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -318,15 +319,6 @@ visualize_shapefile <- function(shapefile) {
 
 
 
-        
-        hf: `
-            <h2>A. Data Assembly and Management>A.2 Health Facilities</h2>
-            <h3>Step by step approach.</h3>
-        `,
-        quartoExample: `
-            <h2>Quarto Example</h2>
-            <p>This is an example of Quarto.</p>
-        `,
     };
 
     document.getElementById('content').innerHTML = content[page];
