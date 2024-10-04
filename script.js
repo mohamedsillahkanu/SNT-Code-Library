@@ -37,7 +37,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
+            <h3>A. Data Assembly and Manangement>A.1 Shapefiles</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p>This section explains the workflow of importing and managing shapefiles using R.</p>
 
@@ -162,7 +162,7 @@ visualize_shapefile <- function(shapefile) {
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.2 Health Facilities</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -297,7 +297,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.3 Routine Case Data from DHIS2</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -432,7 +432,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.4 DHS Data</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -567,7 +567,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.5 Population Data</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -701,7 +701,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.6 Climate Data</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -836,7 +836,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.7 LMIS Data</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -971,7 +971,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>A.8 Modeled Data</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1105,7 +1105,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>A. Data Assembly and Manangement>B.1 Reporting Rate per Variable</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
