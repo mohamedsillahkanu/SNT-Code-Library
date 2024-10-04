@@ -89,6 +89,12 @@ pre {
     
 }
 
+
+p {
+    width: 800px;                /* Set a fixed width for paragraphs */
+    margin: 0;                   /* Optional: remove default margins for consistent spacing */
+}
+
 .copy-button {
     position: absolute; /* Position button at the top right */
     top: 10px;
