@@ -227,7 +227,7 @@ function scrollToSection(sectionId) {
     if (element) {
         element.scrollIntoView({ behavior: 'auto' });
     }
-}
+}       
 
 
 
