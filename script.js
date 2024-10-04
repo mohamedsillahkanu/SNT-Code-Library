@@ -283,16 +283,1087 @@ Code block
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
+
+
            
         `,
 
 
 
-
-
-
-
+        dhis2: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
         
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+
+        dhs: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+
+        pop: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+        climate: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+
+        lmis: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+
+        model: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+        reporting-rate: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,
+
+
+        group-merge-df: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
+            <p></p>
+
+            <h3>Step 1: </h3>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 2: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 3: </h3>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 4: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3>Step 5: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+
+            </code></pre>
+            <p></p>
+
+            <h3>Step 6: </h3>
+            <p></p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+
+Code block
+
+
+
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h3 id="fullCode">Full code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+
+
+
+
+
+
+
+
+
+
+
+Code block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+
+           
+        `,        
         
     };
 
