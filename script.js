@@ -1105,7 +1105,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>B.1 Reporting Rate per Variable</h3>
+            <h3>B. Epidemiological Stratification>B.1 Reporting Rate per Variable</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1239,7 +1239,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>B.2 Group and Merge Data Frame</h2>
+            <h3>B. Epidemiological Stratification>B.2 Group and Merge Data Frame</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1373,7 +1373,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>B.3 Crude Incidence by Year</h2>
+            <h3>B. Epidemiological Stratification>B.3 Crude Incidence by Year</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1508,7 +1508,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>B. Epidemiological Stratification>B.4 Adjusted Incidence by Year/h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1643,7 +1643,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>B. Epidemiological Stratefication>B.5 Option to Select Incidence</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1777,7 +1777,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>B. Epidemiological Stratification>B.6 Risk Ctegorization</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1911,7 +1911,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>C. Stratification of Other Determinants>C.1 Access to Care</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -2048,7 +2048,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h3>C. Stratification of Other Determinants>C.2 Seasonality</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
