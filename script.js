@@ -2979,15 +2979,15 @@ Code block
         `,  
 
 
-#---------------------------------------------------------------------------------------
-       seasonality: `
+
+       irs: `
            
             <div class="fixed-buttons">
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h3>C. Stratification of Other Determinants>C.2 Seasonality</h3>
+            <h3>D. Review of Past Interventions>D.7 IRS (Indoor Residual Spray)</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -3115,15 +3115,15 @@ Code block
 
 
 
-#---------------------------------------------------------------------------------------
-       seasonality: `
+
+       mda: `
            
             <div class="fixed-buttons">
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h3>C. Stratification of Other Determinants>C.2 Seasonality</h3>
+            <h3>D. Review of Past Interventions>D.8 MDA (Mass Drug Administration)</h3>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
