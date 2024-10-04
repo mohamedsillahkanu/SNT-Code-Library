@@ -85,7 +85,7 @@ pre {
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
-    width: 600px;
+    width: 550px;
     
     
 }
@@ -96,7 +96,7 @@ pre + p,
 pre ~ p,
 p + pre,
 p ~ pre {
-    width: 600px;
+    width: 550px;
     margin: 0;
 }
 
@@ -105,7 +105,7 @@ pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
 pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
 h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
 h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
-    width: 600px;
+    width: 550px;
     margin: 0;
 }
 
