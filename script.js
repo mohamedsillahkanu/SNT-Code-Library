@@ -169,6 +169,15 @@ window.onload = function() {
     loadContent('overview');
 };
 
+// Scroll to the relevant section when buttons are clicked
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'auto' });
+    }
+}       
+
+
 function copyCode() {
     const codeBlock = document.getElementById("codeBlock").innerText;
     navigator.clipboard.writeText(codeBlock).then(() => {
@@ -221,13 +230,6 @@ function toggleMenu(menuHeader) {
 }
 
 
-// Scroll to the relevant section when buttons are clicked
-function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'auto' });
-    }
-}       
 
 
 
