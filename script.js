@@ -1239,7 +1239,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h2>A. Data Assembly and Manangement>B.2 Group and Merge Data Frame</h2>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
@@ -1373,7 +1373,7 @@ Code block
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h2>A. Data Assembly and Manangement>A.2 Health Facilities</h2>
+            <h2>A. Data Assembly and Manangement>B.3 Crude Incidence by Year</h2>
             <h3 id="stepByStep">Step by step approach</h3>
             <p></p>
 
