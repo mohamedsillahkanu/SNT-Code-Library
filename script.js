@@ -173,7 +173,7 @@ window.onload = function() {
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        element.scrollIntoView({ behavior: 'auto' });
+        element.scrollIntoView({ behavior: 'smooth' });
     }
 }       
 
