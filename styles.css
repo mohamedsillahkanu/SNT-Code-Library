@@ -91,7 +91,7 @@ pre {
 }
 
 pre + p {
-    width: 600px;                /* Set a fixed width for the paragraph immediately after <pre> */
+    width: 700px;                /* Set a fixed width for the paragraph immediately after <pre> */
     margin: 0;                   /* Optional: remove default margins for consistent spacing */
 }
 
