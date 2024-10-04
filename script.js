@@ -30,9 +30,10 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
         `,
         shapefiles: `
-            <div style="text-align: right;">
-                <button onclick="scrollToSection('stepByStep')">Step by step approach</button>
-                <button onclick="scrollToSection('fullCode')">Full code</button>
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step approach</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
             <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
@@ -174,7 +175,7 @@ window.onload = function() {
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'auto' });
     }
 }       
 
