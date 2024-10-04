@@ -31,8 +31,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         `,
         shapefiles: `
             <div style="text-align: right;">
-                <button onclick="scrollToSection('stepByStep')">Step by Step</button>
-                <button onclick="scrollToSection('fullCode')">Full Code</button>
+                <button onclick="scrollToSection('stepByStep')">Step by step approach</button>
+                <button onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
             <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
