@@ -33,7 +33,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         shapefiles: `
            
             <div class="fixed-buttons">
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step approach</button>
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
@@ -158,7 +158,7 @@ visualize_shapefile <- function(shapefile) {
         hf: `
            
             <div class="fixed-buttons">
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step approach</button>
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
