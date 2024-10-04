@@ -150,6 +150,34 @@ button {
     margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
 }
 
+
+
+
+
+
+.text-button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+
+.text-button:hover {
+    color: darkblue; /* Darker shade when hovering */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.fixed-buttons {
+    position: fixed;
+    top: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensures the buttons are on top */
+}
+
+
     
 
 
