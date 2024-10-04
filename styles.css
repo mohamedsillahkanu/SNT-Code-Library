@@ -85,16 +85,29 @@ pre {
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
-    width: 600px;
+    width: 700px;
     
     
 }
 
-pre + p {
-    width: 700px;                /* Set a fixed width for the paragraph immediately after <pre> */
-    margin: 0;                   /* Optional: remove default margins for consistent spacing */
+
+/* Apply to all paragraphs before or after the <pre> block */
+pre + p,
+pre ~ p,
+p + pre,
+p ~ pre {
+    width: 700px;
+    margin: 0;
 }
 
+/* Apply to all headings before or after the <pre> block */
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
+pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
+h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
+    width: 700px;
+    margin: 0;
+}
 
 .copy-button {
     position: absolute; /* Position button at the top right */
