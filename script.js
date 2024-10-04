@@ -36,7 +36,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             </div>
         
             <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
-            <h3>Step by step approach</h3>
+            <h3 id="stepByStep">Step by step approach</h3>
             <p>This section explains the workflow of importing and managing shapefiles using R.</p>
 
             <h3>Step 1: Install Necessary Libraries</h3>
@@ -106,7 +106,8 @@ visualize_shapefile <- function(shapefile) {
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
 
-            <h3>Full code</h3>
+            <h3 id="fullCode">Full code</h3>
+          
             <pre id="codeBlock">
                 <code>
 
