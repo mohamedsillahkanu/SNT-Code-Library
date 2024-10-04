@@ -172,41 +172,46 @@ visualize_shapefile <- function(shapefile) {
             <h3>Step 1: </h3>
             <p></p>
             <pre><code>
-# Install necessary libraries
-Code block
+# 
+# Code block
 
             
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
+            <p></p>
 
-            <h3>Step 2: Load Necessary Libraries</h3>
-            <p>After installing the libraries, you need to load them into your R environment:</p>
+            <h3>Step 2: </h3>
+            <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
+# 
+
+# Code block
+
+
+
             </code></pre>
-            <p>This step makes the functions from these libraries available for use in your script.</p>
+            <p></p>
 
-            <h3>Step 3: Import Shapefiles</h3>
-            <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
+            <h3>Step 3: </h3>
+            <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
+# 
+
+
+
+# Code block
+
+
 }
             </code></pre>
-            <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
+            <p></p>
 
-            <h3>Step 4: Rename and Match Names</h3>
-            <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
+            <h3>Step 4: </h3>
+            <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
+# 
+
+
+# Code block
 }
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
