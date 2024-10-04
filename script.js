@@ -30,9 +30,13 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
         `,
         shapefiles: `
-        
-            <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
-            <h3>Step by step approach</h3>
+            <div style="text-align: right;">
+                <button onclick="scrollToSection('stepByStep')">Step by step approach</button>
+                <button onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+            
+            <h2>A. Data Assembly and Management > A.1 Shapefiles</h2>
+            <h3 id="stepByStep">Step by step approach</h3>
             <p>This section explains the workflow of importing and managing shapefiles using R.</p>
 
             <h3>Step 1: Install Necessary Libraries</h3>
@@ -40,73 +44,14 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <pre><code>
 # Install necessary libraries
 install.packages(c("sf", "ggplot2", "dplyr"))
-
-            
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
+            </code></pre>
 
             <h3>Step 2: Load Necessary Libraries</h3>
-            <p>After installing the libraries, you need to load them into your R environment:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
-            </code></pre>
-            <p>This step makes the functions from these libraries available for use in your script.</p>
+            <!-- Continue the Step by Step content -->
 
-            <h3>Step 3: Import Shapefiles</h3>
-            <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
-}
-            </code></pre>
-            <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
-
-            <h3>Step 4: Rename and Match Names</h3>
-            <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
-}
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
-
-            <h3>Step 5: Link Shapefiles to Relevant Scales</h3>
-            <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
-}
-            </code></pre>
-            <p>This function performs a left join between the shapefile and a data frame containing scale information based on a specified linking column.</p>
-
-            <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
-            <p>Finally, you can visualize the shapefile using <code>ggplot2</code>. Here’s a function to do that:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
-        theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
-}
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
-
-            <h3>Full code</h3>
-            <pre id="codeBlock">
-                <code>
-
-# Install  necessary libraries
+            <h3 id="fullCode">Full code</h3>
+            <pre id="codeBlock"><code>
+# Install necessary libraries
 install.packages(c("sf", "ggplot2", "dplyr"))
 
 # Load necessary libraries
@@ -140,30 +85,33 @@ visualize_shapefile <- function(shapefile) {
         theme_minimal() +
         labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
 }
-
-
-                </code>
-                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
-            </pre>
-           
+            </code></pre>
         `,
         hf: `
-            <h2>A. Data Assembly and Management>A.2 Health Facilities</h2>
-            <h3>Step by step approach.</h3>
+            <!-- Health facilities content -->
         `,
         quartoExample: `
-            <h2>Quarto Example</h2>
-            <p>This is an example of Quarto.</p>
+            <!-- Quarto example content -->
         `,
     };
 
     document.getElementById('content').innerHTML = content[page];
 }
 
+// Scroll to the relevant section when buttons are clicked
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 // Load the overview content when the page opens
 window.onload = function() {
     loadContent('overview');
 };
+
+
 
 function copyCode() {
     const codeBlock = document.getElementById("codeBlock").innerText;
