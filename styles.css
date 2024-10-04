@@ -159,7 +159,7 @@ button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
     color: blue;                     /* Make the text blue */
-    text-decoration: none;       /* Underline text */
+    text-decoration: underline;       /* Underline text */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
