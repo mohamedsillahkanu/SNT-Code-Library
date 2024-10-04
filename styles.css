@@ -85,13 +85,13 @@ pre {
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
-    width: 800px;  
+    width: 600px;  
     
 }
 
 
 p {
-    width: 800px;                /* Set a fixed width for paragraphs */
+    width: 600px;                /* Set a fixed width for paragraphs */
     margin: 0;                   /* Optional: remove default margins for consistent spacing */
 }
 
