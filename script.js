@@ -1098,7 +1098,7 @@ Code block
         `,
 
 
-        reporting-rate: `
+        reportingrate: `
            
             <div class="fixed-buttons">
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
@@ -1232,7 +1232,7 @@ Code block
         `,
 
 
-        group-merge-df: `
+        groupmergedf: `
            
             <div class="fixed-buttons">
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
