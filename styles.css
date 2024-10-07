@@ -1,297 +1,45 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
+ul, #myUL {
+  list-style-type: none;
 }
 
-.container {
-    display: flex;
-    align-items: stretch;
-    height: 100vh;
+.tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-.sidebar {
-    width: 33.33%; 
-    background-color: white; /* Sidebar color */
-    padding: 10px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    overflow-y: auto; /* Add scroll functionality */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    max-height: 100vh; /* Restrict height to viewport height */
+.tree li {
+  margin: 0;
+  padding: 0 12px;
+  line-height: 1.5;
 }
 
-.sidebar-header {
-    text-align: center;
+.caret {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
 }
 
-.sidebar-logo {
-    width: 80%;
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
 }
 
-.search-bar {
-    width: 90%; /* Shortened the width of the search bar */
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.caret-down::before {
+  transform: rotate(90deg);
 }
 
-
-
-.menu {
-    margin: 10px 0;
+.nested {
+  display: none;
 }
 
-.submenu {
-    list-style-type: none;
-    padding: 0;
-    display: none;
+.active {
+  display: block;
 }
 
-.submenu li {
-    margin: 10px 0;
-}
-
-.menu-header {
-    cursor: pointer;
-    font-weight: bold;
-
-
-
-    display: flex;
-    justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
-    align-items: center; /* Vertically aligns the text and the indicator */
-    background-color: transparent;
-}
-
-
-.main-content {
-    
-    padding: 20px;
-    overflow-y: auto; /* Allows scrolling for main content */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    height: 100vh; /* Ensure full height for the main content */
-    width: 66.67%;
-    display: flex; /* use flexbox */
-}
-
-/* Style for the code block */
-pre {
-    background-color: #171717;
-    padding: 10px;
-    overflow: auto;
-    position: relative; /* Add position relative for button positioning */
-    width: 700px;
-    color: white;
-    font-weight: bold;
-    
-    
-    
-}
-
-
-/* Apply to all paragraphs before or after the <pre> block */
-pre + p,
-pre ~ p,
-p + pre,
-p ~ pre {
-    width: 700px;
-    margin:20px 0;
-}
-
-/* Apply to all headings before or after the <pre> block */
-pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
-pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
-h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
-h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
-    width: 700px;
-    margin:20px 0;
-}
-
-.copy-button {
-    position: absolute; /* Position button at the top right */
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: none;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button {
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.parent{
-    height: 100vh;
-
-}
-
-.sidebar, .main-content {
-    height:100%;
-}
-
-.menu-link {
-    color: blue;
-    text-decoration: none; /* This removes the underline */    
-}
-
-
-
-.menu-link.selected {
-    color: red; /* Color when selected */
-}
-
-
-.menu-header {
-    cursor: pointer; /* Change cursor to pointer for better UX */
-}
-
-.menu-indicator {
-    margin-right: 5px; /* Space between indicator and text */
-}
-
-
-
-.menu-indicator {
-    /* You can customize the indicator's styles here */
-    font-weight: bold; /* Make the indicator bold (optional) */
-    color: black;
-}
-
-
-.menu-header .menu-indicator {
-    font-size: 18px;
-    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
-}
-
-
-
-
-
-
-.text-button {
-    background: none;                /* Remove background */
-    border: none;                    /* Remove border */
-    color: blue;                     /* Make the text blue */
-    text-decoration: underline;       /* Underline text */
-    cursor: pointer;                 /* Show pointer on hover */
-    font-size: 16px;                 /* Adjust font size */
-    padding: 0;                      /* Remove default padding */
-    margin-right: 10px;              /* Space between buttons */
-}
-
-.text-button:last-child {
-    margin-right: 0;                 /* No margin on the last button */
-}
-
-.text-button:hover {
-    color: darkblue;                 /* Darker shade when hovering */
-    text-decoration: none;           /* Remove underline on hover */
-}
-
-.fixed-buttons {
-
-    display: flex;         /* Use flexbox layout */
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px;  
-    position: fixed;                 /* Keep buttons fixed */
-    top: 10px;                       /* Adjust as needed */
-    right: 20px;                     /* Adjust as needed */
-    z-index: 1000;                   /* Ensure buttons are on top */
-}
-    
-
-
-.menu-header .folder-indicator {
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-.sidebar {
-    width: 300px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-}
-
-.folder {
-    margin-bottom: 10px;
-}
-
-.menu-header {
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-.menu-header .folder-indicator {
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-.submenu {
-    display: none;
-    padding-left: 20px;
-}
-
-.submenu li {
-    list-style: none;
-    margin: 5px 0;
-}
-
-
-
-
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-}
-
-.sidebar {
-    width: 300px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-}
-
-.folder {
-    margin-bottom: 10px;
-}
-
-.menu-header {
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-.menu-header .folder-indicator {
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-.submenu {
-    display: none;
-    padding-left: 20px;
-}
-
-.submenu li {
-    list-style: none;
-    margin: 5px 0;
+img {
+  vertical-align: middle;
+  margin-right: 8px;
 }
