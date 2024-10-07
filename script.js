@@ -3887,5 +3887,19 @@ function toggleMenu(element) {
 }
 
 
+// Function to toggle folder expansion
+function toggleMenu(element) {
+    const submenu = element.nextElementSibling;
+    const indicator = element.querySelector('.folder-indicator');
+
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+        submenu.style.display = "block";  // Expand folder
+        indicator.textContent = "-";      // Change to "-"
+    } else {
+        submenu.style.display = "none";   // Collapse folder
+        indicator.textContent = "+";      // Change back to "+"
+    }
+}
+
 
 
