@@ -3872,5 +3872,20 @@ function toggleMenu(menuHeader) {
 
 
 
+// Function to toggle menu
+function toggleMenu(element) {
+    const submenu = element.nextElementSibling;
+    const indicator = element.querySelector('.folder-indicator');
+
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+        submenu.style.display = "block";  // Expand
+        indicator.textContent = "-";      // Change to "-"
+    } else {
+        submenu.style.display = "none";   // Collapse
+        indicator.textContent = "+";      // Change back to "+"
+    }
+}
+
+
 
 
