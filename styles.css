@@ -250,3 +250,48 @@ button {
     margin: 5px 0;
 }
 
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+.folder {
+    margin-bottom: 10px;
+}
+
+.menu-header {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-header .folder-indicator {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu li {
+    list-style: none;
+    margin: 5px 0;
+}
