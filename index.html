@@ -3,80 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Library for Subnational Tailoring</title>
+    <title>Collapsible Folder Menu</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
-    <link rel="icon" href="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" type="image/png">
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
+                <h2 class="sidebar-title">Code Library</h2>
+            </div>
 
-<div class="container">
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
-            <h2 class="sidebar-title">Code Library for Subnational Tailoring</h2>
+            <!-- Menu with collapsible folders -->
+            <div class="menu">
+                <p class="menu-header" onclick="toggleMenu(this)">
+                    <span class="menu-text">A. Data Assembly and Management</span>
+                    <span class="folder-indicator">+</span>
+                </p>
+                <ul class="submenu">
+                    <li><a href="#A.1">A.1 Shapefiles</a></li>
+                    <li><a href="#A.2">A.2 Health Facilities</a></li>
+                    <li><a href="#A.3">A.3 Routine Case Data from DHIS2</a></li>
+                    <li><a href="#A.4">A.4 DHS Data</a></li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <p class="menu-header" onclick="toggleMenu(this)">
+                    <span class="menu-text">B. Epidemiological Stratification</span>
+                    <span class="folder-indicator">+</span>
+                </p>
+                <ul class="submenu">
+                    <li><a href="#B.1">B.1 Reporting Rate</a></li>
+                    <li><a href="#B.2">B.2 Group and Merge Data</a></li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <p class="menu-header" onclick="toggleMenu(this)">
+                    <span class="menu-text">C. Stratification of Other Determinants</span>
+                    <span class="folder-indicator">+</span>
+                </p>
+                <ul class="submenu">
+                    <li><a href="#C.1">C.1 Access to Care</a></li>
+                    <li><a href="#C.2">C.2 Seasonality</a></li>
+                </ul>
+            </div>
         </div>
 
-        <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
-
-        <div class="menu">
-            <p class="menu-header">
-                <a href="https://numalariamodeling.github.io/snt-code-library-french-version/" class="menu-link">
-                    <span class="menu-text">French</span>
-                </a>
-            </p>
-        </div>
-
-        <div class="menu">
-            <p class="menu-header">
-                <a href="#Overview" class="menu-link" onclick="loadContent('overview')">
-                    <span class="menu-text">Overview</span>
-                </a>
-            </p>
-        </div>
-
-        <!-- Example Menu with Folder Icon -->
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <i class="fas fa-folder"></i> <!-- Folder icon added here -->
-                <span class="menu-text">A. Data Assembly and Management</span>
-                <span class="menu-indicator">></span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#A.1 Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a></li>
-                <li><a href="#A.2 Health Facilities" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li> 
-                <li><a href="#A.3 Routine Case Data from DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
-                <li><a href="#A.4 DHS Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
-                <li><a href="#A.5 Population Data" class="menu-link" onclick="selectLink(this); loadContent('pop')"><span class="link-text">A.5 Population Data</span></a></li>
-                <li><a href="#A.6 Climate Data" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li> 
-                <li><a href="#A.7 LMIS Data" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
-                <li><a href="#A.8 Modeled Data" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li> 
-            </ul>
-        </div>
-
-        <!-- Repeat the same structure for other sections -->
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <i class="fas fa-folder"></i> <!-- Folder icon added here -->
-                <span class="menu-text">B. Epidemiological Stratification</span>
-                <span class="menu-indicator">></span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#B.1 Reporting Rate per Variable" class="menu-link" onclick="selectLink(this); loadContent('reportingrate')"><span class="link-text">B.1 Reporting Rate per Variable</span></a></li> 
-                <li><a href="#B.2 Group and Merge Data Frame" class="menu-link" onclick="selectLink(this); loadContent('groupmergedf')"><span class="link-text">B.2 Group and Merge Data Frame</span></a></li> 
-                <li><a href="#B.3 Crude Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('crudeincidence')"><span class="link-text">B.3 Crude Incidence by Year</span></a></li> 
-                <li><a href="#B.4 Adjusted Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('adjustedincidence')"><span class="link-text">B.4 Adjusted Incidence by Year</span></a></li> 
-            </ul>
-        </div>
-
-    </div>
-    <div class="main-content">
-        <div id="content">
-            <!-- Overview content will be loaded here -->
+        <div class="main-content">
+            <div id="content">
+                <!-- Overview content will be loaded here -->
+            </div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script> <!-- Link to the JavaScript file -->
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>
