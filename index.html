@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collapsible Folder Menu</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Collapsible Folder Structure</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="sidebar-header">
-                <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
-                <h2 class="sidebar-title">Code Library</h2>
-            </div>
-
-            <!-- Menu with collapsible folders -->
-            <div class="menu">
+            <!-- Root Folder -->
+            <div class="folder">
                 <p class="menu-header" onclick="toggleMenu(this)">
-                    <span class="menu-text">A. Data Assembly and Management</span>
                     <span class="folder-indicator">+</span>
+                    Framework
                 </p>
                 <ul class="submenu">
-                    <li><a href="#A.1">A.1 Shapefiles</a></li>
-                    <li><a href="#A.2">A.2 Health Facilities</a></li>
-                    <li><a href="#A.3">A.3 Routine Case Data from DHIS2</a></li>
-                    <li><a href="#A.4">A.4 DHS Data</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <p class="menu-header" onclick="toggleMenu(this)">
-                    <span class="menu-text">B. Epidemiological Stratification</span>
-                    <span class="folder-indicator">+</span>
-                </p>
-                <ul class="submenu">
-                    <li><a href="#B.1">B.1 Reporting Rate</a></li>
-                    <li><a href="#B.2">B.2 Group and Merge Data</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <p class="menu-header" onclick="toggleMenu(this)">
-                    <span class="menu-text">C. Stratification of Other Determinants</span>
-                    <span class="folder-indicator">+</span>
-                </p>
-                <ul class="submenu">
-                    <li><a href="#C.1">C.1 Access to Care</a></li>
-                    <li><a href="#C.2">C.2 Seasonality</a></li>
+                    <!-- Subfolder 1 -->
+                    <li class="folder">
+                        <p class="menu-header" onclick="toggleMenu(this)">
+                            <span class="folder-indicator">+</span>
+                            features
+                        </p>
+                        <ul class="submenu">
+                            <li class="folder">
+                                <p class="menu-header" onclick="toggleMenu(this)">
+                                    <span class="folder-indicator">+</span>
+                                    layout
+                                </p>
+                            </li>
+                            <li class="folder">
+                                <p class="menu-header" onclick="toggleMenu(this)">
+                                    <span class="folder-indicator">+</span>
+                                    lookandfeel
+                                </p>
+                            </li>
+                            <li class="folder">
+                                <p class="menu-header" onclick="toggleMenu(this)">
+                                    <span class="folder-indicator">+</span>
+                                    menu
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Subfolder 2 -->
+                    <li class="folder">
+                        <p class="menu-header" onclick="toggleMenu(this)">
+                            <span class="folder-indicator">+</span>
+                            markup
+                        </p>
+                        <ul class="submenu">
+                            <li class="folder">
+                                <p class="menu-header" onclick="toggleMenu(this)">
+                                    <span class="folder-indicator">+</span>
+                                    theme
+                                </p>
+                                <ul class="submenu">
+                                    <li><span>alert.gif</span></li>
+                                    <li><span>alert.theme</span></li>
+                                    <li><span>greyout.theme</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <div class="main-content">
-            <div id="content">
-                <!-- Overview content will be loaded here -->
-            </div>
-        </div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
