@@ -6,6 +6,8 @@
     <title>Code Library for Subnational Tailoring</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
     <link rel="icon" href="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" type="image/png">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <div class="container">
@@ -14,8 +16,6 @@
             <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
             <h2 class="sidebar-title">Code Library for Subnational Tailoring</h2>
         </div>
-
-        
 
         <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
 
@@ -33,11 +33,12 @@
                     <span class="menu-text">Overview</span>
                 </a>
             </p>
-
         </div>
 
+        <!-- Example Menu with Folder Icon -->
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
+                <i class="fas fa-folder"></i> <!-- Folder icon added here -->
                 <span class="menu-text">A. Data Assembly and Management</span>
                 <span class="menu-indicator">></span>
             </p>
@@ -50,12 +51,13 @@
                 <li><a href="#A.6 Climate Data" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li> 
                 <li><a href="#A.7 LMIS Data" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
                 <li><a href="#A.8 Modeled Data" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li> 
-                
             </ul>
         </div>
 
+        <!-- Repeat the same structure for other sections -->
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
+                <i class="fas fa-folder"></i> <!-- Folder icon added here -->
                 <span class="menu-text">B. Epidemiological Stratification</span>
                 <span class="menu-indicator">></span>
             </p>
@@ -64,43 +66,9 @@
                 <li><a href="#B.2 Group and Merge Data Frame" class="menu-link" onclick="selectLink(this); loadContent('groupmergedf')"><span class="link-text">B.2 Group and Merge Data Frame</span></a></li> 
                 <li><a href="#B.3 Crude Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('crudeincidence')"><span class="link-text">B.3 Crude Incidence by Year</span></a></li> 
                 <li><a href="#B.4 Adjusted Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('adjustedincidence')"><span class="link-text">B.4 Adjusted Incidence by Year</span></a></li> 
-                <li><a href="#B.5 Option to Select Incidence" class="menu-link" onclick="selectLink(this); loadContent('optionincidence')"><span class="link-text">B.5 Option to Select Incidence</span></a></li> 
-                <li><a href="#B.6 Risk Categorization" class="menu-link" onclick="selectLink(this); loadContent('riskcategorization')"><span class="link-text">B.6 Risk Categorization</span></a></li> 
             </ul>
         </div>
 
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">C. Stratification of Other Determinants</span>
-                <span class="menu-indicator">></span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#C.1 Access to Care" class="menu-link" onclick="selectLink(this); loadContent('accesstocare')"><span class="link-text">C.1 Access to Care</span></a></li> 
-                <li><a href="#C.2 Seasonality" class="menu-link" onclick="selectLink(this); loadContent('seasonality')"><span class="link-text">C.2 Seasonality</span></a></li> 
-            </ul>
-        </div>
-
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">D. Review of Past Interventions</span>
-                <span class="menu-indicator">></span>
-            </p>
-            <ul class="submenu">
-                
-                <li><a href="#D.1 EPI Coverage and Dropout Rate" class="menu-link" onclick="selectLink(this); loadContent('epi')"><span class="link-text">D.1 EPI Coverage and Dropout Rate</span></a></li> 
-                <li><a href="#D.2 IPTp and ANC Coverage" class="menu-link" onclick="selectLink(this); loadContent('iptp')"><span class="link-text">D.2 IPTp and ANC Coverage</span></a></li>    
-                <li><a href="#D.3 PMC (Perennial Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pmc')"><span class="link-text">D.3 PMC (Perennial Malaria Chemoprevention)</span></a></li>  
-                <li><a href="#D.4 SMC (Seasonal Malaria Chemoprevention" class="menu-link" onclick="selectLink(this); loadContent('smc')"><span class="link-text">D.4 SMC (Seasonal Malaria Chemoprevention</span></a></li> 
-                <li><a href="#D.5 Malaria Vaccine" class="menu-link" onclick="selectLink(this); loadContent('vaccine')"><span class="link-text">D.5 Malaria Vaccine</span></a></li> 
-                <li><a href="#D.6 ITN Coverage, Ownership, Access, Usage, and Type" class="menu-link" onclick="selectLink(this); loadContent('itn')"><span class="link-text">D.6 ITN Coverage, Ownership, Access, Usage, and Type</span></a></li> 
-                <li><a href="#D.7 IRS (Indoor Residual Spraying)" class="menu-link" onclick="selectLink(this); loadContent('irs')"><span class="link-text">D.7 IRS (Indoor Residual Spraying)</span></a></li> 
-                <li><a href="#D.8 MDA (Mass Drug Administration)" class="menu-link" onclick="selectLink(this); loadContent('mda')"><span class="link-text">D.8 MDA (Mass Drug Administration)</span></a></li> 
-                <li><a href="#D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)" class="menu-link" onclick="selectLink(this); loadContent('iptsc')"><span class="link-text">D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)</span></a></li> 
-                <li><a href="#D.10 PDMC (Post-discharge Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pdmc')"><span class="link-text">D.10 PDMC (Post-discharge Malaria Chemoprevention)</span></a></li> 
-                <li><a href="#D.11 LSM (Larval Source Management)" class="menu-link" onclick="selectLink(this); loadContent('lsm')"><span class="link-text">D.11 LSM (Larval Source Management)</span></a></li> 
-                <li><a href="#D.12 Assessing the Quality of Case Management" class="menu-link" onclick="selectLink(this); loadContent('assessingqualman')"><span class="link-text">D.12 Assessing the Quality of Case Management</span></a></li> 
-            </ul>
-        </div>
     </div>
     <div class="main-content">
         <div id="content">
@@ -111,4 +79,4 @@
 
 <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
-</html>   
+</html>
