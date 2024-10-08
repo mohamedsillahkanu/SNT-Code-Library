@@ -1,45 +1,61 @@
-ul, #myUL {
-  list-style-type: none;
+body {
+    font-family: Arial, sans-serif;
 }
 
-.tree ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.menu {
+    margin: 20px;
 }
 
-.tree li {
-  margin: 0;
-  padding: 0 12px;
-  line-height: 1.5;
+.menu-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.caret {
-  cursor: pointer;
-  user-select: none;
-  font-weight: bold;
+.plus-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #ffffff;
 }
 
-.caret::before {
-  content: "\25B6";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
+.menu-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
-.caret-down::before {
-  transform: rotate(90deg);
+.menu-indicator {
+    margin-left: auto;
 }
 
-.nested {
-  display: none;
+.menu-content {
+    display: none;
+    padding-left: 20px;
 }
 
-.active {
-  display: block;
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-img {
-  vertical-align: middle;
-  margin-right: 8px;
+.menu-content li {
+    margin: 5px 0;
+}
+
+.active .menu-content {
+    display: block;
 }
