@@ -3,27 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Example</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>snt english</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <link rel="icon" href="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" type="image/png">
 </head>
 <body>
-    <div class="menu">
-        <p class="menu-header" onclick="toggleMenu(this)">
-            <span class="menu-text">
-                <span class="plus-box">+</span>
-                <img src="icons/folder-icon.png" alt="folder icon" class="menu-icon"> A. Assemblage et Gestion des Données
-            </span>
-            <span class="menu-indicator">></span>
-        </p>
-        <div class="menu-content">
-            <ul>
-                <li>Option 1</li>
-                <li>Option 2</li>
-                <li>Option 3</li>
-            </ul>
+
+<div class="header"> <!-- New header section -->
+    <h1 class="header-title">Code Library for Subnational Tailoring</h1>
+    
+    <div class="header-options">
+        <div class="dropdown">
+            <label for="code-preference">Code Preference:</label>
+            <select id="code-preference" name="code-preference">
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="stata">Stata</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="language">Language:</label>
+            <select id="language" name="language">
+                <option value="english">English</option>
+                <option value="french">French</option>
+            </select>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." maxlength="20">
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<div class="container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
+            <h2 class="sidebar-title">Code Library for Subnational Tailoring</h2>
+        </div>
+
+        <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
+
+        <div class="menu">
+            <p class="menu-header">
+                <a href="https://numalariamodeling.github.io/snt-code-library-french-version/" class="menu-link">
+                    <span class="menu-text">View site in French</span>
+                </a>
+            </p>
+        </div>
+
+        <div class="menu">
+            <p class="menu-header">
+                <a href="#Overview" class="menu-link" onclick="loadContent('overview')">
+                    <span class="menu-text">Overview</span>
+                </a>
+            </p>
+        </div>
+
+        <!-- Menu items... -->
+    </div>
+
+    <div class="main-content">
+        <div id="content">
+            <!-- Overview content will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
