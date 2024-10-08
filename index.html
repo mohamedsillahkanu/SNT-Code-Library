@@ -3,76 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Folder Structure with Icons</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Menu Example</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="menu">
+        <p class="menu-header" onclick="toggleMenu(this)">
+            <span class="menu-text">
+                <span class="plus-box">+</span>
+                <img src="icons/folder-icon.png" alt="folder icon" class="menu-icon"> A. Assemblage et Gestion des Données
+            </span>
+            <span class="menu-indicator">></span>
+        </p>
+        <div class="menu-content">
+            <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+    </div>
 
-<ul class="tree">
-    <li><span class="caret">Framework</span>
-        <ul class="nested">
-            <li><span class="caret">features</span>
-                <ul class="nested">
-                    <li>markup
-                        <ul>
-                            <li>layout</li>
-                            <li>lookandfeel</li>
-                            <li>menu</li>
-                            <li>shell</li>
-                            <li><span class="caret">theme</span>
-                                <ul class="nested">
-                                    <li><img src="icons/alert.gif" alt="alert icon"> alert.gif</li>
-                                    <li><img src="icons/alert.theme" alt="alert theme icon"> alert.theme</li>
-                                    <li><img src="icons/greyout.theme" alt="greyout theme icon"> greyout.theme</li>
-                                    <li><img src="icons/highlight.theme" alt="highlight theme icon"> highlight.theme</li>
-                                    <li><img src="icons/plain.gif" alt="plain icon"> plain.gif</li>
-                                    <li><img src="icons/plain.theme" alt="plain theme icon"> plain.theme</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><span class="caret">skeletons</span>
-                <ul class="nested">
-                    <li>classic
-                        <ul>
-                            <li><span class="caret">default</span>
-                                <ul class="nested">
-                                    <li><span class="caret">alert</span>
-                                        <ul class="nested">
-                                            <li><span class="caret">css</span>
-                                                <ul class="nested">
-                                                    <li><img src="icons/window-alert.css" alt="css icon"> window-alert.css</li>
-                                                </ul>
-                                            </li>
-                                            <li><span class="caret">images</span>
-                                                <ul class="nested">
-                                                    <li><img src="icons/titlebar-button-delete.gif" alt="delete icon"> titlebar-button-delete.gif</li>
-                                                    <li><img src="icons/titlebar-button-edit.gif" alt="edit icon"> titlebar-button-edit.gif</li>
-                                                    <li><img src="icons/titlebar-button-exit.gif" alt="exit icon"> titlebar-button-exit.gif</li>
-                                                    <li><img src="icons/titlebar-button-help.gif" alt="help icon"> titlebar-button-help.gif</li>
-                                                    <li><img src="icons/titlebar-button-help-exit.gif" alt="help-exit icon"> titlebar-button-help-exit.gif</li>
-                                                    <li><img src="icons/titlebar-button-maximize.gif" alt="maximize icon"> titlebar-button-maximize.gif</li>
-                                                    <li><img src="icons/titlebar-button-minimize.gif" alt="minimize icon"> titlebar-button-minimize.gif</li>
-                                                    <li><img src="icons/titlebar-button-source.gif" alt="source icon"> titlebar-button-source.gif</li>
-                                                    <li><img src="icons/titlebar-button-source-exit.gif" alt="source-exit icon"> titlebar-button-source-exit.gif</li>
-                                                    <li><img src="icons/titlebar-button-unmaximize.gif" alt="unmaximize icon"> titlebar-button-unmaximize.gif</li>
-                                                    <li><img src="icons/window-icon.gif" alt="window icon"> window-icon.gif</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
