@@ -40,7 +40,7 @@ body {
 }
 
 .search-bar {
-    width: 100%; /* Full width within the container */
+    width: 50%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
