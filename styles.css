@@ -14,7 +14,7 @@ body {
 }
 
 .sidebar {
-    width: 25%; /* Sidebar takes 30% of the page */
+    width: 25%; /* Sidebar takes 25% of the page */
     background-color: white; /* Sidebar color */
     padding: 20px;
     display: flex;
@@ -40,7 +40,7 @@ body {
 }
 
 .search-bar {
-    width: 50%; /* Full width within the container */
+    width: 100%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -95,7 +95,8 @@ body {
     flex-direction: row;
     width: 70%; /* This contains both the main content and the empty space on the right */
     box-sizing: border-box;
-    padding-left: 10%; /* Leave 10% space between the sidebar and main content */
+    padding-left: 0; /* No padding directly here to allow better control inside the main content */
+    gap: 5%; /* Leave a 5% space between the sidebar and the main content */
 }
 
 .main-content {
@@ -108,6 +109,7 @@ body {
     box-sizing: border-box; /* Ensure padding is included in the width */
     height: 100%;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
+    margin-left: 5%; /* Add 5% space between the sidebar and the main content */
 }
 
 .main-content::-webkit-scrollbar {
@@ -121,11 +123,6 @@ body {
 }
 
 .right-empty-space {
-    width: 5%; /* Empty space on the right of the main content */
-}
-
-
-.left-empty-space {
     width: 5%; /* Empty space on the right of the main content */
 }
 
@@ -212,7 +209,7 @@ button {
     }
     
     .sidebar {
-        width: 30%;
+        width: 25%;
     }
     
     .main-content {
