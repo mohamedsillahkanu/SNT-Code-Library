@@ -11,7 +11,6 @@ body {
 }
 
 
-
 .sidebar {
     width: 33.33%; 
     background-color: white; /* Sidebar color */
@@ -19,9 +18,15 @@ body {
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
-    overflow-y: hidden; /* Add scroll functionality */
+    overflow-y: scroll; /* Make the sidebar scrollable */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     max-height: 100vh; /* Restrict height to viewport height */
+    box-sizing: border-box; /* Ensure padding doesn't affect max-height */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
 .sidebar-header {
