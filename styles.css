@@ -81,12 +81,12 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: #E6E6E6;
-    padding: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
     width: 700px;
-    font-weight: bold;   
+    color: black;    
 }
 
 
@@ -96,7 +96,7 @@ pre ~ p,
 p + pre,
 p ~ pre {
     width: 700px;
-    margin:20px 0;
+    margin:10px 0;
 }
 
 /* Apply to all headings before or after the <pre> block */
@@ -105,7 +105,7 @@ pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
 h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
 h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     width: 700px;
-    margin:20px 0;
+    margin:10px 0;
 }
 
 .copy-button {
@@ -113,11 +113,12 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #E6E6E6;
+    background-color: white;
     color: black;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
+    border: 2px solid black; /* White border around the menu item */
+    
 }
 
 button {
@@ -137,12 +138,17 @@ button {
 .menu-link {
     color: black;
     text-decoration: none; /* This removes the underline */    
+    
 }
 
 
-
 .menu-link.selected {
-    color: red; /* Color when selected */
+    color: black; /* Color when selected */
+    background-color: #F2F2F3; /* White background for the rectangular bar */
+    border: 2px solid black; /* White border around the menu item */
+    padding: 5px 10px; /* Padding to make the border look like a rectangular bar */
+    border-radius: 4px; /* Optional: Rounded corners */
+    
 }
 
 
@@ -192,7 +198,7 @@ button {
 }
 
 .text-button:hover {
-    color: red;                 /* Darker shade when hovering */
+    color: darkblue;                 /* Darker shade when hovering */
     text-decoration: none;           /* Remove underline on hover */
 }
 
