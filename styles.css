@@ -124,6 +124,11 @@ body {
     width: 5%; /* Empty space on the right of the main content */
 }
 
+
+.left-empty-space {
+    width: 5%; /* Empty space on the right of the main content */
+}
+
 pre {
     background-color: #f0f0f0;
     padding: 10px;
