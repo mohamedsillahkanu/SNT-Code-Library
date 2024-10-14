@@ -51,8 +51,10 @@ body {
     underline: none;
 }
 
-.sidebar-button:hover {
-    background-color: #00509e; /* Slightly lighter blue on hover */
+
+.sidebar-button.active {
+    background-color: #47B5FF; /* Highlighted color for active button */
+    color: white; /* Ensure the text is still visible */
 }
 
 .sidebar-search-container {
