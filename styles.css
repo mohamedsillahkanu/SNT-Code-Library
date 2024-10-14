@@ -13,7 +13,7 @@ body {
 }
 
 .sidebar {
-    width: 25%; /* Set the width relatively to fit better on larger screens */
+    width: 30%; /* Set the width relatively to fit better on larger screens */
     min-width: 250px; /* Ensure a minimum width for the sidebar */
     max-width: 400px; /* Ensure the sidebar doesn't grow too large */
     background-color: white; /* Sidebar color */
@@ -93,14 +93,16 @@ body {
 
 .main-content {
     flex: 1; /* Make the main content take the remaining space */
-    padding: 20px;
-    overflow-y: auto; /* Allows scrolling for main content */
+    padding: 40px;
+    overflow-y: scroll; /* Allows scrolling for main content */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     max-width: 1200px; /* Limit the maximum width for readability */
     margin-left: 10px; /* Add a 10-pixel gap between sidebar and main content */
     margin-right: auto; /* Center the main content in its container */
     display: flex; /* Use flexbox */
     height: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect max-height */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
 pre {
