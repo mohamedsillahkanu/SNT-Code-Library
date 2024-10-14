@@ -2,17 +2,20 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
+    height: 100vh; /* Set the body to take up the full viewport height */
+    overflow: hidden; /* Prevent scrolling on body */
 }
 
 .container {
     display: flex;
-    align-items: stretch;
-    height: 100vh;
+    flex: 1; /* Make container flexible */
+    height: 100%; /* Ensure full height */
 }
 
-
 .sidebar {
-    width: 33.33%; 
+    width: 25%; /* Set the width relatively to fit better on larger screens */
+    min-width: 250px; /* Ensure a minimum width for the sidebar */
+    max-width: 400px; /* Ensure the sidebar doesn't grow too large */
     background-color: white; /* Sidebar color */
     padding: 10px;
     display: flex;
@@ -20,7 +23,6 @@ body {
     justify-content: flex-start; 
     overflow-y: scroll; /* Make the sidebar scrollable */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    max-height: 100vh; /* Restrict height to viewport height */
     box-sizing: border-box; /* Ensure padding doesn't affect max-height */
     scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
@@ -45,8 +47,6 @@ body {
     border-radius: 4px;
 }
 
-
-
 .menu {
     margin: 10px 0;
 }
@@ -55,6 +55,7 @@ body {
     list-style-type: none;
     padding: 0;
     display: none;
+    padding-left: 20px; /* Indentation for submenu items */
 }
 
 .submenu li {
@@ -62,55 +63,52 @@ body {
 }
 
 .menu-header {
-    cursor: pointer;
+    cursor: pointer; /* Change cursor to pointer for better UX */
     font-weight: bold;
-
-
-
     display: flex;
     justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
     align-items: center; /* Vertically aligns the text and the indicator */
     background-color: transparent;
 }
 
+.menu-indicator {
+    font-size: 18px;
+    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
+    font-weight: bold; /* Make the indicator bold (optional) */
+    color: black;
+}
+
+.menu-link {
+    color: black;
+    text-decoration: none; /* This removes the underline */
+}
+
+.menu-link.selected {
+    color: black; /* Color when selected */
+    background-color: #F2F2F3; /* White background for the rectangular bar */
+    border: 2px solid black; /* White border around the menu item */
+    padding: 5px 10px; /* Padding to make the border look like a rectangular bar */
+    border-radius: 4px; /* Optional: Rounded corners */
+}
 
 .main-content {
-    
+    flex: 1; /* Make the main content take the remaining space */
     padding: 20px;
     overflow-y: auto; /* Allows scrolling for main content */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    height: 100vh; /* Ensure full height for the main content */
-    width: 66.67%;
-    display: flex; /* use flexbox */
+    max-width: 1200px; /* Limit the maximum width for readability */
+    margin: 0 auto; /* Center the main content in its container */
+    display: flex; /* Use flexbox */
+    height: 100%;
 }
 
-/* Style for the code block */
 pre {
     background-color: #f0f0f0;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
-    width: 700px;
+    max-width: 100%; /* Ensure pre elements do not overflow */
     color: black;    
-}
-
-
-/* Apply to all paragraphs before or after the <pre> block */
-pre + p,
-pre ~ p,
-p + pre,
-p ~ pre {
-    width: 700px;
-    margin:10px 0;
-}
-
-/* Apply to all headings before or after the <pre> block */
-pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
-pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
-h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
-h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
-    width: 700px;
-    margin:10px 0;
 }
 
 .copy-button {
@@ -122,93 +120,24 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     color: black;
     border-radius: 4px;
     cursor: pointer;
-    border: 2px solid black; /* White border around the menu item */
-    
+    border: 2px solid black;
 }
-
-button {
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.parent{
-    height: 100vh;
-
-}
-
-.sidebar, .main-content {
-    height:100%;
-}
-
-.menu-link {
-    color: black;
-    text-decoration: none; /* This removes the underline */    
-    
-}
-
-
-.menu-link.selected {
-    color: black; /* Color when selected */
-    background-color: #F2F2F3; /* White background for the rectangular bar */
-    border: 2px solid black; /* White border around the menu item */
-    padding: 5px 10px; /* Padding to make the border look like a rectangular bar */
-    border-radius: 4px; /* Optional: Rounded corners */
-    
-}
-
-
-.menu-header {
-    cursor: pointer; /* Change cursor to pointer for better UX */
-}
-
-.menu-indicator {
-    margin-right: 5px; /* Space between indicator and text */
-}
-
-.submenu {
-    padding-left: 20px; /* Indentation for submenu items */
-}
-
-
-.menu-indicator {
-    /* You can customize the indicator's styles here */
-    font-weight: bold; /* Make the indicator bold (optional) */
-    color: black;
-}
-
-
-.menu-header .menu-indicator {
-    font-size: 18px;
-    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
-}
-
-
-
-
-
 
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: black;                     /* Make the text blue */
-    text-decoration: none;       /* Underline text */
+    color: black;                    /* Make the text black */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
     margin-right: 10px;              /* Space between buttons */
 }
 
-.text-button:last-child {
-    margin-right: 0;                 /* No margin on the last button */
-}
-
 .text-button:hover {
     color: darkblue;                 /* Darker shade when hovering */
-    text-decoration: none;           /* Remove underline on hover */
 }
 
 .fixed-buttons {
-
     display: flex;         /* Use flexbox layout */
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px;  
@@ -217,4 +146,59 @@ button {
     right: 20px;                     /* Adjust as needed */
     z-index: 1000;                   /* Ensure buttons are on top */
 }
+
+/* Apply to all paragraphs before or after the <pre> block */
+pre + p,
+pre ~ p,
+p + pre,
+p ~ pre {
+    width: 700px;
+    margin: 10px 0;
+}
+
+/* Apply to all headings before or after the <pre> block */
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
+pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
+h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
+    width: 700px;
+    margin: 10px 0;
+}
+
+button {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.parent {
+    height: 100vh;
+}
+
+.sidebar, .main-content {
+    height: 100%;
+}
+
+/* Add media queries for better responsiveness */
+@media (min-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
     
+    .sidebar {
+        width: 20%;
+    }
+    
+    .main-content {
+        max-width: 1400px; /* Increase the maximum width on larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 35%;
+    }
+    
+    .main-content {
+        padding: 10px;
+    }
+}
