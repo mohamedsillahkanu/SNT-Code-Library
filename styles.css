@@ -14,7 +14,7 @@ body {
 }
 
 .sidebar {
-    width: 25%; /* Sidebar takes 30% of the page */
+    width: 30%; /* Sidebar takes 30% of the page */
     background-color: white; /* Sidebar color */
     padding: 10px;
     display: flex;
@@ -30,31 +30,26 @@ body {
     display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
-/* Sidebar content takes 30% of the width */
-.sidebar-content {
-    flex: 0 0 25%;
-    margin-bottom: 20px; /* Add spacing between elements */
-}
-
-/* Sidebar elements styling */
-.sidebar-header,
-.search-bar,
-.menu,
-.submenu {
-    width: 100%; /* Take up 100% of the 30% defined for the sidebar content */
-    box-sizing: border-box;
-}
-
-.sidebar-header {
-    text-align: center;
+/* Search bar and related elements take up 25% of the sidebar */
+.sidebar-search-container {
+    flex: 0 0 25%; /* Set to take 25% of sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add spacing below the container */
 }
 
 .search-bar {
-    width: 100%; /* Full width of the sidebar content */
+    width: 100%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+/* Sidebar content styling */
+.sidebar-content {
+    flex: 0 0 75%; /* The rest of the sidebar (75%) is for other elements */
 }
 
 .menu {
@@ -106,7 +101,7 @@ body {
     flex-direction: row;
     width: 70%; /* This contains both the main content and the empty space on the right */
     box-sizing: border-box;
-    padding-left: 5%; /* Leave 5% space between the sidebar and main content */
+    padding-left: 10%; /* Leave 10% space between the sidebar and main content */
 }
 
 .main-content {
