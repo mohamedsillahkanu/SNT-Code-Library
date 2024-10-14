@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Hubot Sans', sans-serif; /* Changed to Hubot Sans */
     margin: 0;
     display: flex;
     height: 100vh; /* Set the body to take up the full viewport height */
@@ -97,7 +97,8 @@ body {
     overflow-y: auto; /* Allows scrolling for main content */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     max-width: 1200px; /* Limit the maximum width for readability */
-    margin: 0 auto; /* Center the main content in its container */
+    margin-left: 10px; /* Add a 10-pixel gap between sidebar and main content */
+    margin-right: auto; /* Center the main content in its container */
     display: flex; /* Use flexbox */
     height: 100%;
 }
