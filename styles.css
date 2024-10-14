@@ -14,9 +14,9 @@ body {
 }
 
 .sidebar {
-    width: 30%; /* Sidebar takes 30% of the page */
+    width: 25%; /* Sidebar takes 30% of the page */
     background-color: white; /* Sidebar color */
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
@@ -69,7 +69,6 @@ body {
 
 .menu-header {
     cursor: pointer; /* Change cursor to pointer for better UX */
-    font-weight: bold;
     display: flex;
     justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
     align-items: center; /* Vertically aligns the text and the indicator */
@@ -79,7 +78,6 @@ body {
 .menu-indicator {
     font-size: 18px;
     margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
-    font-weight: bold; /* Make the indicator bold (optional) */
     color: black;
 }
 
@@ -181,7 +179,7 @@ pre ~ p,
 p + pre,
 p ~ pre {
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 /* Apply to all headings before or after the <pre> block */
@@ -190,7 +188,7 @@ pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
 h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
 h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 button {
