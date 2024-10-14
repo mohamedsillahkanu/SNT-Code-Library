@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
-    overflow-y: auto; /* Add scroll functionality */
+    overflow-y: hidden; /* Add scroll functionality */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     max-height: 100vh; /* Restrict height to viewport height */
 }
