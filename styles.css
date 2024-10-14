@@ -48,6 +48,7 @@ body {
     text-align: center;
     font-size: 16px; /* Adjust font size */
     font-weight: bold;
+    underline: none;
 }
 
 .sidebar-button:hover {
@@ -63,7 +64,7 @@ body {
 }
 
 .search-bar {
-    width: 90%; /* Full width within the container */
+    width: 95%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
