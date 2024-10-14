@@ -14,7 +14,7 @@ body {
 }
 
 .sidebar {
-    width: 30%; /* Sidebar takes 30% of the page */
+    width: 25%; /* Sidebar takes 30% of the page */
     background-color: white; /* Sidebar color */
     padding: 10px;
     display: flex;
@@ -32,7 +32,7 @@ body {
 
 /* Sidebar content takes 30% of the width */
 .sidebar-content {
-    flex: 0 0 30%;
+    flex: 0 0 25%;
     margin-bottom: 20px; /* Add spacing between elements */
 }
 
