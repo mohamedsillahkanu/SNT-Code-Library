@@ -30,7 +30,30 @@ body {
     display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
-/* Search bar and related elements take up 25% of the sidebar */
+/* Sidebar button grid (2x2) styling */
+.sidebar-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below button grid */
+}
+
+.sidebar-button {
+    background-color: #003366; /* Dark blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+}
+
+.sidebar-button:hover {
+    background-color: #00509e; /* Slightly lighter blue on hover */
+}
+
 .sidebar-search-container {
     flex: 0 0 25%; /* Set to take 25% of sidebar */
     display: flex;
@@ -140,7 +163,7 @@ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #AADEE9;
+    background-color: white;
     color: black;
     border-radius: 4px;
     cursor: pointer;
