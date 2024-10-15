@@ -4,12 +4,8 @@ window.onload = function() {
     if (hash) {
         loadContent(hash);
         setActiveButton(document.querySelector(`[href="#${hash}"]`));
-    } else {
-        loadContent('overview');
-        setActiveButton(document.querySelector(`[href="#Overview"]`));
     }
 };
-
 // Function to load content based on the selected menu item
 function loadContent(page) {
     const content = {
