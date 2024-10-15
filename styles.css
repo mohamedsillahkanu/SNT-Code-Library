@@ -57,6 +57,7 @@ body {
     color: white; /* Ensure the text is still visible */
 }
 
+
 .sidebar-search-container {
     flex: 0 0 25%; /* Set to take 25% of sidebar */
     display: flex;
