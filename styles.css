@@ -82,6 +82,37 @@ body {
 
 
 
+
+
+
+
+
+/* Styles for the non-clickable button */
+.inactive-button {
+  background-color: #47B5FF; /* Light blue color for non-clickable */
+  pointer-events: none; /* Makes the button non-clickable */
+  cursor: default; /* Changes the cursor to indicate it’s not clickable */
+}
+
+/* Styles for the active (clickable) buttons */
+.active-button {
+  background-color: #003366; /* Darker blue color for clickable buttons */
+  cursor: pointer; /* Show hand cursor to indicate clickability */
+}
+
+.active-button:hover {
+  background-color:  #47B5FF; /* Optional: Darker shade on hover */
+}
+
+
+
+
+
+
+
+
+
+
 .menu {
     margin: 10px 0;
 }
