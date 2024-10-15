@@ -3800,7 +3800,21 @@ function scrollToSection(sectionId) {
     if (element) {
         element.scrollIntoView({ behavior: 'auto' });
     }
-}       
+}   
+
+
+
+// Load the correct content when the page loads based on the hash
+window.onload = function() {
+    const hash = window.location.hash.substring(1); // Get the hash without the '#' symbol
+    if (hash) {
+        loadContent(hash);
+        setActiveButton(document.querySelector(`[href="#${hash}"]`));
+    } else {
+        loadContent('overview');
+        setActiveButton(document.querySelector(`[href="#Overview"]`));
+    }
+};
 
 
 function copyCode() {
@@ -3854,6 +3868,34 @@ function toggleMenu(menuHeader) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get the content container
+    const contentContainer = document.getElementById("content");
+
+    // Set the inner HTML of the content container to the appropriate page content
+    if (content[page]) {
+        contentContainer.innerHTML = content[page];
+        // Update the URL hash
+        window.location.hash = `#${page}`;
+    } else {
+        // If the content doesn't exist, fall back to Overview
+        contentContainer.innerHTML = content['overview'];
+        window.location.hash = `#overview`;
+    }
+}
 
 
 
