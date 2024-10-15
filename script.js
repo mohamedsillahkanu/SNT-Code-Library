@@ -3862,4 +3862,17 @@ function toggleMenu(menuHeader) {
 
 
 
+    // Get the content container
+    const contentContainer = document.getElementById("content");
+
+    // Set the inner HTML of the content container to the appropriate page content
+    if (content[page]) {
+        contentContainer.innerHTML = content[page];
+    }
+}
+
+
+
+
+
 
