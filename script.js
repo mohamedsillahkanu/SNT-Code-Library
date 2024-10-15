@@ -21,7 +21,6 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>2. Improve efficiency of SNT analysis by minimizing duplication of effort.</p>
             <p>3. Promote accessibility of SNT analysis by lowering barriers to entry.</p>
 
-
             <h3>Target audience</h3>
             <p>Anyone doing this kind of work. We assume some basic knowledge of R, some understanding of the data, and a strong connection to the NMCP.</p>
 
