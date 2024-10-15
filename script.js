@@ -3856,3 +3856,34 @@ function toggleMenu(menuHeader) {
         menuHeader.querySelector('.menu-indicator').textContent = '>'; // Change indicator back to '>'
     }
 }
+
+
+
+
+
+
+
+
+// Set the default landing page on page load
+function loadLandingPage() {
+    if (window.location.hash === '' || window.location.hash === '#') {
+        window.location.href = 'https://mohamedsillahkanu.github.io/SNT-Code-Library/#Overview';
+    } else {
+        loadContent(window.location.hash.substring(1));
+    }
+}
+
+
+
+// Set active button style and ensure R En button is always active and non-clickable
+function setActiveButton(button) {
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll('.sidebar-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Add active class to the clicked button
+    if (!button.classList.contains('disabled')) {
+        button.classList.add('active');
+    }
+}
+
