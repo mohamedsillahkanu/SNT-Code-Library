@@ -52,12 +52,6 @@ body {
 }
 
 
-.sidebar-button inactive-button.inactive {
-    background-color: #47B5FF; /* Highlighted color for active button */
-    color: white; /* Ensure the text is still visible */
-    cursor: default; /* Changes the cursor to indicate it’s not clickable */
-}
-
 
 .sidebar-search-container {
     flex: 0 0 25%; /* Set to take 25% of sidebar */
@@ -80,22 +74,9 @@ body {
     flex: 0 0 75%; /* The rest of the sidebar (75%) is for other elements */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.ren-button {
+    background-color: #47B5FF; /* Light blue background for R En button */
+}
 
 
 .menu {
