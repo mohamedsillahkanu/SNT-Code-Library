@@ -3793,10 +3793,7 @@ Code block
     document.getElementById('content').innerHTML = content[page];
 }
 
-// Load the overview content when the page opens
-window.onload = function() {
-    loadContent('overview');
-};
+
 
 // Scroll to the relevant section when buttons are clicked
 function scrollToSection(sectionId) {
