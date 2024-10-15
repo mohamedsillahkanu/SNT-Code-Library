@@ -52,7 +52,7 @@ body {
 }
 
 
-.sidebar-button.inactive {
+.sidebar-button inactive-button.inactive {
     background-color: #47B5FF; /* Highlighted color for active button */
     color: white; /* Ensure the text is still visible */
     cursor: default; /* Changes the cursor to indicate it’s not clickable */
