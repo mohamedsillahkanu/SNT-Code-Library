@@ -80,18 +80,6 @@ body {
 }
 
 
-.sidebar-button:hover {
-    background-color: #47B5FF;
-}
-
-.sidebar-button.active {
-    background-color: #47B5FF;
-}
-
-.sidebar-button.disabled {
-    pointer-events: none;
-    cursor: default;
-}
 
 
 .menu {
