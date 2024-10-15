@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>snt-r-english</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
-    <link rel="icon" href="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/nuamalaria_logo.png" type="image/png">
+    <link rel="icon" href="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .sidebar-button.active {
@@ -25,7 +25,7 @@
 
         <!-- Sidebar button grid -->
         <div class="sidebar-button-grid">
-            <a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/" class="sidebar-button" onclick="setActiveButton(this);">R En</a>
+            <a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Overview" class="sidebar-button active" onclick="setActiveButton(this);">R En</a>
             <a href="https://numalariamodeling.github.io/snt-code-library-french-version/" class="sidebar-button" onclick="setActiveButton(this);">R FR</a>
             <a href="https://numalariamodeling.github.io/snt-python-english-version/" class="sidebar-button" onclick="setActiveButton(this);">py EN</a>
             <a href="https://numalariamodeling.github.io/snt-python-french-version/" class="sidebar-button" onclick="setActiveButton(this);">py FR</a>
@@ -34,7 +34,7 @@
         <!-- Menu Links -->
         <div class="menu">
             <p class="menu-header">
-                <a href="#Overview" class="menu-link" onclick="loadContent('overview')">
+                <a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Overview" class="menu-link" onclick="loadContent('overview')">
                     <span class="menu-text">Overview</span>
                 </a>
             </p>
@@ -64,6 +64,7 @@
             </p>
         </div>
 
+        <!-- Additional menu sections -->
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
                 <span class="menu-text">A. Data Assembly and Management</span>
@@ -72,71 +73,27 @@
             <ul class="submenu">
                 <li>
                     <p class="menu-header" onclick="toggleMenu(this)">
-                        <a href="#A.1 Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a>
+                        <a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')">
+                            <span class="link-text">A.1 Shapefiles</span>
+                        </a>
                         <span class="menu-indicator">&gt;</span>
                     </p>
                     <ul class="submenu">
-                        <li><a href="#A.1.1 Importing Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('import_shapefiles')"><span class="link-text">A.1.1 Importing Shapefiles</span></a></li>
-                        <li><a href="#A.1.2 Cleaning Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('cleaning_shapefiles')"><span class="link-text">A.1.2 Cleaning Shapefiles</span></a></li>
-                        <li><a href="#A.1.3 Merging Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('merging_shapefiles')"><span class="link-text">A.1.3 Merging Shapefiles</span></a></li>
+                        <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Importing_Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('import_shapefiles')"><span class="link-text">A.1.1 Importing Shapefiles</span></a></li>
+                        <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Cleaning_Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('cleaning_shapefiles')"><span class="link-text">A.1.2 Cleaning Shapefiles</span></a></li>
+                        <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Merging_Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('merging_shapefiles')"><span class="link-text">A.1.3 Merging Shapefiles</span></a></li>
                     </ul>
                 </li>
-                <li><a href="#A.2 Health Facilities" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li>
-                <li><a href="#A.3 Routine Case Data from DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
-                <li><a href="#A.4 DHS Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
-                <li><a href="#A.5 Population Data" class="menu-link" onclick="selectLink(this); loadContent('pop')"><span class="link-text">A.5 Population Data</span></a></li>
-                <li><a href="#A.6 Climate Data" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li> 
-                <li><a href="#A.7 LMIS Data" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
-                <li><a href="#A.8 Modeled Data" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li> 
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Health_Facilities" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Routine_Case_Data" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#DHS_Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Population_Data" class="menu-link" onclick="selectLink(this); loadContent('pop')"><span class="link-text">A.5 Population Data</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Climate_Data" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#LMIS_Data" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
+                <li><a href="https://mohamedsillahkanu.github.io/SNT-Code-Library/#Modeled_Data" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li>
             </ul>
         </div>
-
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">B. Epidemiological Stratification</span>
-                <span class="menu-indicator">&gt;</span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#B.1 Reporting Rate per Variable" class="menu-link" onclick="selectLink(this); loadContent('reportingrate')"><span class="link-text">B.1 Reporting Rate per Variable</span></a></li> 
-                <li><a href="#B.2 Group and Merge Data Frame" class="menu-link" onclick="selectLink(this); loadContent('groupmergedf')"><span class="link-text">B.2 Group and Merge Data Frame</span></a></li> 
-                <li><a href="#B.3 Crude Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('crudeincidence')"><span class="link-text">B.3 Crude Incidence by Year</span></a></li> 
-                <li><a href="#B.4 Adjusted Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('adjustedincidence')"><span class="link-text">B.4 Adjusted Incidence by Year</span></a></li> 
-                <li><a href="#B.5 Option to Select Incidence" class="menu-link" onclick="selectLink(this); loadContent('optionincidence')"><span class="link-text">B.5 Option to Select Incidence</span></a></li> 
-                <li><a href="#B.6 Risk Categorization" class="menu-link" onclick="selectLink(this); loadContent('riskcategorization')"><span class="link-text">B.6 Risk Categorization</span></a></li> 
-            </ul>
-        </div>
-
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">C. Stratification of Other Determinants</span>
-                <span class="menu-indicator">&gt;</span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#C.1 Access to Care" class="menu-link" onclick="selectLink(this); loadContent('accesstocare')"><span class="link-text">C.1 Access to Care</span></a></li> 
-                <li><a href="#C.2 Seasonality" class="menu-link" onclick="selectLink(this); loadContent('seasonality')"><span class="link-text">C.2 Seasonality</span></a></li> 
-            </ul>
-        </div>
-
-        <div class="menu">
-            <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">D. Review of Past Interventions</span>
-                <span class="menu-indicator">&gt;</span>
-            </p>
-            <ul class="submenu">
-                <li><a href="#D.1 EPI Coverage and Dropout Rate" class="menu-link" onclick="selectLink(this); loadContent('epi')"><span class="link-text">D.1 EPI Coverage and Dropout Rate</span></a></li> 
-                <li><a href="#D.2 IPTp and ANC Coverage" class="menu-link" onclick="selectLink(this); loadContent('iptp')"><span class="link-text">D.2 IPTp and ANC Coverage</span></a></li>    
-                <li><a href="#D.3 PMC (Perennial Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pmc')"><span class="link-text">D.3 PMC (Perennial Malaria Chemoprevention)</span></a></li>  
-                <li><a href="#D.4 SMC (Seasonal Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('smc')"><span class="link-text">D.4 SMC (Seasonal Malaria Chemoprevention)</span></a></li> 
-                <li><a href="#D.5 Malaria Vaccine" class="menu-link" onclick="selectLink(this); loadContent('vaccine')"><span class="link-text">D.5 Malaria Vaccine</span></a></li> 
-                <li><a href="#D.6 ITN Coverage, Ownership, Access, Usage, and Type" class="menu-link" onclick="selectLink(this); loadContent('itn')"><span class="link-text">D.6 ITN Coverage, Ownership, Access, Usage, and Type</span></a></li> 
-                <li><a href="#D.7 IRS (Indoor Residual Spraying)" class="menu-link" onclick="selectLink(this); loadContent('irs')"><span class="link-text">D.7 IRS (Indoor Residual Spraying)</span></a></li> 
-                <li><a href="#D.8 MDA (Mass Drug Administration)" class="menu-link" onclick="selectLink(this); loadContent('mda')"><span class="link-text">D.8 MDA (Mass Drug Administration)</span></a></li> 
-                <li><a href="#D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)" class="menu-link" onclick="selectLink(this); loadContent('iptsc')"><span class="link-text">D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)</span></a></li> 
-                <li><a href="#D.10 PDMC (Post-discharge Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pdmc')"><span class="link-text">D.10 PDMC (Post-discharge Malaria Chemoprevention)</span></a></li> 
-                <li><a href="#D.11 LSM (Larval Source Management)" class="menu-link" onclick="selectLink(this); loadContent('lsm')"><span class="link-text">D.11 LSM (Larval Source Management)</span></a></li> 
-                <li><a href="#D.12 Assessing the Quality of Case Management" class="menu-link" onclick="selectLink(this); loadContent('assessingqualman')"><span class="link-text">D.12 Assessing the Quality of Case Management</span></a></li> 
-            </ul>
-        </div>
+        <!-- Additional menu sections go here... -->
     </div>
     <div class="main-content">
         <div id="content">
@@ -154,8 +111,36 @@
         // Add active class to the clicked button
         button.classList.add('active');
     }
+
+    // Function to load content based on URL parameters
+    function loadPageFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        const buttons = document.querySelectorAll('.sidebar-button');
+
+        if (page) {
+            buttons.forEach(button => {
+                if (button.href.includes(page)) {
+                    button.classList.add('active');
+                }
+            });
+            loadContent(page.toLowerCase());
+        } else {
+            // Default to Overview page if no specific page is provided
+            window.location.href = "https://mohamedsillahkanu.github.io/SNT-Code-Library/#Overview";
+        }
+    }
+
+    // Function to load content dynamically based on the page parameter
+    function loadContent(page) {
+        document.getElementById('content').innerHTML = `<h3>Loading content for ${page}...</h3>`;
+        // Logic to load actual content goes here
+    }
+
+    // Initialize the page based on URL parameters
+    window.onload = loadPageFromURL;
 </script>
 
 <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
-</html> 
+</html>
