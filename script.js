@@ -33,6 +33,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         shapefiles: `
            
             <div class="fixed-buttons">
+                
+                <button class="text-button" onclick="scrollToSection('onthispage')">On this page:</button>
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
@@ -3848,3 +3850,48 @@ function toggleMenu(menuHeader) {
         menuHeader.querySelector('.menu-indicator').textContent = '>'; // Change indicator back to '>'
     }
 }
+
+
+
+
+
+
+// Update button styles based on the section in view
+function updateButtonStyles(activeSection) {
+    const stepButton = document.getElementById('stepByStepButton');
+    const codeButton = document.getElementById('fullCodeButton');
+
+    if (activeSection === 'stepByStep') {
+        stepButton.style.backgroundColor = '#47B5FF';
+        codeButton.style.backgroundColor = '';
+    } else if (activeSection === 'fullCode') {
+        codeButton.style.backgroundColor = '#47B5FF';
+        stepButton.style.backgroundColor = '';
+    }
+}
+
+
+// Detect scroll to update button styles
+window.addEventListener('scroll', function() {
+    const stepSection = document.getElementById('stepByStep');
+    const codeSection = document.getElementById('fullCode');
+    const stepButton = document.getElementById('stepByStepButton');
+    const codeButton = document.getElementById('fullCodeButton');
+
+    const stepRect = stepSection.getBoundingClientRect();
+    const codeRect = codeSection.getBoundingClientRect();
+
+    if (stepRect.top >= 0 && stepRect.bottom <= window.innerHeight) {
+        stepButton.style.backgroundColor = '#47B5FF';
+        codeButton.style.backgroundColor = '';
+    } else if (codeRect.top >= 0 && codeRect.bottom <= window.innerHeight) {
+        codeButton.style.backgroundColor = '#47B5FF';
+        stepButton.style.backgroundColor = '';
+    } else {
+        stepButton.style.backgroundColor = '';
+        codeButton.style.backgroundColor = '';
+    }
+});
+
+
+
