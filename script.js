@@ -3817,15 +3817,7 @@ window.onload = function() {
         loadContent('hf');
     }
 
-    // Example 4: Load 'analysis' if URL contains '#Analysis'
-    if (currentUrl.includes('#Analysis')) {
-        loadContent('analysis');
-    }
 
-    // Example 5: Load 'reports' if URL contains '#Reports'
-    if (currentUrl.includes('#Reports')) {
-        loadContent('reports');
-    }
 };
 
 
