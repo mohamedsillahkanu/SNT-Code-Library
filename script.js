@@ -3855,24 +3855,4 @@ function toggleMenu(menuHeader) {
 
 
 
-<script>
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const buttons = document.querySelectorAll('.text-button');
-            let scrollPosition = window.scrollY;
-
-            sections.forEach((section, index) => {
-                let sectionOffset = section.offsetTop;
-                let sectionHeight = section.offsetHeight;
-
-                if (scrollPosition >= sectionOffset - sectionHeight / 2 && scrollPosition < sectionOffset + sectionHeight / 2) {
-                    buttons[index].classList.add('active');
-                } else {
-                    buttons[index].classList.remove('active');
-                }
-            });
-        });
-    </script>
-
-
 
