@@ -3910,7 +3910,7 @@ const styles = `
         font-size: 14px;
         cursor: pointer;
     }
-`;
+
 
 // Inject styles into the document head
 const styleSheet = document.createElement("style");
