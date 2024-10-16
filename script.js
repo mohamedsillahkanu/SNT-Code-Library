@@ -42,9 +42,15 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
             <h3 style="color: #47B5FF;">Shapefiles</h3>
-            <h4 id="stepByStep">Step-by-step guide</h4>
             <p><em>This section explains the workflow of importing and managing shapefiles using Python.</em></p>
 
+            <div class="round-buttons">
+                <button class="round-button" onclick="window.location.href='https://example.com/button1';">View py EN</button>
+                <button class="round-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="round-button" onclick="window.location.href='https://example.com/button3';">View py FR</button>
+            </div>
+            
+            <h4 id="stepByStep">Step-by-step guide</h4>
             <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
             
             <p>Before starting, ensure you have the required Python packages installed.</p>
@@ -3882,6 +3888,35 @@ function toggleMenu(menuHeader) {
         menuHeader.querySelector('.menu-indicator').textContent = '>'; // Change indicator back to '>'
     }
 }
+
+
+
+
+// Add styles for round buttons
+const styles = `
+    .round-buttons {
+        display: flex;
+        gap: 10px; /* Adds space between the buttons */
+        margin-top: 10px;
+    }
+
+    .round-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: #47B5FF;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+    }
+`;
+
+// Inject styles into the document head
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
 
 
 
