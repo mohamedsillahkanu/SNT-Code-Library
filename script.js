@@ -25,7 +25,6 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h3>Target audience</h3>
             <p>Anyone doing this kind of work. We assume some basic knowledge of Python, some understanding of the data, and a strong connection to the NMCP.</p>
 
-
             <h3>Scope</h3>
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis.</p>
         `,
