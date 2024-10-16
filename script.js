@@ -3855,42 +3855,24 @@ function toggleMenu(menuHeader) {
 
 
 
-// Update button styles based on the section in view
-function updateButtonStyles(activeSection) {
-    const stepButton = document.getElementById('stepByStepButton');
-    const codeButton = document.getElementById('fullCodeButton');
+<script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const buttons = document.querySelectorAll('.text-button');
+            let scrollPosition = window.scrollY;
 
-    if (activeSection === 'stepByStep') {
-        stepButton.style.backgroundColor = '#47B5FF';
-        codeButton.style.backgroundColor = '';
-    } else if (activeSection === 'fullCode') {
-        codeButton.style.backgroundColor = '#47B5FF';
-        stepButton.style.backgroundColor = '';
-    }
-}
+            sections.forEach((section, index) => {
+                let sectionOffset = section.offsetTop;
+                let sectionHeight = section.offsetHeight;
 
-
-// Detect scroll to update button styles
-window.addEventListener('scroll', function() {
-    const stepSection = document.getElementById('stepByStep');
-    const codeSection = document.getElementById('fullCode');
-    const stepButton = document.getElementById('stepByStepButton');
-    const codeButton = document.getElementById('fullCodeButton');
-
-    const stepRect = stepSection.getBoundingClientRect();
-    const codeRect = codeSection.getBoundingClientRect();
-
-    if (stepRect.top >= 0 && stepRect.bottom <= window.innerHeight) {
-        stepButton.style.backgroundColor = '#47B5FF';
-        codeButton.style.backgroundColor = '';
-    } else if (codeRect.top >= 0 && codeRect.bottom <= window.innerHeight) {
-        codeButton.style.backgroundColor = '#47B5FF';
-        stepButton.style.backgroundColor = '';
-    } else {
-        stepButton.style.backgroundColor = '';
-        codeButton.style.backgroundColor = '';
-    }
-});
+                if (scrollPosition >= sectionOffset - sectionHeight / 2 && scrollPosition < sectionOffset + sectionHeight / 2) {
+                    buttons[index].classList.add('active');
+                } else {
+                    buttons[index].classList.remove('active');
+                }
+            });
+        });
+    </script>
 
 
 
