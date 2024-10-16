@@ -3845,7 +3845,7 @@ function textLink(textLink) {
         links[i].classList.remove('selected');
     }
     // Add 'selected' class to the clicked link
-    selectedLink.classList.add('selected');
+    textLink.classList.add('selected');
 }
 
 
