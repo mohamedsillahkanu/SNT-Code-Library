@@ -44,9 +44,11 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h3 style="color: #47B5FF;">Shapefiles</h3>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
-            <div class="round-buttons">
-                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
-                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+            <div class="rect-buttons">
+                <button class="rect-button" onclick="window.location.href='https:';">View R py</button>
+                <button class="rect-button" onclick="window.location.href='https:';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https:';">View py En</button>
+                
             </div>
             
             <h4 id="stepByStep">Step-by-step guide</h4>
