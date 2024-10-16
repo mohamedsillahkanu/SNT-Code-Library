@@ -42,73 +42,76 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
             <h3 style="color: #47B5FF;">Shapefiles</h3>
-            <p><em>This section explains the workflow of importing and managing shapefiles using Python.</em></p>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
             <div class="round-buttons">
-                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View py EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
                 <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
-                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View py FR</button>
             </div>
             
             <h4 id="stepByStep">Step-by-step guide</h4>
             <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
             
-            <p>Before starting, ensure you have the required Python packages installed.</p>
+            <p>Before starting, ensure you have the required R packages installed.</p>
             <p>This can be done using the following code:</p>
             <pre><code>
 # Install necessary libraries
-
-pip install geopandas matplotlib pandas      
+install.packages(c("sf", "ggplot2", "dplyr"))     
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This code installs the <code>geopandas</code> package for handling spatial data, <code>matplotlib</code> for data visualization, and <code>pandas</code> for data manipulation.</p>
+            <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
           
             <h5 style="color: #ADD8E6;">Step 2: Load Necessary Libraries</h5>
-            <p>After installing the libraries, you need to load them into your Python environment:</p>
+            <p>After installing the libraries, you need to load them into your R environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>            
 # Load necessary libraries
-import geopandas as gpd
-import pandas as pd
-import matplotlib.pyplot as plt
+library(sf)
+library(dplyr)
+library(ggplot2)
             </code></pre>
             <p>This step makes the functions from these libraries available for use in your script.</p>   
             <h5 style="color: #ADD8E6;">Step 3: Import Shapefiles</h5>
-            <p>You can import shapefiles using the <code>read_file</code> function from the <code>geopandas</code> package. Here’s a function to do that:</p>
+            <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Import Shapefiles
-def import_shapefile(filepath):
-    shapefile = gpd.read_file(filepath)  # Read the shapefile
-    return shapefile  # Return the loaded shapefile
+import_shapefile <- function(filepath) {
+    shapefile <- st_read(filepath)  # Read the shapefile
+    return(shapefile)  # Return the loaded shapefile
+}
             </code></pre>
             <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>     
             <h5 style="color: #ADD8E6;">Step 4: Rename and Match Names</h5>
             <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Rename and Match Names
-def rename_shapefile_columns(shapefile, new_names):
-    shapefile.columns = new_names  # Rename columns
-    return shapefile  # Return the renamed shapefile
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function takes a shapefile and a list of new names, renaming the columns accordingly.</p>
+rename_shapefile_columns <- function(shapefile, new_names) {
+    colnames(shapefile) <- new_names  # Rename columns
+    return(shapefile)  # Return the renamed shapefile
+}
+            </code></pre>
+            <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
 
           
             <h5 style="color: #ADD8E6;">Step 5: Link Shapefiles to Relevant Scales</h5>
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
-def link_shapefiles_to_scales(shapefile, scales_df, link_col):
-    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Merge shapefile with scales
-    return linked_shapefile  # Return the linked shapefile
+link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
+    linked_shapefile <- merge(shapefile, scales_df, by = link_col)  # Merge shapefile with scales
+    return(linked_shapefile)  # Return the linked shapefile
+}
             </code></pre>
             <p>This function performs a merge between the shapefile and a data frame containing scale information based on a specified linking column.</p>
             <h5 style="color: #ADD8E6;">Step 6: Visualizing Shapefiles and Making Basic Maps</h5>
-            <p>Finally, you can visualize the shapefile using <code>matplotlib</code> and <code>geopandas</code>. Here’s a function to do that:</p>
+            <p>Finally, you can visualize the shapefile using <code>ggplot2</code> and <code>sf</code>. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Visualizing Shapefiles and Making Basic Maps
-def visualize_shapefile(shapefile, variable):
-    shapefile.plot(column=variable, cmap='viridis', legend=True)
-    plt.title(f'Shapefile Visualization: {variable}')
-    plt.show()
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+visualize_shapefile <- function(shapefile, variable) {
+    ggplot(shapefile) +
+        geom_sf(aes_string(fill = variable)) +
+        scale_fill_viridis_c() +
+        ggtitle(paste('Shapefile Visualization:', variable))
+}
+            </code></pre>
             <p>This function creates a simple map visualization using the spatial data. Replace <code>variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
 
             <h3 id="fullCode">Full code</h3>
@@ -116,33 +119,38 @@ def visualize_shapefile(shapefile, variable):
             <pre id="codeBlock">
                 <code>
 # Install necessary libraries
-pip install geopandas matplotlib pandas
+install.packages(c("sf", "ggplot2", "dplyr"))
 
 # Load necessary libraries
-import geopandas as gpd
-import pandas as pd
-import matplotlib.pyplot as plt
+library(sf)
+library(dplyr)
+library(ggplot2)
 
 # Import Shapefiles
-def import_shapefile(filepath):
-    shapefile = gpd.read_file(filepath)  # Read the shapefile
-    return shapefile  # Return the loaded shapefile
+import_shapefile <- function(filepath) {
+    shapefile <- st_read(filepath)  # Read the shapefile
+    return(shapefile)  # Return the loaded shapefile
+}
 
 # Rename and Match Names
-def rename_shapefile_columns(shapefile, new_names):
-    shapefile.columns = new_names  # Rename columns
-    return shapefile  # Return the renamed shapefile
+rename_shapefile_columns <- function(shapefile, new_names) {
+    colnames(shapefile) <- new_names  # Rename columns
+    return(shapefile)  # Return the renamed shapefile
+}
 
 # Link Shapefiles to Relevant Scales
-def link_shapefiles_to_scales(shapefile, scales_df, link_col):
-    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Merge shapefile with scales
-    return linked_shapefile  # Return the linked shapefile
+link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
+    linked_shapefile <- merge(shapefile, scales_df, by = link_col)  # Merge shapefile with scales
+    return(linked_shapefile)  # Return the linked shapefile
+}
 
 # Visualizing Shapefiles and Making Basic Maps
-def visualize_shapefile(shapefile, variable):
-    shapefile.plot(column=variable, cmap='viridis', legend=True)
-    plt.title(f'Shapefile Visualization: {variable}')
-    plt.show()
+visualize_shapefile <- function(shapefile, variable) {
+    ggplot(shapefile) +
+        geom_sf(aes_string(fill = variable)) +
+        scale_fill_viridis_c() +
+        ggtitle(paste('Shapefile Visualization:', variable))
+}
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
@@ -150,8 +158,6 @@ def visualize_shapefile(shapefile, variable):
 
             <h4 id="sampleR">Sample results</h4>
         `,
-
-        
 
         hf: `
            
@@ -178,7 +184,6 @@ Code block
 Code block
 
 
-
             </code></pre>
             <p></p>
 
@@ -188,9 +193,7 @@ Code block
 
 
 
-
 Code block
-
 
 
             </code></pre>
@@ -199,7 +202,6 @@ Code block
             <h5>Step 4: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-
 
 
 Code block
@@ -212,9 +214,7 @@ Code block
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
 
-
 Code block
-
 
 
             </code></pre>
@@ -226,9 +226,7 @@ Code block
 
 
 
-
 Code block
-
 
 
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
@@ -245,11 +243,9 @@ Code block
 
 
 
-
-
-
-
 Code block
+
+
 
 
 
@@ -281,8 +277,6 @@ Code block
 
            
         `,
-
-
 
         dhis2: `
            
@@ -309,9 +303,7 @@ Code block
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
-
 Code block
-
 
 
             </code></pre>
@@ -323,9 +315,7 @@ Code block
 
 
 
-
 Code block
-
 
 
             </code></pre>
@@ -334,7 +324,6 @@ Code block
             <h5>Step 4: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-
 
 
 Code block
@@ -347,9 +336,7 @@ Code block
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
 
-
 Code block
-
 
 
             </code></pre>
@@ -361,9 +348,7 @@ Code block
 
 
 
-
 Code block
-
 
 
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
@@ -380,11 +365,9 @@ Code block
 
 
 
-
-
-
-
 Code block
+
+
 
 
 
@@ -417,7 +400,50 @@ Code block
            
         `,
 
+        dhs: `
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+            </div>
+        
+            <h3>A. Data Assembly and Manangement>A.4 DHS Data</h3>
+            <h4 id="stepByStep">Step by step approach</h4>
+            <p></p>
 
+            <h5>Step 1: </h5>
+            <p></p>
+            <pre><code>
+
+Code block
+
+            
+            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
+            <p></p>
+
+            <h5>Step 2: </h5>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+Code block
+
+
+            </code></pre>
+            <p></p>
+
+            <h5>Step 3: </h5>
+            <p> </p>
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+
+
+
+Code block
+
+
+            </code></pre>
+            <p></p>
+
+            <h5>Step
 
         dhs: `
            
