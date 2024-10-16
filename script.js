@@ -35,13 +35,14 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <div class="fixed-buttons">
                 
                 <button class="text-button" onclick="scrollToSection('onthispage')">On this page:</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step guide</button>
+                <button class="text-button" onclick="scrollToSection('sampleR')">Sample results</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
             <h3 style="color: #47B5FF;">Shapefiles</h3>
-            <h4 id="stepByStep">Step by step approach</h4>
+            <h4 id="stepByStep">Step-by-step guide</h4>
             <p><em>This section explains the workflow of importing and managing shapefiles using Python.</em></p>
 
             <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
@@ -138,6 +139,9 @@ def visualize_shapefile(shapefile, variable):
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
+
+
+            <h4 id="sampleR">Sample results</h4>
         `,
 
         
