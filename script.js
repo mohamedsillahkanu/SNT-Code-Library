@@ -5,7 +5,7 @@ window.onload = function() {
 
 
 // Function to load content based on the selected menu item
-function loadContent(page) {
+function loadContent(page) {   
     const content = {
         overview: `
             <h3 class="sidebar-title">Version: 3 October 2024 </h3>
