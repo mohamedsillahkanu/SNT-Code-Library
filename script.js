@@ -35,7 +35,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <div class="fixed-buttons">
                 
                 <button class="text-button" onclick="scrollToSection('onthispage')">On this page:</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step guide</button>
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step</button>
                 <button class="text-button" onclick="scrollToSection('sampleR')">Sample results</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
