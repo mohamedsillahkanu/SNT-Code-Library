@@ -3800,8 +3800,8 @@ window.onload = function() {
     }
 
     // Example 3: Load 'data-management' if URL contains '#DataManagement'
-    if (currentUrl.includes('#DataManagement')) {
-        loadContent('data-management');
+    if (currentUrl.includes('#hf')) {
+        loadContent('hf');
     }
 
     // Example 4: Load 'analysis' if URL contains '#Analysis'
@@ -3812,12 +3812,6 @@ window.onload = function() {
     // Example 5: Load 'reports' if URL contains '#Reports'
     if (currentUrl.includes('#Reports')) {
         loadContent('reports');
-    }
-
-    // Default content load if no specific hash is matched
-    if (!currentUrl.includes('#')) {
-        loadContent('overview');
-        loadContent('shapefiles');
     }
 };
 
