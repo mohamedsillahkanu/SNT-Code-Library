@@ -1,15 +1,6 @@
-// Load the correct content when the page loads based on the hash
+// Load the overview content when the page opens
 window.onload = function() {
-    const hash = window.location.hash.substring(1); // Get the hash without the '#' symbol
-    if (hash) {
-        // If there's a specific hash, load its content
-        loadContent(hash);
-        setActiveButton(document.querySelector(`[href="#${hash}"]`));
-    } else {
-        // If no hash, load the overview content by default
-        loadContent('overview');
-        setActiveButton(document.querySelector(`[href="#overview"]`));
-    }
+    loadContent('overview');
 };
 
 
