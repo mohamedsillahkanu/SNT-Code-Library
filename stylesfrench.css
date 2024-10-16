@@ -30,7 +30,29 @@ body {
     display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
-/* Search bar and related elements take up 25% of the sidebar */
+/* Sidebar button grid (2x2) styling */
+.sidebar-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below button grid */
+}
+
+.sidebar-button {
+    background-color: #003366; /* Dark blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    underline: none;
+}
+
+
+
 .sidebar-search-container {
     flex: 0 0 25%; /* Set to take 25% of sidebar */
     display: flex;
@@ -40,7 +62,7 @@ body {
 }
 
 .search-bar {
-    width: 100%; /* Full width within the container */
+    width: 95%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -51,6 +73,11 @@ body {
 .sidebar-content {
     flex: 0 0 75%; /* The rest of the sidebar (75%) is for other elements */
 }
+
+.ren-button {
+    background-color: #47B5FF; /* Light blue background for R En button */
+}
+
 
 .menu {
     margin: 10px 0;
@@ -140,7 +167,7 @@ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #AADEE9;
+    background-color: #47B5FF;
     color: black;
     border-radius: 4px;
     cursor: pointer;
@@ -150,7 +177,7 @@ pre {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: black;                    /* Make the text black */
+    color: #47B5FF;                    /* Make the text black */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
