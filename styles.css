@@ -177,15 +177,16 @@ pre {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: #47B5FF;                    /* Make the text black */
+    color: black;                    /* Make the text black */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
     margin-right: 10px;              /* Space between buttons */
 }
 
-.text-button:hover {
-    color: darkblue;                 /* Darker shade when hovering */
+
+.text-button.selected {
+    color: #47B5FF; /* Color when selected */
 }
 
 .fixed-buttons {
