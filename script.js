@@ -42,7 +42,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h5>A. Data Assembly and Management/Shapefiles</h5>
             <h3 style="color: #47B5FF;">Shapefiles</h3>
             <h4 id="stepByStep">Step by step approach</h4>
-            <p>This section explains the workflow of importing and managing shapefiles using Python.</p>
+            <p><em>This section explains the workflow of importing and managing shapefiles using Python.</em></p>
 
             <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
             
