@@ -3837,6 +3837,17 @@ function selectLink(selectedLink) {
     selectedLink.classList.add('selected');
 }
 
+// Function to handle link selection
+function textLink(textLink) {
+    // Remove 'selected' class from all links
+    var links = document.getElementsByClassName('text-button');
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('selected');
+    }
+    // Add 'selected' class to the clicked link
+    selectedLink.classList.add('selected');
+}
+
 
 
 function toggleMenu(menuHeader) {
