@@ -44,7 +44,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h4 id="stepByStep">Step by step approach</h4>
             <p>This section explains the workflow of importing and managing shapefiles using Python.</p>
 
-            <h5 style="color: #47B5FF;">Step 1: Install Necessary Libraries</h5>
+            <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
             
             <p>Before starting, ensure you have the required Python packages installed.</p>
             <p>This can be done using the following code:</p>
