@@ -3788,6 +3788,8 @@ Code block
 // Load the overview content when the page opens
 window.onload = function() {
     loadContent('overview');
+    loadContent('shapefiles');
+    
 };
 
 // Scroll to the relevant section when buttons are clicked
@@ -3837,23 +3839,6 @@ function selectLink(selectedLink) {
     selectedLink.classList.add('selected');
 }
 
-function handleButtonClick(buttons, selectedClass) {
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove 'selected' class from all buttons
-            buttons.forEach(btn => {
-                btn.classList.remove(selectedClass);
-            });
-
-            // Add 'selected' class to the clicked button
-            button.classList.add(selectedClass);
-        });
-    });
-}
-
-// Usage
-const buttons = document.querySelectorAll('.text-button');
-handleButtonClick(buttons, 'selected');
 
 
 function toggleMenu(menuHeader) {
