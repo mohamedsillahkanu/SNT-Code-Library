@@ -3912,6 +3912,9 @@ const styles = `
     }
 
 
+`;
+
+
 // Inject styles into the document head
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
