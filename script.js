@@ -3919,6 +3919,45 @@ styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
 
+// Add styles for buttons using JavaScript
+const styles = `
+    .text-button {
+        background-color: none;
+        color: black;
+        border:none;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .text-button.active {
+        background-color: #47B5FF;
+        color: white;
+    }
+
+
+
+
+
+// JavaScript to add click behavior to the buttons
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all the buttons with the class 'text-button'
+    const buttons = document.querySelectorAll('.text-button');
+
+    // Add event listeners to each button to handle the click
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove the 'active' class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add the 'active' class to the clicked button
+            this.classList.add('active');
+        });
+    });
+});
+
+
 
 
 
