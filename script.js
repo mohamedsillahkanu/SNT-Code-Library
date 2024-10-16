@@ -61,7 +61,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 pip install geopandas matplotlib pandas      
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This code installs the <code>geopandas</code> package for handling spatial data, <code>matplotlib</code> for data visualization, and <code>pandas</code> for data manipulation.</p>
-            <h3>Step 2: Load Necessary Libraries</h3>
+          
+            <h5 style="color: #ADD8E6;">Step 2: Load Necessary Libraries</h5>
             <p>After installing the libraries, you need to load them into your Python environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>            
 # Load necessary libraries
@@ -69,8 +70,8 @@ import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
             </code></pre>
-            <p>This step makes the functions from these libraries available for use in your script.</p>
-            <h3>Step 3: Import Shapefiles</h3>
+            <p>This step makes the functions from these libraries available for use in your script.</p>   
+            <h5 style="color: #ADD8E6;">Step 3: Import Shapefiles</h5>
             <p>You can import shapefiles using the <code>read_file</code> function from the <code>geopandas</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Import Shapefiles
@@ -78,8 +79,8 @@ def import_shapefile(filepath):
     shapefile = gpd.read_file(filepath)  # Read the shapefile
     return shapefile  # Return the loaded shapefile
             </code></pre>
-            <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
-            <h3>Step 4: Rename and Match Names</h3>
+            <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>     
+            <h5 style="color: #ADD8E6;">Step 4: Rename and Match Names</h5>
             <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Rename and Match Names
@@ -89,7 +90,8 @@ def rename_shapefile_columns(shapefile, new_names):
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This function takes a shapefile and a list of new names, renaming the columns accordingly.</p>
 
-            <h3>Step 5: Link Shapefiles to Relevant Scales</h3>
+          
+            <h5 style="color: #ADD8E6;">Step 5: Link Shapefiles to Relevant Scales</h5>
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
@@ -98,8 +100,7 @@ def link_shapefiles_to_scales(shapefile, scales_df, link_col):
     return linked_shapefile  # Return the linked shapefile
             </code></pre>
             <p>This function performs a merge between the shapefile and a data frame containing scale information based on a specified linking column.</p>
-
-            <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
+            <h5 style="color: #ADD8E6;">Step 6: Visualizing Shapefiles and Making Basic Maps</h5>
             <p>Finally, you can visualize the shapefile using <code>matplotlib</code> and <code>geopandas</code>. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Visualizing Shapefiles and Making Basic Maps
