@@ -5,7 +5,7 @@ window.onload = function() {
 
 
 // Function to load content based on the selected menu item
-function loadContent(page) {   
+function loadContent(page) {
     const content = {
         overview: `
             <h3 class="sidebar-title">Version: 3 October 2024 </h3>
@@ -28,7 +28,15 @@ function loadContent(page) {
         // Other content objects can be added here in the same format
     };
 
+    const contentContainer = document.getElementById("content");
 
+    if (content[page]) {
+        contentContainer.innerHTML = content[page];
+        window.location.hash = `#${page}`;
+    } else {
+        contentContainer.innerHTML = content['overview'];
+        window.location.hash = `#overview`;
+    }
 }
 
 // Function to set the active button/link
