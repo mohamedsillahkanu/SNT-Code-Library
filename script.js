@@ -3892,18 +3892,18 @@ function toggleMenu(menuHeader) {
 
 
 
-// Add styles for round buttons
+// Add styles for rectangular buttons
 const styles = `
-    .round-buttons {
+    .rect-buttons {
         display: flex;
         gap: 10px; /* Adds space between the buttons */
         margin-top: 10px;
     }
 
-    .round-button {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+    .rect-button {
+        width: 100px;  /* Set width to make the button rectangular */
+        height: 40px;  /* Set height for better visibility */
+        border-radius: 5px; /* Small radius for slightly rounded corners, or set to 0 for sharp edges */
         border: none;
         background-color: #47B5FF;
         color: white;
@@ -3917,8 +3917,6 @@ const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
-
-
 
 
 
