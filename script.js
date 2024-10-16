@@ -28,17 +28,7 @@ function loadContent(page) {
         // Other content objects can be added here in the same format
     };
 
-    const contentContainer = document.getElementById("content");
-
-    if (content[page]) {
-        contentContainer.innerHTML = content[page];
-        window.location.hash = `#${page}`;
-    } else {
-        contentContainer.innerHTML = content['overview'];
-        window.location.hash = `#overview`;
-    }
-}
-
+ 
 // Function to set the active button/link
 function setActiveButton(button) {
     const buttons = document.querySelectorAll('.sidebar-button, .menu-link');
