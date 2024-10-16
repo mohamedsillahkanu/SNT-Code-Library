@@ -3891,7 +3891,6 @@ function toggleMenu(menuHeader) {
 
 
 
-
 // Add styles for rectangular buttons
 const styles = `
     .rect-buttons {
@@ -3910,19 +3909,13 @@ const styles = `
         font-size: 14px;
         cursor: pointer;
     }
-
-
 `;
-
 
 // Inject styles into the document head
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
-
-
-
 
 
 
