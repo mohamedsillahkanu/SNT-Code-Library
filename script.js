@@ -3785,12 +3785,42 @@ Code block
     document.getElementById('content').innerHTML = content[page];
 }
 
-// Load the overview content when the page opens
 window.onload = function() {
-    loadContent('overview');
-    loadContent('shapefiles');
-    
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    // Example 1: Load 'overview' if URL contains '#Overview'
+    if (currentUrl.includes('#Overview')) {
+        loadContent('overview');
+    }
+
+    // Example 2: Load 'shapefiles' if URL contains '#Shapefiles'
+    if (currentUrl.includes('#Shapefiles')) {
+        loadContent('shapefiles');
+    }
+
+    // Example 3: Load 'data-management' if URL contains '#DataManagement'
+    if (currentUrl.includes('#DataManagement')) {
+        loadContent('data-management');
+    }
+
+    // Example 4: Load 'analysis' if URL contains '#Analysis'
+    if (currentUrl.includes('#Analysis')) {
+        loadContent('analysis');
+    }
+
+    // Example 5: Load 'reports' if URL contains '#Reports'
+    if (currentUrl.includes('#Reports')) {
+        loadContent('reports');
+    }
+
+    // Default content load if no specific hash is matched
+    if (!currentUrl.includes('#')) {
+        loadContent('overview');
+        loadContent('shapefiles');
+    }
 };
+
 
 // Scroll to the relevant section when buttons are clicked
 function scrollToSection(sectionId) {
