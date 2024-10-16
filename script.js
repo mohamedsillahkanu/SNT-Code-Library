@@ -30,6 +30,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         `,
 
         shapefiles: `
+        
            
             <div class="fixed-buttons">
                 
@@ -37,8 +38,9 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step by step</button>
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
-        
-            <h3>A. Data Assembly and Management>A.1 Shapefiles</h3>
+
+            <h3>Shapefiles</h3>
+            <h5>A. Data Assembly and Management>A.1 Shapefiles</h5>
             <h4 id="stepByStep">Step by step approach</h4>
             <p>This section explains the workflow of importing and managing shapefiles using Python.</p>
 
