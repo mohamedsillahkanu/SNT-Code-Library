@@ -155,7 +155,7 @@ visualize_shapefile <- function(shapefile, variable) {
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
 
-            <h4 id="sampleR">Sample results</h4>
+            <h3 id="sampleR">Sample results</h3>
             <img src="https://raw.githubusercontent.com/numalariamodeling/snt-code-library-english-version/a204dc53be5209fc170acbfbb5db8900930a80fa/MAP_PYTHON.png" alt="Sample Results">;
             
 
