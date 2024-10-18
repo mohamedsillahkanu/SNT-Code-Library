@@ -33,9 +33,9 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             
             <div class="fixed-buttons">
                 <button class="text-button">On this page:</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Sample results</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Full code</button>
+                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample results</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
@@ -187,13 +187,20 @@ window.onload = function() {
 };
 
 
+
+
+
+
 // Function to scroll to the section when the button is clicked
 function scrollToSection(sectionId) {
+    // Scroll to the specific section smoothly
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-    // Remove 'active' class from all buttons
+    
+    // Remove the 'active' class from all buttons
     document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
-    // Add 'active' class to the clicked button
-    document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`).classList.add('active');
+    
+    // Add the 'active' class to the clicked button
+    document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
 }
 
 // Function to check which section is in view and update the active button
@@ -204,29 +211,24 @@ function handleScroll() {
     sections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         const rect = section.getBoundingClientRect();
+        
         // Check if the section is within the viewport
-        if (rect.top >= 0 && rect.top <= window.innerHeight / 3) {
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
             activeSection = sectionId;
         }
     });
 
-    // Remove 'active' class from all buttons
+    // Remove the 'active' class from all buttons
     document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
 
-    // Add 'active' class to the button corresponding to the active section
+    // Add the 'active' class to the button corresponding to the section in view
     if (activeSection) {
-        document.querySelector(`[onclick="scrollToSection('${activeSection}')"]`).classList.add('active');
+        document.querySelector(`[data-section="${activeSection}"]`).classList.add('active');
     }
 }
 
-// Attach the scroll event listener
+// Attach the scroll event listener to update the active button based on scroll position
 window.addEventListener('scroll', handleScroll);
-
-
-
-
-
-
 
 
 
