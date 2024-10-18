@@ -33,9 +33,9 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             
             <div class="fixed-buttons">
                 <button class="text-button" onclick="scrollToSection('onthispage')">On this page:</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step</button>
-                <button class="text-button" onclick="scrollToSection('sampleR')">Sample results</button>
-                <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
+                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
+                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Sample results</button>
+                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Full code</button>
             </div>
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
@@ -193,10 +193,8 @@ function scrollToSection(sectionId) {
     // Remove 'active' class from all buttons
     document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
     // Add 'active' class to the clicked button
-    document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`).classList.add('active');
+    document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
 }
-
-
 
 // Function to check which section is in view and update the active button
 function handleScroll() {
@@ -217,12 +215,13 @@ function handleScroll() {
 
     // Add 'active' class to the button corresponding to the active section
     if (activeSection) {
-        document.querySelector(`[onclick="scrollToSection('${activeSection}')"]`).classList.add('active');
+        document.querySelector(`[data-section="${activeSection}"]`).classList.add('active');
     }
 }
 
 // Attach the scroll event listener
 window.addEventListener('scroll', handleScroll);
+
 
 
 function copyCode() {
