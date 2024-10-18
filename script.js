@@ -188,9 +188,6 @@ window.onload = function() {
 
 
 
-
-
-
 // Function to scroll to the section when the button is clicked
 function scrollToSection(sectionId) {
     // Scroll to the specific section smoothly
@@ -212,8 +209,8 @@ function handleScroll() {
         const section = document.getElementById(sectionId);
         const rect = section.getBoundingClientRect();
         
-        // Check if the section is within the viewport
-        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+        // Check if the section is partially visible
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
             activeSection = sectionId;
         }
     });
@@ -229,6 +226,9 @@ function handleScroll() {
 
 // Attach the scroll event listener to update the active button based on scroll position
 window.addEventListener('scroll', handleScroll);
+
+
+
 
 
 
