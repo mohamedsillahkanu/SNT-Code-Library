@@ -187,40 +187,13 @@ window.onload = function() {
 };
 
 
-// Function to scroll to the section when the button is clicked
+// Scroll to the relevant section when buttons are clicked
 function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'auto' });
-    // Remove 'active' class from all buttons
-    document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
-    // Add 'active' class to the clicked button
-    document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`).classList.add('active');
-}
-
-// Function to check which section is in view and update the active button
-function handleScroll() {
-    const sections = ['stepByStep', 'sampleR', 'fullCode'];
-    let activeSection = null;
-
-    sections.forEach(sectionId => {
-        const section = document.getElementById(sectionId);
-        const rect = section.getBoundingClientRect();
-        // Check if the section is within the viewport
-        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
-            activeSection = sectionId;
-        }
-    });
-
-    // Remove 'active' class from all buttons
-    document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
-
-    // Add 'active' class to the button corresponding to the active section
-    if (activeSection) {
-        document.querySelector(`[onclick="scrollToSection('${activeSection}')"]`).classList.add('active');
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'auto' });
     }
-}
-
-// Attach the scroll event listener
-window.addEventListener('scroll', handleScroll);
+} 
 
 
 
