@@ -32,7 +32,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
         shapefiles: `
             
             <div class="fixed-buttons">
-                <button class="text-button" onclick="scrollToSection('onthispage')">On this page:</button>
+                <button class="text-button">On this page:</button>
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Step-by-step</button>
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Sample results</button>
                 <button class="text-button" onclick="scrollToSection('stepByStep')">Full code</button>
