@@ -187,15 +187,15 @@ window.onload = function() {
 };
 
 
+
+
 // Scroll to the relevant section when buttons are clicked
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
         element.scrollIntoView({ behavior: 'auto' });
     }
-} 
-
-
+}       
 
 
 function copyCode() {
