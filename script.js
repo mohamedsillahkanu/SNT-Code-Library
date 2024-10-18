@@ -200,7 +200,7 @@ function scrollToSection(sectionId) {
     document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
 }
 
-// Function to check which section is in view and update the active button
+// Function to check which section is at the top and update the active button
 function handleScroll() {
     const sections = ['stepByStep', 'sampleR', 'fullCode'];
     let activeSection = null;
@@ -209,8 +209,8 @@ function handleScroll() {
         const section = document.getElementById(sectionId);
         const rect = section.getBoundingClientRect();
         
-        // Check if the section is partially visible
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        // Check if the section is exactly at the top of the viewport
+        if (rect.top <= 0 && rect.bottom >= 0) {
             activeSection = sectionId;
         }
     });
@@ -218,7 +218,7 @@ function handleScroll() {
     // Remove the 'active' class from all buttons
     document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
 
-    // Add the 'active' class to the button corresponding to the section in view
+    // Add the 'active' class to the button corresponding to the section at the top
     if (activeSection) {
         document.querySelector(`[data-section="${activeSection}"]`).classList.add('active');
     }
@@ -226,6 +226,7 @@ function handleScroll() {
 
 // Attach the scroll event listener to update the active button based on scroll position
 window.addEventListener('scroll', handleScroll);
+
 
 
 
