@@ -205,7 +205,7 @@ function handleScroll() {
         const section = document.getElementById(sectionId);
         const rect = section.getBoundingClientRect();
         // Check if the section is within the viewport
-        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 3) {
             activeSection = sectionId;
         }
     });
