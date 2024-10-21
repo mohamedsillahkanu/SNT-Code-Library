@@ -308,21 +308,23 @@ document.head.appendChild(styleSheet);
 
 
 
-
 document.addEventListener("scroll", () => {
     const buttonsContainer = document.getElementById('fixedButtons');
     
-    // Adjust the top value based on the scroll position
+    // Get current scroll position
     const scrollPosition = window.scrollY;
-    buttonsContainer.style.top = `${10 + scrollPosition}px`;
 
-    // Change color based on scroll position
+    // Set new top position to create the scroll effect with a bit of offset
+    buttonsContainer.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+
+    // Optionally, change the button color as you scroll further down
     const buttons = buttonsContainer.querySelectorAll('.text-button');
     buttons.forEach(button => {
-        if (scrollPosition > 300) { // Change threshold as needed
-            button.style.color = "#47B5FF";  // Change to desired color
+        if (scrollPosition > 300) { // Change color after scrolling past a certain point
+            button.style.color = "#47B5FF";
         } else {
-            button.style.color = "black";    // Default color
+            button.style.color = "black";
         }
     });
 });
+
