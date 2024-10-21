@@ -240,7 +240,7 @@ button {
 
 .fixed-buttons .text-button {
     color: black; /* Default color */
-    transition: color 0.1s ease;
+    transition: color 0.3s ease;
 }
 
 /* Add media queries for better responsiveness */
