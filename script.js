@@ -305,3 +305,29 @@ const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);     
+
+
+
+
+
+
+window.addEventListener('scroll', function() {
+    // Select all headings (h3 elements)
+    const headings = document.querySelectorAll('h3');
+    const buttons = document.querySelectorAll('.fixed-buttons .text-button');
+
+    headings.forEach((heading, index) => {
+        // Get the heading's distance from the top of the viewport
+        const headingTop = heading.getBoundingClientRect().top;
+
+        // Check if the heading is at the top of the viewport
+        if (headingTop >= 0 && headingTop <= 50) {
+            // Remove 'active' class from all buttons
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add 'active' class to the button corresponding to the current heading
+            buttons[index].classList.add('active');
+        }
+    });
+});
+
