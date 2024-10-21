@@ -195,7 +195,7 @@ pre {
     display: flex;         /* Use flexbox layout */
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px;  
-    position: fixed;                 /* Keep buttons fixed */
+    position: absolute;                 /* Keep buttons fixed */
     top: 10px;                       /* Adjust as needed */
     right: 20px;                     /* Adjust as needed */
     z-index: 1000;                   /* Ensure buttons are on top */
