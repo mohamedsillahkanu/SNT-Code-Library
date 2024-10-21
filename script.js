@@ -313,7 +313,7 @@ document.head.appendChild(styleSheet);
 
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.fixed-buttons .text-button');
-    const heading = document.querySelector('#target-heading'); // Replace with your target heading's selector
+    const heading = document.querySelector('h3'); // Replace with your target heading's selector
 
     function updateButtonState() {
         const headingTop = heading.getBoundingClientRect().top;
