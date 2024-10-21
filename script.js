@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const button = document.querySelector('.fixed-buttons');
 
     function changeButtonColorOnScroll() {
-        if (window.scrollY > 100) { // Change '100' to the scroll distance you want
+        if (window.scrollY > 50) { // Change '100' to the scroll distance you want
             button.classList.add('scrolled');
         } else {
             button.classList.remove('scrolled');
