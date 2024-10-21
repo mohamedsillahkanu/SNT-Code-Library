@@ -311,17 +311,28 @@ document.head.appendChild(styleSheet);
 
 
 
-document.addEventListener("scroll", () => {
-    const buttons = document.querySelectorAll('.text-button');
-    const scrollPosition = window.scrollY;
+document.addEventListener("DOMContentLoaded", () => {
+    const stepSection = document.getElementById('stepByStep');
+    const stepButton = document.getElementById('stepByStep');
 
-    buttons.forEach(button => {
-        if (scrollPosition > 300) { // Adjust this value based on your page
-            button.style.color = "#47B5FF";  // Change color after scrolling past a certain point
-        } else {
-            button.style.color = "black";    // Default color
-        }
+    // Create an IntersectionObserver to watch when the "Step-by-Step" section comes into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When the section is in view, highlight the button
+                stepButton.classList.add('active');
+            } else {
+                // Remove highlight when section is out of view
+                stepButton.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is visible
     });
+
+    // Start observing the "Step-by-Step" section
+    observer.observe(stepSection);
 });
+
 
 
