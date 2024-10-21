@@ -31,7 +31,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
         shapefiles: `
             
-            <div class="fixed-buttons id="fixedButtons">
+            <div class="sticky-buttons id="fixedButtons">
                 <button class="text-button">On this page:</button>
                 <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
                 <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Full code</button>
