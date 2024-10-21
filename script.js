@@ -309,26 +309,20 @@ document.head.appendChild(styleSheet);
 
 
 
+document.addEventListener("scroll", () => {
+    const buttonsContainer = document.getElementById('fixedButtons');
+    
+    // Adjust the top value based on the scroll position
+    const scrollPosition = window.scrollY;
+    buttonsContainer.style.top = `${10 + scrollPosition}px`;
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll('.fixed-buttons .text-button');
-    const heading = document.querySelector('h3'); // Replace with your target heading's selector
-
-    function updateButtonState() {
-        const headingTop = heading.getBoundingClientRect().top;
-
-        buttons.forEach(button => {
-            if (headingTop <= 0) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateButtonState);
-    updateButtonState(); // Initial call to set state correctly if starting mid-page
+    // Change color based on scroll position
+    const buttons = buttonsContainer.querySelectorAll('.text-button');
+    buttons.forEach(button => {
+        if (scrollPosition > 300) { // Change threshold as needed
+            button.style.color = "#47B5FF";  // Change to desired color
+        } else {
+            button.style.color = "black";    // Default color
+        }
+    });
 });
-
-
