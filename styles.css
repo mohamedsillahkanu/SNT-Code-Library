@@ -238,6 +238,10 @@ button {
 }
 
 
+.fixed-buttons .text-button {
+    color: #47B5FF; /* Default color */
+    transition: color 0.1s ease;
+}
 
 /* Add media queries for better responsiveness */
 @media (min-width: 1024px) {
