@@ -191,7 +191,7 @@ pre {
 }
 
 
-.fixed-buttons {
+.sticky-buttons {
     display: flex;         /* Use flexbox layout */
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px;  
@@ -234,12 +234,12 @@ button {
 }
 
 
-.fixed-buttons .text-button.active {
+.sticky-buttons .text-button.active {
     color: #47B5FF;
 }
 
 
-.fixed-buttons .text-button {
+.sticky-buttons .text-button {
     color: black; /* Default color */
     transition: color 0.3s ease;
 }
