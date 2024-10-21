@@ -202,6 +202,10 @@ pre {
     transition: top 0.3s ease;  /* Smooth transition effect */
 }
 
+.fixed-buttons.scrolled {
+    color: #47B5FF; /* Change text color */
+}
+
 /* Apply to all paragraphs before or after the <pre> block */
 pre + p,
 pre ~ p,
