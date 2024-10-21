@@ -31,7 +31,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
         shapefiles: `
             
-            <div class="sticky-buttons id="fixedButtons">
+            <div class="fixed-buttons id="fixedButtons">
                 <button class="text-button">On this page:</button>
                 <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
                 <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Full code</button>
@@ -191,7 +191,7 @@ window.onload = function() {
 // Function to scroll to the section when the button is clicked
 function scrollToSection(sectionId) {
     // Scroll to the specific section smoothly
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'auto' });
     
     // Remove the 'active' class from all buttons
     document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
@@ -226,13 +226,6 @@ function handleScroll() {
 
 // Attach the scroll event listener to update the active button based on scroll position
 window.addEventListener('scroll', handleScroll);
-
-
-
-
-
-
-
 
 
 function copyCode() {
@@ -311,28 +304,6 @@ document.head.appendChild(styleSheet);
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const stepSection = document.getElementById('stepByStep');
-    const stepButton = document.getElementById('stepByStep');
-
-    // Create an IntersectionObserver to watch when the "Step-by-Step" section comes into view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // When the section is in view, highlight the button
-                stepButton.classList.add('active');
-            } else {
-                // Remove highlight when section is out of view
-                stepButton.classList.remove('active');
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the section is visible
-    });
-
-    // Start observing the "Step-by-Step" section
-    observer.observe(stepSection);
-});
 
 
 
