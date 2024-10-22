@@ -322,3 +322,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector('.text-button');
+    const headings = document.querySelectorAll('h2'); // All headings to track
+
+    function updateButtonState() {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        // Loop through all headings
+        headings.forEach((heading) => {
+            const headingTop = heading.offsetTop;
+
+            if (scrollPosition >= headingTop) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateButtonState);
+    updateButtonState(); // Initial call in case already scrolled
+});
+
+
