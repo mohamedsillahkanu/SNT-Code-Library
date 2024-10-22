@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector('.text-button');
-    const headings = document.querySelectorAll('h2'); // All headings to track
+    const headings = document.querySelectorAll('h3'); // All headings to track
 
     function updateButtonState() {
         // Get the current scroll position
