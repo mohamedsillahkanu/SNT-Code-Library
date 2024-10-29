@@ -194,11 +194,11 @@ pre {
     z-index: 100; 
 }
 
-.menu-link .text-button {
 
-    color: black;
+.link-text {
+
+    color:black;
 }
-
 
 .text-button.selected {
     color: #47B5FF;
