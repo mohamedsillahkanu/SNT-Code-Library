@@ -195,9 +195,13 @@ pre {
 }
 
 
-.link-text {
+.link-text:active {
+    color:#47B5FF;
+}
 
-    color:black;
+
+.link-text:hover {
+    color:#47B5FF;
 }
 
 .text-button.selected {
