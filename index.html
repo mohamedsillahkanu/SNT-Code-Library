@@ -43,15 +43,29 @@
                 </a>
             </p>
         </div>
-
+ 
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
                 <span class="menu-text">Data Assembly and Management</span>
             
             </p>
+
+          
             <ul class="submenu">
+                <!-- Shapefiles Submenu -->
+                <li>
+                    <a href="#shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')">
+                        <span class="link-text">Shapefiles</span>
+                    </a>
+                    <ul class="submenu-inner">
+                        <li><a href="#shapefiles-info" class="submenu-link" onclick="selectLink(this); loadContent('shapefiles-info')">Shapefiles Info</a></li>
+                        <li><a href="#basic-plot" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Basic Plot</a></li>
+                    </ul>
+                </li>
+
+
+
                 
-                <li><a href="#shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">Shapefiles</span></a></li>
                 <li><a href="#hf" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">Health Facilities</span></a></li>
                 <li><a href="#A.3 Routine Case Data from DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">Routine Case Data from DHIS2</span></a></li>
                 <li><a href="#A.4 DHS Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">DHS Data</span></a></li>
