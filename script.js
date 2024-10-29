@@ -41,7 +41,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             </div>
 
             <h5 style="font-weight: normal;">Data Assembly and Management / Shapefiles</h5>
-            <h2 style="color: #47B5FF;">Shapefiles</h2>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
             <div class="round-buttons">
