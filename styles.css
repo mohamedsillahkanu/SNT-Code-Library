@@ -222,13 +222,20 @@ pre {
   color: black; /* Set link text color */
 }
 
-.submenu-link.active {
-  color: #47B5FF; /* Color when selected */
-}
+
 
 submenu-inner:active {
     color: #47B5FF;
 }
+
+ .submenu-link {
+    color: black; /* Default color when inactive */
+    text-decoration: none; /* Remove underline if needed */
+  }
+
+  .submenu-link.active {
+    color: #47B5FF; /* Color when selected or clicked */
+  }
 
 
 
