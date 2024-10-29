@@ -28,11 +28,11 @@
         <!-- Sidebar button grid -->
         <div class="sidebar-button-grid">
             <a href="#" class="sidebar-button ren-button">R En</a> <!-- This button has both the .sidebar-button and .ren-button classes -->
-            <a href="https://numalariamodeling.github.io/snt-code-library-french-version/" class="sidebar-button" onclick="setActiveButton(this);">R FR</a>
-            <a href="https://numalariamodeling.github.io/snt-python-english-version/" class="sidebar-button" onclick="setActiveButton(this);">py EN</a>
-            <a href="https://numalariamodeling.github.io/snt-python-french-version/" class="sidebar-button" onclick="setActiveButton(this);">py FR</a>
-            <a href="https://numalariamodeling.github.io/snt-python-english-version/" class="sidebar-button" onclick="setActiveButton(this);">St EN</a>
-            <a href="https://numalariamodeling.github.io/snt-python-french-version/" class="sidebar-button" onclick="setActiveButton(this);">St FR</a>
+            <a href="https://numalariamodeling.github.io/snt-code-library-french-version/" class="sidebar-button" onclick="setActiveButton(this);">R in French</a>
+            <a href="https://numalariamodeling.github.io/snt-python-english-version/" class="sidebar-button" onclick="setActiveButton(this);">Python in English</a>
+            <a href="https://numalariamodeling.github.io/snt-python-french-version/" class="sidebar-button" onclick="setActiveButton(this);">Python in French</a>
+            <a href="https://numalariamodeling.github.io/snt-python-english-version/" class="sidebar-button" onclick="setActiveButton(this);">Stata in English</a>
+            <a href="https://numalariamodeling.github.io/snt-python-french-version/" class="sidebar-button" onclick="setActiveButton(this);">Stata in French</a>
         </div>
 
         <!-- Menu Links -->
@@ -58,8 +58,14 @@
                         <span class="link-text">Shapefiles</span>
                     </a>
                     <ul class="submenu-inner">
-                        <li><a href="#shapefiles_info" class="submenu-link" onclick="selectLink(this); loadContent('shapefiles_info')">Shapefiles Info</a></li>
-                        <li><a href="#basic-plot" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Basic Plot</a></li>
+                        <li><a href="#shapefiles_info" class="submenu-link" onclick="selectLink(this); loadContent('shapefiles_info')">View Shapefile Data</a></li>
+                        <li><a href="#basic-plot" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Basic Plotting</a></li>
+                        <li><a href="#shapefiles_info" class="submenu-link" onclick="selectLink(this); loadContent('shapefiles_info')">Admin Units Overlay</a></li>
+                        <li><a href="#merge_excel" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Merge Shapefile with excel</a></li>
+                        <li><a href="#map_numeric" class="submenu-link" onclick="selectLink(this); loadContent('shapefiles_info')">Map by Numeric variable</a></li>
+                        <li><a href="#map_categorical" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Map by categorical variable</a></li>
+                        <li><a href="#manual_color" class="submenu-link" onclick="selectLink(this); loadContent('basic-plot')">Map with manual color coding</a></li>
+                        
                     </ul>
                 </li>
 
