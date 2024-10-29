@@ -322,16 +322,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+function selectLink(element) {
+    // Remove 'active' class from all submenu links
+    const links = document.querySelectorAll('.submenu-link');
+    links.forEach(link => {
+      link.classList.remove('active');
+    });
 
-
-
-
-
-
-
-
-
-
+    // Add 'active' class to the clicked link
+    element.classList.add('active');
+  }
 
 
 
@@ -360,5 +360,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', updateButtonState);
     updateButtonState(); // Initial call in case already scrolled
 });
+
+
+
+
 
 
