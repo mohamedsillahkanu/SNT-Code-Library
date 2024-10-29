@@ -195,13 +195,13 @@ pre {
 }
 
 
-.link-text:active {
-    color:#47B5FF;
+.submenu-link:active {
+    color: #47B5FF;
 }
 
 
-.link-text:hover {
-    color:#47B5FF;
+.submenu-link:hover {
+    color: #47B5FF;
 }
 
 .text-button.selected {
@@ -230,7 +230,7 @@ pre {
   color: black; /* Set link text color */
 }
 
-.menu-link, .submenu-link.active {
+.submenu-link.active {
   color: #47B5FF; /* Color when selected */
 }
 
