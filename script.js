@@ -40,7 +40,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample results</button>
             </div>
 
-            <h5 style="font-weight: normal;">Data Assembly and Management / Shapefiles</h5>
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
             <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
