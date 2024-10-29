@@ -51,7 +51,6 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             </div>
 
             <h5 style="color: white;">#</h5>
-            <h5 style="color: white;">#</h5>
             <h4 id="stepByStep">Step-by-step guide</h4>
             <h5 style="color: #628DA5;">Step 1: Install Necessary Libraries</h5>
             
