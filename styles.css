@@ -281,6 +281,10 @@ li {
 }
 
 
+.sidebar-title {
+  font-weight: normal;
+}
+
 
 
 /* Add media queries for better responsiveness */
