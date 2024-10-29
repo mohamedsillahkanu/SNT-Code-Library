@@ -1,5 +1,5 @@
 body {
-    font-family: 'Hubot Sans', sans-serif; /* Changed to Hubot Sans */
+    font-family: 'Verdana', sans-serif; /* Changed to Hubot Sans */
     margin: 0;
     display: flex;
     height: 100vh; /* Set the body to take up the full viewport height */
@@ -115,6 +115,8 @@ body {
     line-height: 0;
     margon: 0;
     padding: 0;
+    font-family: Verdana;
+    
 }
 
 .menu-link.selected {
