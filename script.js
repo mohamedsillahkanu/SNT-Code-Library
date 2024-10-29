@@ -39,7 +39,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             </div>
 
             <h5>A. Data Assembly and Management/Shapefiles</h5>
-            <h3 style="color: #47B5FF;">Shapefiles</h3>
+            <h2 style="color: #47B5FF;">Shapefiles</h2>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
             <div class="round-buttons">
@@ -49,6 +49,11 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View St FR</button>
                 <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View St EN</button>
             </div>
+
+            <h5 style="color: white;">#</h5>
+            <h5 style="color: white;">#</h5>
+            <h5 style="color: white;">#</h5>
+            
             
             <h4 id="stepByStep">Step-by-step guide</h4>
             <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
