@@ -197,6 +197,11 @@ pre {
 }
 
 
+.text-button.selected {
+    color:#47B5FF;
+}
+
+
 
 .submenu, .submenu-inner {
   list-style-type: none; /* Removes bullet points */
