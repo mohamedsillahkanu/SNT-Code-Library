@@ -206,11 +206,13 @@ pre {
 .submenu, .submenu-inner {
   list-style-type: none; /* Removes bullet points */
   padding-left: 0; /* Aligns submenus with parent items */
+  color: black;
 }
 
 .submenu-inner {
   display: none; /* Hide inner submenus by default */
   margin-left: 20px; /* Indent to show hierarchy */
+  color: black;
 }
 
 .submenu > li:hover > .submenu-inner {
