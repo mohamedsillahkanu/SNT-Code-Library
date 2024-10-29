@@ -81,6 +81,7 @@ body {
 
 .menu {
     margin: 5px 0;
+    padding: 0;
 }
 
 .submenu {
@@ -112,6 +113,7 @@ body {
     color: black;
     text-decoration: none; /* This removes the underline */
     margin: 5px 0;
+    padding: 0;
 }
 
 .menu-link.selected {
