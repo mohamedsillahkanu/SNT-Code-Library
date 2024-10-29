@@ -195,14 +195,6 @@ pre {
 }
 
 
-.submenu-link:active {
-    color: #47B5FF;
-}
-
-
-.submenu-link:hover {
-    color: #47B5FF;
-}
 
 .text-button.selected {
     color: #47B5FF;
