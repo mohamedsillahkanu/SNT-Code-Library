@@ -197,10 +197,6 @@ pre {
 }
 
 
-.text-button.selected {
-    color: #47B5FF; /* Color when selected */
-}
-
 
 .submenu, .submenu-inner {
   list-style-type: none; /* Removes bullet points */
@@ -224,9 +220,6 @@ pre {
 .menu-link, .submenu-link.selected {
   color: #47B5FF; /* Color when selected */
 }
-
-
-
 
 
 .text-button:hover {
