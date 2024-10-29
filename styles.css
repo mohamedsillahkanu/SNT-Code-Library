@@ -226,6 +226,11 @@ pre {
   color: #47B5FF; /* Color when selected */
 }
 
+submenu-inner:active {
+    color: #47B5FF;
+}
+
+
 
 
 .fixed-buttons {
