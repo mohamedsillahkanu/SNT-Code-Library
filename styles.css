@@ -120,7 +120,7 @@ body {
 }
 
 .menu-link.selected {
-    color: #47B5FF; /* Color when selected */
+    color: black; /* Color when selected */
 }
 
 .main-content-container {
@@ -222,13 +222,6 @@ pre {
 }
 
 
-.text-button:hover {
-    color: #47B5FF; /* Color when selected */
-}
-
-.text-button.scrolled {
-    color: #47B5FF; /* Change text color */
-}
 
 .fixed-buttons {
     display: flex;         /* Use flexbox layout */
