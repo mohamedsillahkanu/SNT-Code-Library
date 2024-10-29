@@ -189,7 +189,7 @@ pre {
     padding: 0;                      /* Remove default padding */
     margin-right: 10px;              /* Space between buttons */
     text-align: left; 
-    font_family: Verdana;
+    font-family: Verdana;
     
     position: sticky;
     top: 10px; /* Adjust this value to control where the button sticks on the page */
