@@ -214,7 +214,7 @@ pre {
 
 .menu-link, .submenu-link {
   text-decoration: none; /* Remove underlines from links */
-  color: #000; /* Set link text color */
+  color: black; /* Set link text color */
 }
 
 .menu-link, .submenu-link.selected {
