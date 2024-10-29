@@ -38,7 +38,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample results</button>
             </div>
 
-            <h5>A. Data Assembly and Management/Shapefiles</h5>
+            <h5>Data Assembly and Management / Shapefiles</h5>
             <h2 style="color: #47B5FF;">Shapefiles</h2>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
@@ -52,11 +52,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
             <h5 style="color: white;">#</h5>
             <h5 style="color: white;">#</h5>
-            <h5 style="color: white;">#</h5>
-            
-            
             <h4 id="stepByStep">Step-by-step guide</h4>
-            <h5 style="color: #AADEE9;">Step 1: Install Necessary Libraries</h5>
+            <h5 style="color: #628DA5;">Step 1: Install Necessary Libraries</h5>
             
             <p>Before starting, ensure you have the required R packages installed.</p>
             <p>This can be done using the following code:</p>
@@ -67,7 +64,7 @@ install.packages(c("sf", "ggplot2", "dplyr"))
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
           
-            <h5 style="color: #AADEE9;">Step 2: Load Necessary Libraries</h5>
+            <h5 style="color: #628DA5;">Step 2: Load Necessary Libraries</h5>
             <p>After installing the libraries, you need to load them into your R environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>            
 # Load necessary libraries
@@ -76,7 +73,7 @@ library(dplyr)
 library(ggplot2)
             </code></pre>
             <p>This step makes the functions from these libraries available for use in your script.</p>   
-            <h5 style="color: #AADEE9;">Step 3: Import Shapefiles</h5>
+            <h5 style="color: #628DA5;">Step 3: Import Shapefiles</h5>
             <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Import Shapefiles
@@ -86,7 +83,7 @@ import_shapefile <- function(filepath) {
 }
             </code></pre>
             <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>     
-            <h5 style="color: #ADD8E6;">Step 4: Rename and Match Names</h5>
+            <h5 style="color: #628DA5;">Step 4: Rename and Match Names</h5>
             <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Rename and Match Names
@@ -98,7 +95,7 @@ rename_shapefile_columns <- function(shapefile, new_names) {
             <p>This function takes a shapefile and a list of new names, renaming the columns accordingly.</p>
 
           
-            <h5 style="color: #AADEE9;">Step 5: Link Shapefiles to Relevant Scales</h5>
+            <h5 style="color: #628DA5;">Step 5: Link Shapefiles to Relevant Scales</h5>
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
