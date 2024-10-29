@@ -194,6 +194,15 @@ pre {
     z-index: 100; 
 }
 
+.menu-link .text-button {
+
+    color: black;
+}
+
+
+.text-button.selected {
+    color: #47B5FF;
+}
 
 
 .submenu, .submenu-inner {
