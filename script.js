@@ -56,7 +56,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             
             
             <h4 id="stepByStep">Step-by-step guide</h4>
-            <h5 style="color: #ADD8E6;">Step 1: Install Necessary Libraries</h5>
+            <h5 style="color: #AADEE9;">Step 1: Install Necessary Libraries</h5>
             
             <p>Before starting, ensure you have the required R packages installed.</p>
             <p>This can be done using the following code:</p>
@@ -67,7 +67,7 @@ install.packages(c("sf", "ggplot2", "dplyr"))
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
           
-            <h5 style="color: #ADD8E6;">Step 2: Load Necessary Libraries</h5>
+            <h5 style="color: #AADEE9;">Step 2: Load Necessary Libraries</h5>
             <p>After installing the libraries, you need to load them into your R environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>            
 # Load necessary libraries
@@ -76,7 +76,7 @@ library(dplyr)
 library(ggplot2)
             </code></pre>
             <p>This step makes the functions from these libraries available for use in your script.</p>   
-            <h5 style="color: #ADD8E6;">Step 3: Import Shapefiles</h5>
+            <h5 style="color: #AADEE9;">Step 3: Import Shapefiles</h5>
             <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Import Shapefiles
@@ -98,7 +98,7 @@ rename_shapefile_columns <- function(shapefile, new_names) {
             <p>This function takes a shapefile and a list of new names, renaming the columns accordingly.</p>
 
           
-            <h5 style="color: #ADD8E6;">Step 5: Link Shapefiles to Relevant Scales</h5>
+            <h5 style="color: #AADEE9;">Step 5: Link Shapefiles to Relevant Scales</h5>
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
@@ -108,7 +108,7 @@ link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
 }
             </code></pre>
             <p>This function performs a merge between the shapefile and a data frame containing scale information based on a specified linking column.</p>
-            <h5 style="color: #ADD8E6;">Step 6: Visualizing Shapefiles and Making Basic Maps</h5>
+            <h5 style="color: #AADEE9;">Step 6: Visualizing Shapefiles and Making Basic Maps</h5>
             <p>Finally, you can visualize the shapefile using <code>ggplot2</code> and <code>sf</code>. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Visualizing Shapefiles and Making Basic Maps
