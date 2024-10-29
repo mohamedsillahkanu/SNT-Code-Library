@@ -201,6 +201,34 @@ pre {
     color: #47B5FF; /* Color when selected */
 }
 
+
+.submenu, .submenu-inner {
+  list-style-type: none; /* Removes bullet points */
+  padding-left: 0; /* Aligns submenus with parent items */
+}
+
+.submenu-inner {
+  display: none; /* Hide inner submenus by default */
+  margin-left: 20px; /* Indent to show hierarchy */
+}
+
+.submenu > li:hover > .submenu-inner {
+  display: block; /* Show the inner submenu on hover of parent item */
+}
+
+.menu-link, .submenu-link {
+  text-decoration: none; /* Remove underlines from links */
+  color: #000; /* Set link text color */
+}
+
+.menu-link, .submenu-link.selected {
+  color: #47B5FF; /* Color when selected */
+}
+
+
+
+
+
 .text-button:hover {
     color: #47B5FF; /* Color when selected */
 }
