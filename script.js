@@ -101,7 +101,7 @@ st_crs(gdf) <- 4326
 print(gdf)
 
 # Explanation:
-# - 'head()' displays the first 6 rows of the sf object to give you a preview of the data and understand its structure.
+# - 'print(gdf)' print only a portion of the spatial object by default.
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
