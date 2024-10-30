@@ -28,6 +28,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h3>Scope</h3>
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis.</p>
         `,
+    
 
         shapefiles_info: `
             
@@ -36,7 +37,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" style="color: white;">R</button>
                 <button class="text-button">On this page:</button>
                 <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
-                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample result</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
             </div>
 
             <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
@@ -102,6 +103,103 @@ print(gdf)
 
 # Explanation:
 # - 'print(gdf)' print only a portion of the spatial object by default.
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Sample results</h3>
+            <img src="https://github.com/mohamedsillahkanu/SNT-Code-Library/raw/31b914c1115de3ccd6c8045946adc4a84eadc4bb/print%20gdf%20in%20R.png" alt="Sample Results">;
+            
+        `,
+
+        basic_plot: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf") # Installs the 'sf' library to handle spatial data
+install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+
+# Step 2: Import the necessary libraries
+library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
+library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+
+# Step 3: Define the path to the shapefile components on GitHub
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
+# - A shapefile consists of multiple files, so all components must be downloaded.
+
+# Step 3.1: Download the shapefile components locally
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' downloads each of the shapefile components and saves them locally.
+# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+
+# Step 4: Load the shapefile into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
+# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
+# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+
+# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
+ggplot(data = gdf) +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),  # Remove grid lines
+    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
+    axis.ticks = element_blank(),  # Remove x and y axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+  ) +
+  ggtitle("Map of Sierra Leone")
+
+# Explanation:
+# - 'geom_sf()' adds the geometry from the sf object to the plot.
+# - 'theme_minimal()' sets a basic clean theme, which is further customized.
+# - 'theme()' allows for specific customizations:
+#   - 'panel.grid = element_blank()' removes grid lines.
+#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
+#   - 'axis.ticks = element_blank()' removes the axis ticks.
+#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
+#   - 'size = 16' adjusts the size of the title text to make it more readable.
+
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
