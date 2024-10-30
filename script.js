@@ -28,7 +28,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h3>Scope</h3>
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis.</p>
         `,
-    
+
+
 
         shapefiles_info: `
             
@@ -112,6 +113,88 @@ print(gdf)
             
         `,
 
+
+        manual_color: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles / View shapefile data</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">View shapefile data</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf")
+
+# Step 2: Import necessary libraries
+library(sf)
+
+# Explanation:
+# - sf: Used to work with geospatial data in R.
+
+# Step 3: Define the path to the shapefile components
+
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - The variables 'shapefile_shx', 'shapefile_dbf', and 'shapefile_path' hold the raw paths to the shapefile components from the GitHub repository.
+# - All three files (.shp, .shx, .dbf) are required to correctly read the shapefile.
+
+# Step 3.1: Download the shapefile components
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' is used to download each component of the shapefile from GitHub and save them locally.
+# - This ensures all necessary files are available for reading the shapefile.
+
+# Step 4: Load shapefile data into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an sf object, which is a data structure for handling geospatial data in R.
+# - The sf object 'gdf' contains both the geometry (spatial features) and attributes (data values) of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs()' is used to set the CRS of the sf object.
+# - EPSG:4326 is a common CRS that represents coordinates in longitude and latitude.
+
+# Step 5: View the first few rows of the sf object
+print(gdf)
+
+# Explanation:
+# - 'print(gdf)' print only a portion of the spatial object by default.
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://github.com/mohamedsillahkanu/SNT-Code-Library/raw/31b914c1115de3ccd6c8045946adc4a84eadc4bb/print%20gdf%20in%20R.png" alt="Output">
+            
+        `,
         basic_plot: `
             
             <div class="fixed-buttons id="fixedButtons">
