@@ -622,6 +622,8 @@ ggplot(data = merged_data) +
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/c25bdfc559d70f15e282d15c7286d1d4e66c12c4/IRS%20NEW.png" alt="Output">
             
         `,
+
+        
         manual_color: `
             
             <div class="fixed-buttons id="fixedButtons">
@@ -648,7 +650,7 @@ ggplot(data = merged_data) +
           
             <pre id="codeBlock">
                 <code>
-#Step 1: Install necessary packages (if not installed)
+# Step 1: Install necessary packages (if not installed)
 install.packages("sf")          # Install 'sf' for spatial data handling
 install.packages("readxl")      # Install 'readxl' for reading Excel files
 install.packages("dplyr")       # Install 'dplyr' for data manipulation
@@ -706,7 +708,7 @@ ggplot(data = merged_data) +
     plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),  # Center the title and make it bold
     legend.position = "right"      # Position the legend on the right
   ) +
-  ggtitle("IRS Status by Chiefdom")  # Add and center the map title
+  ggtitle("IRS Status by Chiefdom") 
 
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
