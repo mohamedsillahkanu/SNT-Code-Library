@@ -329,66 +329,75 @@ ggplot() +
             <pre id="codeBlock">
                 <code>
 # Step 1: Install necessary libraries
-install.packages("sf") # Installs the 'sf' library to handle spatial data
-install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+#install.packages("sf")          # Install 'sf' for spatial data handling
+install.packages("readxl")      # Install 'readxl' for reading Excel files
+install.packages("dplyr")       # Install 'dplyr' for data manipulation
 
-# Step 2: Import the necessary libraries
-library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
-library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+# Step 2: Import necessary libraries
+library(sf)          # Load 'sf' package for geospatial data manipulation
+library(readxl)      # Load 'readxl' package for reading Excel files
+library(dplyr)       # Load 'dplyr' for data manipulation
 
-# Step 3: Define the path to the shapefile components on GitHub
-shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
-shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
-shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+# Step 3: Define URLs to shapefile components for 'Chiefdom 2021'
+chiefdom_shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+chiefdom_shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+chiefdom_shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
 
-# Explanation:
-# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
-# - A shapefile consists of multiple files, so all components must be downloaded.
-
-# Step 3.1: Download the shapefile components locally
-download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
-download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
-download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
-
-# Explanation:
-# - 'download.file()' downloads each of the shapefile components and saves them locally.
-# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+# Step 3.1: Download the shapefile components locally for 'Chiefdom 2021'
+download.file(chiefdom_shapefile_path, destfile = "Chiefdom_2021.shp", mode = "wb")
+download.file(chiefdom_shapefile_shx, destfile = "Chiefdom_2021.shx", mode = "wb")
+download.file(chiefdom_shapefile_dbf, destfile = "Chiefdom_2021.dbf", mode = "wb")
 
 # Step 4: Load the shapefile into an sf object
-gdf <- st_read("Chiefdom_2021.shp")
+adm3 <- st_read("Chiefdom_2021.shp")
+
+# Step 5: Set the Coordinate Reference System (CRS) to ensure consistency
+st_crs(adm3) <- 4326  # Set CRS to WGS84
+
+# Step 6: Read the Excel file that contains additional attribute data
+# Define the raw URL for the Excel file
+excel_file_url <- "https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/0912c6f41ef3256396c145781450286a91147554/Chiefdom_data.xlsx"
+
+# Step 6.1: Download the Excel file to the local directory
+download.file(excel_file_url, destfile = "Chiefdom_data.xlsx", mode = "wb")
+
+# Step 6.2: Load Excel data into R
+excel_data <- read_excel("Chiefdom_data.xlsx")
 
 # Explanation:
-# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
-# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+# - 'download.file()' downloads the Excel file from the raw GitHub URL and saves it locally.
+# - 'read_excel()' reads the downloaded Excel file into an R data frame.
+# - Ensure the Excel data has a common key column (e.g., 'adm3_id') to merge with the shapefile.
 
-# Step 4.1: Set the Coordinate Reference System (CRS)
-st_crs(gdf) <- 4326
+# Step 7: Perform the merge operation and validate 1:1 relationship
+# Ensure that both adm3 and excel_data have a common column named 'adm3_id'
+merged_data <- merge(adm3, excel_data, by = "FIRST_CHIE", all = FALSE)
 
-# Explanation:
-# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
-# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+# Validate 1:1 Merge:
+# Identify rows that did not merge (in both adm3 and excel_data)
+unmatched_adm3 <- anti_join(adm3, excel_data, by = "FIRST_CHIE")  # Rows in 'adm3' not in 'excel_data'
+unmatched_excel <- anti_join(excel_data, adm3, by = "FIRST_CHIE") # Rows in 'excel_data' not in 'adm3'
 
-# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
-ggplot(data = gdf) +
-  geom_sf() +
-  theme_minimal() +
-  theme(
-    panel.grid = element_blank(),  # Remove grid lines
-    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
-    axis.ticks = element_blank(),  # Remove x and y axis ticks
-    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
-  ) +
-  ggtitle("Map of Sierra Leone")
+# Print the non-matching rows
+print("Rows in the shapefile (adm3) that did not merge:")
+print(unmatched_adm3)
+
+print("Rows in the Excel data that did not merge:")
+print(unmatched_excel)
 
 # Explanation:
-# - 'geom_sf()' adds the geometry from the sf object to the plot.
-# - 'theme_minimal()' sets a basic clean theme, which is further customized.
-# - 'theme()' allows for specific customizations:
-#   - 'panel.grid = element_blank()' removes grid lines.
-#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
-#   - 'axis.ticks = element_blank()' removes the axis ticks.
-#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
-#   - 'size = 16' adjusts the size of the title text to make it more readable.
+# - 'anti_join(adm3, excel_data, by = "adm3_id")' finds rows in 'adm3' that do not have a matching row in 'excel_data'.
+# - 'anti_join(excel_data, adm3, by = "adm3_id")' finds rows in 'excel_data' that do not have a matching row in 'adm3'.
+# - The print statements display the rows that were not matched during the merge process.
+
+# Step 8: Print the merged data to inspect the result
+print("Merged Data:")
+print(merged_data)
+
+# Explanation:
+# - 'print(merged_data)' will display the contents of the merged sf object in the console.
+# - This allows you to verify that the data merge was successful and to inspect the attributes.
+
 
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
