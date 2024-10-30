@@ -714,7 +714,7 @@ ggplot(data = merged_data) +
             </pre>
 
             <h3 id="sampleR">Output</h3>
-            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/07020381e3bed8011bc1ef27151947bdffad7a7f/manual%20color%20coding.png" alt="Output">
             
         `,
 
