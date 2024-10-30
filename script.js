@@ -596,9 +596,9 @@ excel_data <- read_excel("Chiefdom_data1.xlsx")
 # Ensure that both adm3 and excel_data have a common column named 'adm3_id'
 merged_data <- merge(adm3, excel_data, by = "FIRST_CHIE", all = FALSE)
 
-# Step 8: Plot the map using ggplot2 with RColorBrewer Set1 palette for the categorical column `IRS`
+# Step 8: Plot the map using ggplot2 with RColorBrewer Set3 palette for the categorical column IRS
 ggplot(data = merged_data) +
-  geom_sf(aes(fill = IRS), color = "black", size = 1.2, linetype = "solid") +  # Fill regions based on `IRS` column, add thicker borders for separation
+  geom_sf(aes(fill = IRS), color = "black", size = 1.2, linetype = "solid") +  # Fill regions based on IRS column, add thicker borders for separation
   scale_fill_brewer(
     palette = "Set3",  # Use 'Set1' from RColorBrewer for distinct categorical colors
     name = "IRS Status"  # Legend title
@@ -613,13 +613,6 @@ ggplot(data = merged_data) +
   ) +
   ggtitle("IRS Status by Chiefdom")  # Add and center the map title
 
-# Explanation:
-#geom_sf(): Adds the spatial features (chiefdoms) and fills them based on the IRS column.
-#size = 1.2`: Increases the line thickness to help distinguish the boundaries more clearly.
-#scale_fill_brewer(): Uses RColorBrewer to apply a categorical palette (Set1) to the IRS column.
-#palette = "Set1": Uses Set1 palette which provides vibrant and distinct colors suitable for two categories.
-#name = "IRS Status": Sets the legend title.
-#theme_minimal() and theme(): Customize the appearance by removing unnecessary elements and enhancing map readability.
 
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
