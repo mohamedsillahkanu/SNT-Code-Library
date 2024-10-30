@@ -166,7 +166,7 @@ gdf.info()
             </pre>
 
             <h3 id="sampleR">Sample results</h3>
-            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-code-library-english-version/a204dc53be5209fc170acbfbb5db8900930a80fa/MAP_PYTHON.png" alt="Sample Results">;
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/50b3fee1b7093c4014e647309562a3934fe4c801/Sh%20information.png" alt="Sample Results">;
             
 
         `,
