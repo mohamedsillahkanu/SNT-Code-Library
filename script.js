@@ -505,7 +505,7 @@ merged_data <- merged_data %>%
 # Step 10: Plot the map using ggplot2
 ggplot(data = merged_data) +
   geom_sf(aes(fill = Testing_rate), color = "black", lwd = 0.5) +  # Fill regions based on Testing_rate_category
-  scale_fill_brewer(palette = "RdYlGn", name = "Testing rate (%)") +  # Use Set3 palette with a customized legend title
+  scale_fill_brewer(palette = "RdYlGn", name = "Testing rate (%)") +  # Use RdYlGn palette with a customized legend title
   theme_minimal() +  # Apply a minimal theme for clean visualization
   theme(
     panel.grid = element_blank(),  # Remove background grid lines for a cleaner look
