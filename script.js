@@ -40,8 +40,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
             </div>
 
-            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
-            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles / View shapefile data</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">View shapefile data</h2>
             <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
 
             <div class="round-buttons">
@@ -113,6 +113,196 @@ print(gdf)
         `,
 
         basic_plot: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles / Basic plotting</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Basic plotting</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf") # Installs the 'sf' library to handle spatial data
+install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+
+# Step 2: Import the necessary libraries
+library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
+library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+
+# Step 3: Define the path to the shapefile components on GitHub
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
+# - A shapefile consists of multiple files, so all components must be downloaded.
+
+# Step 3.1: Download the shapefile components locally
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' downloads each of the shapefile components and saves them locally.
+# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+
+# Step 4: Load the shapefile into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
+# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
+# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+
+# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
+ggplot(data = gdf) +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),  # Remove grid lines
+    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
+    axis.ticks = element_blank(),  # Remove x and y axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+  ) +
+  ggtitle("Map of Sierra Leone")
+
+# Explanation:
+# - 'geom_sf()' adds the geometry from the sf object to the plot.
+# - 'theme_minimal()' sets a basic clean theme, which is further customized.
+# - 'theme()' allows for specific customizations:
+#   - 'panel.grid = element_blank()' removes grid lines.
+#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
+#   - 'axis.ticks = element_blank()' removes the axis ticks.
+#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
+#   - 'size = 16' adjusts the size of the title text to make it more readable.
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            
+        `,
+
+
+        admin_units: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles / Admin units overlay</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Admin units overlay</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf")       # Install 'sf' for spatial data handling
+install.packages("ggplot2")  # Install 'ggplot2' for advanced plotting
+
+# Step 2: Import necessary libraries
+library(sf)       # Load 'sf' package for geospatial data manipulation
+library(ggplot2)  # Load 'ggplot2' for plotting
+
+# Step 3: Define URLs to shapefile components for adm1 and adm3
+adm1_shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM1.shp'
+adm1_shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM1.shx'
+adm1_shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM1.dbf'
+
+adm3_shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM3.shp'
+adm3_shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM3.shx'
+adm3_shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/b319b4afc5168a33cfe1173a1ea0de7094e9593f/geoBoundaries-BFA-ADM3.dbf'
+
+# Step 3.1: Download the shapefile components locally for adm1 and adm3
+# Download adm1 shapefile components
+download.file(adm1_shapefile_path, destfile = "geoBoundaries_BFA_ADM1.shp", mode = "wb")
+download.file(adm1_shapefile_shx, destfile = "geoBoundaries_BFA_ADM1.shx", mode = "wb")
+download.file(adm1_shapefile_dbf, destfile = "geoBoundaries_BFA_ADM1.dbf", mode = "wb")
+
+# Download adm3 shapefile components
+download.file(adm3_shapefile_path, destfile = "geoBoundaries_BFA_ADM3.shp", mode = "wb")
+download.file(adm3_shapefile_shx, destfile = "geoBoundaries_BFA_ADM3.shx", mode = "wb")
+download.file(adm3_shapefile_dbf, destfile = "geoBoundaries_BFA_ADM3.dbf", mode = "wb")
+
+# Step 4: Load shapefiles into sf objects
+adm1 <- st_read("geoBoundaries_BFA_ADM1.shp")   # Reads administrative level 1 shapefile
+adm3 <- st_read("geoBoundaries_BFA_ADM3.shp")   # Reads administrative level 3 shapefile
+
+# Step 5: Set the Coordinate Reference System (CRS) to ensure consistency
+st_crs(adm1) <- 4326  # Set CRS to WGS84 for adm1
+st_crs(adm3) <- 4326  # Set CRS to WGS84 for adm3
+
+# Explanation:
+# - It is crucial to make sure both spatial layers have the same CRS to overlay them accurately.
+
+# Step 6: Plot the adm1 and adm3 layers together using ggplot2
+ggplot() +
+  geom_sf(data = adm1, fill = NA, color = "blue", lwd = 1.8) +  # Plot adm1 boundaries in blue
+  geom_sf(data = adm3, fill = NA, color = "red", size = 1) +   # Plot adm3 boundaries in red
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),   # Remove grid lines
+    axis.text = element_blank(),    # Remove axis tick labels
+    axis.ticks = element_blank(),   # Remove axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center and adjust the title size
+  ) +
+  ggtitle("Overlay of Administrative Units (ADM1 and ADM3)")
+
+# Explanation:
+# - 'geom_sf(data = adm1, fill = NA, color = "blue")' plots the adm1 boundaries in blue without filling.
+# - 'geom_sf(data = adm3, fill = NA, color = "red")' plots the adm3 boundaries in red without filling.
+# - 'theme_minimal()' sets a simple theme, and 'theme()' is used to remove unwanted elements like grid lines and axis ticks.
+# - 'ggtitle()' adds a title and centers it for better visual presentation.
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            
+        `,
+
+        merge_excel: `
             
             <div class="fixed-buttons id="fixedButtons">
                 
@@ -208,6 +398,299 @@ ggplot(data = gdf) +
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
             
         `,
+
+        map_numeric: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf") # Installs the 'sf' library to handle spatial data
+install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+
+# Step 2: Import the necessary libraries
+library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
+library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+
+# Step 3: Define the path to the shapefile components on GitHub
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
+# - A shapefile consists of multiple files, so all components must be downloaded.
+
+# Step 3.1: Download the shapefile components locally
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' downloads each of the shapefile components and saves them locally.
+# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+
+# Step 4: Load the shapefile into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
+# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
+# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+
+# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
+ggplot(data = gdf) +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),  # Remove grid lines
+    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
+    axis.ticks = element_blank(),  # Remove x and y axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+  ) +
+  ggtitle("Map of Sierra Leone")
+
+# Explanation:
+# - 'geom_sf()' adds the geometry from the sf object to the plot.
+# - 'theme_minimal()' sets a basic clean theme, which is further customized.
+# - 'theme()' allows for specific customizations:
+#   - 'panel.grid = element_blank()' removes grid lines.
+#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
+#   - 'axis.ticks = element_blank()' removes the axis ticks.
+#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
+#   - 'size = 16' adjusts the size of the title text to make it more readable.
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            
+        `,
+
+        map_categorical: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf") # Installs the 'sf' library to handle spatial data
+install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+
+# Step 2: Import the necessary libraries
+library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
+library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+
+# Step 3: Define the path to the shapefile components on GitHub
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
+# - A shapefile consists of multiple files, so all components must be downloaded.
+
+# Step 3.1: Download the shapefile components locally
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' downloads each of the shapefile components and saves them locally.
+# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+
+# Step 4: Load the shapefile into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
+# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
+# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+
+# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
+ggplot(data = gdf) +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),  # Remove grid lines
+    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
+    axis.ticks = element_blank(),  # Remove x and y axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+  ) +
+  ggtitle("Map of Sierra Leone")
+
+# Explanation:
+# - 'geom_sf()' adds the geometry from the sf object to the plot.
+# - 'theme_minimal()' sets a basic clean theme, which is further customized.
+# - 'theme()' allows for specific customizations:
+#   - 'panel.grid = element_blank()' removes grid lines.
+#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
+#   - 'axis.ticks = element_blank()' removes the axis ticks.
+#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
+#   - 'size = 16' adjusts the size of the title text to make it more readable.
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            
+        `,
+
+        manual_color: `
+            
+            <div class="fixed-buttons id="fixedButtons">
+                
+                <button class="text-button" style="color: white;">R</button>
+                <button class="text-button">On this page:</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Output</button>
+            </div>
+
+            <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
+            <h2 style="color: #47B5FF; font-family: Verdana;">Shapefiles</h2>
+            <p><em>This section explains the workflow of importing and managing shapefiles using R.</em></p>
+
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
+            </div>
+            <h5 style="color: white;">#</h5>
+            <h3 id="fullCode">Code</h3>
+          
+            <pre id="codeBlock">
+                <code>
+# Step 1: Install necessary libraries
+install.packages("sf") # Installs the 'sf' library to handle spatial data
+install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+
+# Step 2: Import the necessary libraries
+library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
+library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+
+# Step 3: Define the path to the shapefile components on GitHub
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+
+# Explanation:
+# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
+# - A shapefile consists of multiple files, so all components must be downloaded.
+
+# Step 3.1: Download the shapefile components locally
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+
+# Explanation:
+# - 'download.file()' downloads each of the shapefile components and saves them locally.
+# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+
+# Step 4: Load the shapefile into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
+# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
+# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
+
+# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
+ggplot(data = gdf) +
+  geom_sf() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),  # Remove grid lines
+    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
+    axis.ticks = element_blank(),  # Remove x and y axis ticks
+    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+  ) +
+  ggtitle("Map of Sierra Leone")
+
+# Explanation:
+# - 'geom_sf()' adds the geometry from the sf object to the plot.
+# - 'theme_minimal()' sets a basic clean theme, which is further customized.
+# - 'theme()' allows for specific customizations:
+#   - 'panel.grid = element_blank()' removes grid lines.
+#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
+#   - 'axis.ticks = element_blank()' removes the axis ticks.
+#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
+#   - 'size = 16' adjusts the size of the title text to make it more readable.
+
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+            </pre>
+
+            <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            
+        `,
+
+
 
     };
 
