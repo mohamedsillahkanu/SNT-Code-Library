@@ -55,45 +55,53 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
           
             <pre id="codeBlock">
                 <code>
-# Step 1: Import necessary libraries
-import geopandas as gpd
-import pandas as pd
-import matplotlib.pyplot as plt
+# Step 1: Install necessary libraries
+install.packages("sf")
+
+# Step 2: Import necessary libraries
+library(sf)
 
 # Explanation:
-# - geopandas: Used to work with geospatial data.
-# - pandas: Used for general data manipulation.
-# - matplotlib.pyplot: Used for data visualization.
+# - sf: Used to work with geospatial data in R.
 
-# Step 2: Define the path to the shapefile
-shapefile_path = 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+# Step 3: Define the path to the shapefile components
 
-# Explanation:
-# - The variable 'shapefile_path' holds the raw path to your shapefile from the GitHub repository.
-# - This link is the raw version of the file, allowing it to be accessed directly.
-# - The variable 'shapefile_path' holds the path to your shapefile.
-# - The current path is a link to a GitHub repository. You might need to download it or use a library that can access files directly from GitHub.
-# - The variable 'shapefile_path' holds the path to your shapefile.
-# - Make sure to replace the path with the correct location of your shapefile.
-
-# Step 3: Load shapefile data into a GeoDataFrame
-gdf = gpd.read_file(shapefile_path)
+shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
+shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
 
 # Explanation:
-# - gpd.read_file(): This function reads the shapefile into a GeoDataFrame, which is a data structure similar to a pandas DataFrame but with additional functionality for geospatial data.
+# - The variables 'shapefile_shx', 'shapefile_dbf', and 'shapefile_path' hold the raw paths to the shapefile components from the GitHub repository.
+# - All three files (.shp, .shx, .dbf) are required to correctly read the shapefile.
 
-# Step 4: View the first few rows of the GeoDataFrame
-print(gdf.head())
-
-# Explanation:
-# - gdf.head(): Displays the first 5 rows of the GeoDataFrame to give you a preview of the data and understand its structure.
-
-# Step 5: Check the structure and basic information of the GeoDataFrame
-gdf.info()
+# Step 3.1: Download the shapefile components
+download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
+download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
+download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
 
 # Explanation:
-# - gdf.info(): Provides a concise summary of the GeoDataFrame, including column names, data types, and non-null values.
+# - 'download.file()' is used to download each component of the shapefile from GitHub and save them locally.
+# - This ensures all necessary files are available for reading the shapefile.
 
+# Step 4: Load shapefile data into an sf object
+gdf <- st_read("Chiefdom_2021.shp")
+
+# Explanation:
+# - 'st_read()' reads the shapefile into an sf object, which is a data structure for handling geospatial data in R.
+# - The sf object 'gdf' contains both the geometry (spatial features) and attributes (data values) of the shapefile.
+
+# Step 4.1: Set the Coordinate Reference System (CRS)
+st_crs(gdf) <- 4326
+
+# Explanation:
+# - 'st_crs()' is used to set the CRS of the sf object.
+# - EPSG:4326 is a common CRS that represents coordinates in longitude and latitude.
+
+# Step 5: View the first few rows of the sf object
+print(gdf)
+
+# Explanation:
+# - 'head()' displays the first 6 rows of the sf object to give you a preview of the data and understand its structure.
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
