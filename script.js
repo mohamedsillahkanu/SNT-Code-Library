@@ -204,7 +204,7 @@ ggplot(data = merged_data) +
             </pre>
 
             <h3 id="sampleR">Output</h3>
-            <img src="https://github.com/mohamedsillahkanu/SNT-Code-Library/raw/31b914c1115de3ccd6c8045946adc4a84eadc4bb/print%20gdf%20in%20R.png" alt="Output">
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/bff06d61deac1142cf599cca3fd6ab20f94d4c6d/manual%20color%20coding.png" alt="Output">
             
         `,
         basic_plot: `
