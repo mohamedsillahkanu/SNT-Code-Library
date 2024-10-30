@@ -708,7 +708,6 @@ ggplot(data = merged_data) +
     legend.position = "right"      # Position the legend on the right
   ) +
   ggtitle("IRS Status by Chiefdom")  # Add and center the map title
-
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
