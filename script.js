@@ -35,9 +35,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 
                 <button class="text-button" style="color: white;">R</button>
                 <button class="text-button">On this page:</button>
-                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
-                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Full code</button>
-                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample results</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample result</button>
             </div>
 
             <h5 style="font-weight: normal; font-family: Verdana;">Data Assembly and Management / Shapefiles</h5>
