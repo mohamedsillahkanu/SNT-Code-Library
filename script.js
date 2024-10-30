@@ -122,39 +122,45 @@ visualize_shapefile <- function(shapefile, variable) {
           
             <pre id="codeBlock">
                 <code>
-# Install necessary libraries
-install.packages(c("sf", "ggplot2", "dplyr"))
+# Step 1: Import necessary libraries
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
+# Explanation:
+# - geopandas: Used to work with geospatial data.
+# - pandas: Used for general data manipulation.
+# - matplotlib.pyplot: Used for data visualization.
 
-# Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
-}
+# Step 2: Define the path to the shapefile
+shapefile_path = 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
 
-# Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
-}
+# Explanation:
+# - The variable 'shapefile_path' holds the raw path to your shapefile from the GitHub repository.
+# - This link is the raw version of the file, allowing it to be accessed directly.
+# - The variable 'shapefile_path' holds the path to your shapefile.
+# - The current path is a link to a GitHub repository. You might need to download it or use a library that can access files directly from GitHub.
+# - The variable 'shapefile_path' holds the path to your shapefile.
+# - Make sure to replace the path with the correct location of your shapefile.
 
-# Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- merge(shapefile, scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
-}
+# Step 3: Load shapefile data into a GeoDataFrame
+gdf = gpd.read_file(shapefile_path)
 
-# Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile, variable) {
-    ggplot(data = shapefile) +
-        geom_sf(aes_string(fill = variable)) +
-        scale_fill_viridis_c() +
-        ggtitle(paste('Shapefile Visualization:', variable))
-}
+# Explanation:
+# - gpd.read_file(): This function reads the shapefile into a GeoDataFrame, which is a data structure similar to a pandas DataFrame but with additional functionality for geospatial data.
+
+# Step 4: View the first few rows of the GeoDataFrame
+print(gdf.head())
+
+# Explanation:
+# - gdf.head(): Displays the first 5 rows of the GeoDataFrame to give you a preview of the data and understand its structure.
+
+# Step 5: Check the structure and basic information of the GeoDataFrame
+gdf.info()
+
+# Explanation:
+# - gdf.info(): Provides a concise summary of the GeoDataFrame, including column names, data types, and non-null values.
+
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
