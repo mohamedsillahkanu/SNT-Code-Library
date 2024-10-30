@@ -329,7 +329,7 @@ ggplot() +
             <pre id="codeBlock">
                 <code>
 # Step 1: Install necessary libraries
-#install.packages("sf")          # Install 'sf' for spatial data handling
+install.packages("sf")          # Install 'sf' for spatial data handling
 install.packages("readxl")      # Install 'readxl' for reading Excel files
 install.packages("dplyr")       # Install 'dplyr' for data manipulation
 
@@ -386,8 +386,8 @@ print("Rows in the Excel data that did not merge:")
 print(unmatched_excel)
 
 # Explanation:
-# - 'anti_join(adm3, excel_data, by = "adm3_id")' finds rows in 'adm3' that do not have a matching row in 'excel_data'.
-# - 'anti_join(excel_data, adm3, by = "adm3_id")' finds rows in 'excel_data' that do not have a matching row in 'adm3'.
+# - 'anti_join(adm3, excel_data, by = "FIRST_CHIE")' finds rows in 'adm3' that do not have a matching row in 'excel_data'.
+# - 'anti_join(excel_data, adm3, by = "FIRST_CHIE")' finds rows in 'excel_data' that do not have a matching row in 'adm3'.
 # - The print statements display the rows that were not matched during the merge process.
 
 # Step 8: Print the merged data to inspect the result
