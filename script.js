@@ -436,67 +436,86 @@ print(merged_data)
           
             <pre id="codeBlock">
                 <code>
-# Step 1: Install necessary libraries
-install.packages("sf") # Installs the 'sf' library to handle spatial data
-install.packages("ggplot2") # Installs the 'ggplot2' library for data visualization
+# Step 1: Install necessary packages (if not installed)
+install.packages("sf")          # Install 'sf' for spatial data handling
+install.packages("readxl")      # Install 'readxl' for reading Excel files
+install.packages("dplyr")       # Install 'dplyr' for data manipulation
+install.packages("ggplot2")     # Install 'ggplot2' for plotting maps and visualizations
+install.packages("viridis")     # Install 'viridis' for color palettes
+install.packages("RColorBrewer")# Install 'RColorBrewer' for color palettes
 
-# Step 2: Import the necessary libraries
-library(sf) # Loads the 'sf' package, which is used to work with geospatial data in R
-library(ggplot2) # Loads the 'ggplot2' package for advanced plotting
+# Step 2: Load the necessary libraries
+library(sf)          # Load 'sf' package to work with spatial data
+library(readxl)      # Load 'readxl' package to read Excel files
+library(dplyr)       # Load 'dplyr' package to manipulate data
+library(ggplot2)     # Load 'ggplot2' package to plot spatial data
 
-# Step 3: Define the path to the shapefile components on GitHub
-shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
-shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
-shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+# Step 3: Define URLs to download shapefile components for 'Chiefdom 2021'
+chiefdom_shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+chiefdom_shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+chiefdom_shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
 
-# Explanation:
-# - These variables hold the URLs to the raw shapefile components (shp, shx, and dbf files) in the GitHub repository.
-# - A shapefile consists of multiple files, so all components must be downloaded.
-
-# Step 3.1: Download the shapefile components locally
-download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
-download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
-download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
-
-# Explanation:
-# - 'download.file()' downloads each of the shapefile components and saves them locally.
-# - This ensures that the entire shapefile (which includes geometry, attributes, and index) is available for analysis.
+# Step 3.1: Download the shapefile components locally for 'Chiefdom 2021'
+download.file(chiefdom_shapefile_path, destfile = "Chiefdom_2021.shp", mode = "wb")
+download.file(chiefdom_shapefile_shx, destfile = "Chiefdom_2021.shx", mode = "wb")
+download.file(chiefdom_shapefile_dbf, destfile = "Chiefdom_2021.dbf", mode = "wb")
 
 # Step 4: Load the shapefile into an sf object
-gdf <- st_read("Chiefdom_2021.shp")
+adm3 <- st_read("Chiefdom_2021.shp")
 
-# Explanation:
-# - 'st_read()' reads the shapefile into an 'sf' object (gdf).
-# - The 'sf' object contains both the spatial features (geometry) and attributes of the shapefile.
+# Step 5: Set the Coordinate Reference System (CRS) to ensure consistency
+st_crs(adm3) <- 4326  # Set CRS to WGS84 (latitude/longitude)
 
-# Step 4.1: Set the Coordinate Reference System (CRS)
-st_crs(gdf) <- 4326
+# Step 6: Read the Excel file that contains additional attribute data
+# Define the raw URL for the Excel file
+excel_file_url <- "https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/d48b5acb7e4e79a6b4c929e9fa11a4335a47a389/Chiefdom_data1.xlsx"
 
-# Explanation:
-# - 'st_crs() <- 4326' assigns the coordinate reference system (CRS) to the sf object.
-# - EPSG 4326 represents latitude and longitude, commonly used for geographic data.
 
-# Step 5: Plot the shapefile using ggplot2 for enhanced visualization, with customization
-ggplot(data = gdf) +
-  geom_sf() +
-  theme_minimal() +
+# Step 6.1: Download the Excel file to the local directory
+download.file(excel_file_url, destfile = "Chiefdom_data.xlsx", mode = "wb")
+
+# Step 6.2: Load Excel data into R
+excel_data <- read_excel("Chiefdom_data.xlsx")
+
+# Step 7: Merge the shapefile and Excel data by a common key column ('adm3_id')
+# Ensure that both adm3 and excel_data have a common column named 'adm3_id'
+merged_data <- merge(adm3, excel_data, by = "FIRST_CHIE", all = FALSE)
+
+# Step 8: Validate 1:1 Merge
+# Identify rows that did not merge (in both adm3 and excel_data)
+unmatched_adm3 <- anti_join(adm3, excel_data, by = "FIRST_CHIE")  # Rows in 'adm3' not in 'excel_data'
+unmatched_excel <- anti_join(excel_data, adm3, by = "FIRST_CHIE") # Rows in 'excel_data' not in 'adm3'
+
+# Step 8.1: Print the non-matching rows to check if any discrepancies exist
+print("Rows in the shapefile (adm3) that did not merge:")
+print(unmatched_adm3)
+
+print("Rows in the Excel data that did not merge:")
+print(unmatched_excel)
+
+# Step 9: Categorize the 'Testing rate' column in the merged dataset
+# Create a new column 'Testing_rate_category' based on defined ranges
+merged_data <- merged_data %>%
+  mutate(Testing_rate= cut(
+    Testing_rate,  # Column to be categorized
+    breaks = c(-Inf, 20, 40, 60, 80, 100),  # Define the breakpoints for categories
+    labels = c("<20", "20-40", "41-60", "61-80", "81-100")  # Labels for each category
+  ))
+
+# Step 10: Plot the map using ggplot2
+ggplot(data = merged_data) +
+  geom_sf(aes(fill = Testing_rate), color = "black", lwd = 0.5) +  # Fill regions based on Testing_rate_category
+  scale_fill_brewer(palette = "RdYlGn", name = "Testing rate (%)") +  # Use Set3 palette with a customized legend title
+  theme_minimal() +  # Apply a minimal theme for clean visualization
   theme(
-    panel.grid = element_blank(),  # Remove grid lines
-    axis.text = element_blank(),   # Remove x and y axis text (tick labels)
-    axis.ticks = element_blank(),  # Remove x and y axis ticks
-    plot.title = element_text(hjust = 0.5, size = 16)  # Center the title and adjust its size
+    panel.grid = element_blank(),  # Remove background grid lines for a cleaner look
+    axis.text = element_blank(),   # Remove axis labels (tick values)
+    axis.ticks = element_blank(),  # Remove axis tick marks
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),  # Center the title and make it bold
+    legend.position = "right"      # Position the legend on the right
   ) +
-  ggtitle("Map of Sierra Leone")
+  ggtitle("Testing Rate by Chiefdom")  # Add and center the title of the map
 
-# Explanation:
-# - 'geom_sf()' adds the geometry from the sf object to the plot.
-# - 'theme_minimal()' sets a basic clean theme, which is further customized.
-# - 'theme()' allows for specific customizations:
-#   - 'panel.grid = element_blank()' removes grid lines.
-#   - 'axis.text = element_blank()' removes the axis text (x and y tick labels).
-#   - 'axis.ticks = element_blank()' removes the axis ticks.
-#   - 'plot.title = element_text(hjust = 0.5)' centers the title by setting 'hjust' to 0.5 (horizontal justification).
-#   - 'size = 16' adjusts the size of the title text to make it more readable.
 
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
