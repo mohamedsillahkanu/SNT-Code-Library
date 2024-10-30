@@ -404,6 +404,8 @@ print(merged_data)
             </pre>
 
             <h3 id="sampleR">Output</h3>
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/4b58a824df47b56af2397452378dbc286423afae/row%20merging.png" alt="Output">
+
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/05f17c7e8e997d29e3a5000bc1adab46779554b6/Merge%20with%20excel.png" alt="Output">
             
         `,
