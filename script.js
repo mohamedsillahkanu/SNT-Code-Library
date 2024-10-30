@@ -629,7 +629,7 @@ ggplot(data = merged_data) +
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/eeff291e5a54c172ef62756d1cccbaa0daa9ede2/categorical%20Image.png" alt="Output">
             
         `,
-
+ 
         manual_color: `
             
             <div class="fixed-buttons id="fixedButtons">
