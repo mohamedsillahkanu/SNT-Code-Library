@@ -51,9 +51,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
             </div>
             <h5 style="color: white;">#</h5>
-            <h4 id="stepByStep" style="font-weight: normal;">Step-by-step guide</h4>
-
-            <h3 id="fullCode">Full code</h3>
+            <h3 id="fullCode">Code</h3>
           
             <pre id="codeBlock">
                 <code>
