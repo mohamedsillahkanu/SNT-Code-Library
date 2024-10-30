@@ -619,7 +619,7 @@ ggplot(data = merged_data) +
             </pre>
 
             <h3 id="sampleR">Output</h3>
-            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/eeff291e5a54c172ef62756d1cccbaa0daa9ede2/categorical%20Image.png" alt="Output">
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/c25bdfc559d70f15e282d15c7286d1d4e66c12c4/IRS%20NEW.png" alt="Output">
             
         `,
  
