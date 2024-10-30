@@ -168,7 +168,6 @@ gdf.info()
             <h3 id="sampleR">Sample results</h3>
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/50b3fee1b7093c4014e647309562a3934fe4c801/Sh%20information.png" alt="Sample Results">;
             
-
         `,
 
     };
