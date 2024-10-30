@@ -525,7 +525,7 @@ ggplot(data = merged_data) +
             <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/902afc6c44ec5806d47da4e9fb610cee365c9bf3/tesing%20replace.png" alt="Output">
             
         `,
-#
+
         map_categorical: `
             
             <div class="fixed-buttons id="fixedButtons">
