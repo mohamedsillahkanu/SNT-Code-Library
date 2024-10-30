@@ -140,53 +140,65 @@ print(gdf)
           
             <pre id="codeBlock">
                 <code>
-# Step 1: Install necessary libraries
-install.packages("sf")
+# Step 1: Install necessary packages (if not installed)
+install.packages("sf")          # Install 'sf' for spatial data handling
+install.packages("readxl")      # Install 'readxl' for reading Excel files
+install.packages("dplyr")       # Install 'dplyr' for data manipulation
+install.packages("ggplot2")     # Install 'ggplot2' for plotting maps
 
-# Step 2: Import necessary libraries
-library(sf)
+# Step 2: Load the necessary libraries
 
-# Explanation:
-# - sf: Used to work with geospatial data in R.
+library(sf)          # Load 'sf' package to work with spatial data
+library(readxl)      # Load 'readxl' package to read Excel files
+library(dplyr)       # Load 'dplyr' package to manipulate data
+library(ggplot2)     # Load 'ggplot2' package to plot spatial data
 
-# Step 3: Define the path to the shapefile components
+# Step 3: Define URLs to download shapefile components for 'Chiefdom 2021'
+chiefdom_shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+chiefdom_shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
+chiefdom_shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
 
-shapefile_shx <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shx'
-shapefile_dbf <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.dbf'
-shapefile_path <- 'https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/a43027a9454581dd57aec9244e33378da723d38e/Chiefdom%202021.shp'
+# Step 3.1: Download the shapefile components locally for 'Chiefdom 2021'
+download.file(chiefdom_shapefile_path, destfile = "Chiefdom_2021.shp", mode = "wb")
+download.file(chiefdom_shapefile_shx, destfile = "Chiefdom_2021.shx", mode = "wb")
+download.file(chiefdom_shapefile_dbf, destfile = "Chiefdom_2021.dbf", mode = "wb")
 
-# Explanation:
-# - The variables 'shapefile_shx', 'shapefile_dbf', and 'shapefile_path' hold the raw paths to the shapefile components from the GitHub repository.
-# - All three files (.shp, .shx, .dbf) are required to correctly read the shapefile.
+# Step 4: Load the shapefile into an sf object
+adm3 <- st_read("Chiefdom_2021.shp")
 
-# Step 3.1: Download the shapefile components
-download.file(shapefile_path, destfile = "Chiefdom_2021.shp")
-download.file(shapefile_shx, destfile = "Chiefdom_2021.shx")
-download.file(shapefile_dbf, destfile = "Chiefdom_2021.dbf")
+# Step 5: Set the Coordinate Reference System (CRS) to ensure consistency
+st_crs(adm3) <- 4326  # Set CRS to WGS84 (latitude/longitude)
 
-# Explanation:
-# - 'download.file()' is used to download each component of the shapefile from GitHub and save them locally.
-# - This ensures all necessary files are available for reading the shapefile.
+# Step 6: Read the Excel file that contains additional attribute data
+# Define the raw URL for the Excel file
+excel_file_url <- "https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/d48b5acb7e4e79a6b4c929e9fa11a4335a47a389/Chiefdom_data1.xlsx"
 
-# Step 4: Load shapefile data into an sf object
-gdf <- st_read("Chiefdom_2021.shp")
+# Step 6.1: Download the Excel file to the local directory
+download.file(excel_file_url, destfile = "Chiefdom_data1.xlsx", mode = "wb")
 
-# Explanation:
-# - 'st_read()' reads the shapefile into an sf object, which is a data structure for handling geospatial data in R.
-# - The sf object 'gdf' contains both the geometry (spatial features) and attributes (data values) of the shapefile.
+# Step 6.2: Load Excel data into R
+excel_data <- read_excel("Chiefdom_data1.xlsx")
 
-# Step 4.1: Set the Coordinate Reference System (CRS)
-st_crs(gdf) <- 4326
+# Step 7: Merge the shapefile and Excel data by a common key column ('adm3_id')
+# Ensure that both adm3 and excel_data have a common column named 'adm3_id'
+merged_data <- merge(adm3, excel_data, by = "FIRST_CHIE", all = FALSE)
 
-# Explanation:
-# - 'st_crs()' is used to set the CRS of the sf object.
-# - EPSG:4326 is a common CRS that represents coordinates in longitude and latitude.
-
-# Step 5: View the first few rows of the sf object
-print(gdf)
-
-# Explanation:
-# - 'print(gdf)' print only a portion of the spatial object by default.
+# Step 8: Plot the map using ggplot2 with manual color coding for `IRS`
+ggplot(data = merged_data) +
+  geom_sf(aes(fill = IRS), color = "black", size = 1.2, linetype = "solid") +  # Fill regions based on `IRS` column, add thicker borders for separation
+  scale_fill_manual(
+    values = c("YES" = "#87CEEB", "NO" = "#B0E0E6"),  # Define manual colors: YES (light blue) and NO (lighter blue)
+    name = "IRS Status"  # Legend title
+  ) +
+  theme_minimal() +  # Use a minimalistic theme for clean visualization
+  theme(
+    panel.grid = element_blank(),  # Remove background grid lines for a cleaner look
+    axis.text = element_blank(),   # Remove axis labels (tick values)
+    axis.ticks = element_blank(),  # Remove axis tick marks
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),  # Center the title and make it bold
+    legend.position = "right"      # Position the legend on the right
+  ) +
+  ggtitle("IRS Status by Chiefdom")  # Add and center the map title
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
