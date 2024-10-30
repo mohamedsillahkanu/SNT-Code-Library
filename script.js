@@ -205,7 +205,7 @@ ggplot(data = gdf) +
             </pre>
 
             <h3 id="sampleR">Sample results</h3>
-            <img src="https://github.com/mohamedsillahkanu/SNT-Code-Library/raw/31b914c1115de3ccd6c8045946adc4a84eadc4bb/print%20gdf%20in%20R.png" alt="Sample Results">;
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">;
             
         `,
 
