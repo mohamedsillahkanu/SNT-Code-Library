@@ -298,7 +298,7 @@ ggplot() +
             </pre>
 
             <h3 id="sampleR">Output</h3>
-            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/67daf1ea675c806b6e3bae6facfee6e7c83f2f19/basic%20plot%20in%20R.png" alt="Sample Results">
+            <img src="https://raw.githubusercontent.com/mohamedsillahkanu/SNT-Code-Library/5141b2ddead9abd0e5edb6d99e1403b8f3b78709/overlay_R.png" alt="Sample Results">
             
         `,
 
