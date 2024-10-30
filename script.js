@@ -48,8 +48,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="rect-button" onclick="window.location.href='https://example.com/button1';">View R EN</button>
                 <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View R FR</button>
                 <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View R FR</button>
-                <button class="rect-button" onclick="window.location.href='https://example.com/button2';">View St FR</button>
-                <button class="rect-button" onclick="window.location.href='https://example.com/button3';">View St EN</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button4';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://example.com/button5';">View St EN</button>
             </div>
             <h5 style="color: white;">#</h5>
             <h4 id="stepByStep" style="font-weight: normal;">Step-by-step guide</h4>
