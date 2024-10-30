@@ -614,12 +614,12 @@ ggplot(data = merged_data) +
   ggtitle("IRS Status by Chiefdom")  # Add and center the map title
 
 # Explanation:
-# - `geom_sf()`: Adds the spatial features (chiefdoms) and fills them based on the `IRS` column.
-#   - `size = 1.2`: Increases the line thickness to help distinguish the boundaries more clearly.
-# - `scale_fill_brewer()`: Uses `RColorBrewer` to apply a categorical palette (`Set1`) to the `IRS` column.
-#   - `palette = "Set1"`: Uses Set1 palette which provides vibrant and distinct colors suitable for two categories.
-#   - `name = "IRS Status"`: Sets the legend title.
-# - `theme_minimal()` and `theme()`: Customize the appearance by removing unnecessary elements and enhancing map readability.
+#geom_sf(): Adds the spatial features (chiefdoms) and fills them based on the IRS column.
+#size = 1.2`: Increases the line thickness to help distinguish the boundaries more clearly.
+#scale_fill_brewer(): Uses RColorBrewer to apply a categorical palette (Set1) to the IRS column.
+#palette = "Set1": Uses Set1 palette which provides vibrant and distinct colors suitable for two categories.
+#name = "IRS Status": Sets the legend title.
+#theme_minimal() and theme(): Customize the appearance by removing unnecessary elements and enhancing map readability.
 
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
