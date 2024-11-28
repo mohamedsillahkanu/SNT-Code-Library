@@ -13,6 +13,8 @@ This guide walks you through the step-by-step process of loading, manipulating, 
 Use libraries like `sf` for spatial data manipulation and `ggplot2` for visualization.
 
 ```r
+
+
 # Load necessary libraries
 library(sf)
 library(ggplot2)
