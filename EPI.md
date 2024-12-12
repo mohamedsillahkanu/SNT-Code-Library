@@ -110,10 +110,7 @@ for year in years:
 ```
 - For each year:
   - Constructs column names for population, LLINs total, and coverage.
-  - If the required columns exist, calculates LLINs coverage as:
-    \[
-    \text{coverage} = \left(\frac{\text{llins\_penta3\_tot}}{\text{population} \times 0.027}\right) \times 100
-    \]
+  - Where 0.027 is the proportion of surviving infants
   - Adds a new `coverage` column for each year to the GeoDataFrame.
 
 ---
