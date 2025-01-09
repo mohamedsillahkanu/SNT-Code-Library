@@ -1,99 +1,108 @@
-
-# View Shapefile Data
-**Introduction**  
-This guide walks you through the step-by-step process of loading, manipulating, and visualizing shapefile data in R. Shapefile analysis is crucial for spatial data analysis in various domains, including mapping, GIS, and geostatistics.
+### README: Filtering Active Health Facilities Using R
 
 ---
 
-## Step-by-Step Guide
+#### Overview
 
-### R-Specific Context
+This project demonstrates how to filter health facilities (`hf_uid`) from a dataset based on their activity. A health facility is considered active if the sum of specific variables (`allout`, `susp`, `test`, `conf`, `maltreat`) across all its records is greater than zero. Rows corresponding to inactive health facilities are excluded from the final dataset.
 
-### Step 1: Load the Required Libraries  
-Use libraries like `sf` for spatial data manipulation and `ggplot2` for visualization.
+---
 
-```r
+#### Example Input
 
+##### Input Data (`df`):
+| hf_uid | year | month | allout | susp | test | conf | maltreat |
+|--------|------|-------|--------|------|------|------|----------|
+| 1      | 2023 | 1     | 10     | 5    | 15   | 10   | 20       |
+| 1      | 2023 | 2     | 0      | 0    | 0    | 0    | 0        |
+| 2      | 2023 | 1     | 0      | 0    | 0    | 0    | 0        |
+| 2      | 2023 | 2     | 0      | 0    | 0    | 0    | 0        |
+| 3      | 2023 | 1     | 5      | 0    | 5    | 0    | 0        |
+| 3      | 2023 | 2     | 10     | 5    | 10   | 5    | 5        |
 
-# Load necessary libraries
-library(sf)
-library(ggplot2)
+---
+
+#### Output Data
+
+##### Filtered Data (`df_active_hf`):
+| hf_uid | year | month | allout | susp | test | conf | maltreat |
+|--------|------|-------|--------|------|------|------|----------|
+| 1      | 2023 | 1     | 10     | 5    | 15   | 10   | 20       |
+| 1      | 2023 | 2     | 0      | 0    | 0    | 0    | 0        |
+| 3      | 2023 | 1     | 5      | 0    | 5    | 0    | 0        |
+| 3      | 2023 | 2     | 10     | 5    | 10   | 5    | 5        |
+
+---
+
+#### R Code with `for` Loop
+
+The following code uses a `for` loop to identify active health facilities and filter the dataset:
+
+```R
+# Step 1: Add df_active column to the original DataFrame
+df <- df %>%
+  mutate(
+    df_active = ifelse(rowSums(select(., allout, susp, test, conf, maltreat), na.rm = TRUE) > 0, 1, 0)
+  )
+
+# Step 2: Initialize an empty vector to store valid hf_uid values
+valid_hf_uid <- c()
+
+# Step 3: Iterate over unique hf_uid and calculate the total sum for each
+for (hf in unique(df$hf_uid)) {
+  # Subset rows for the current hf_uid
+  hf_subset <- df %>% filter(hf_uid == hf)
+  
+  # Calculate the total sum for the specified columns
+  total_sum <- sum(hf_subset$allout, hf_subset$susp, hf_subset$test, hf_subset$conf, hf_subset$maltreat, na.rm = TRUE)
+  
+  # If total_sum > 0, add the hf_uid to the valid list
+  if (total_sum > 0) {
+    valid_hf_uid <- c(valid_hf_uid, hf)
+  }
+}
+
+# Step 4: Filter the original DataFrame to keep only valid hf_uid
+df_active_hf <- df %>% filter(hf_uid %in% valid_hf_uid)
+
+# View the result
+head(df_active_hf)
 ```
 
 ---
 
-### Step 2: Read the Shapefile  
-Use `st_read()` from the `sf` package to load your shapefile data.
+#### Notes
 
-```r
-# Read shapefile
-shapefile_data <- st_read("path_to_your_shapefile.shp")
+1. **Efficiency**:
+   - The `for` loop approach is less efficient than using vectorized functions from `dplyr`, especially for large datasets. However, it is useful for understanding the process step-by-step.
+
+2. **Clarity**:
+   - This approach demonstrates how to iterate over groups (`hf_uid`) and apply conditional logic to filter the data.
+
+3. **Use Cases**:
+   - Suitable for small datasets or scenarios where explicit iteration over groups is required.
+
+4. **Alternative Approach**:
+   - For larger datasets, consider using the `dplyr` package's vectorized operations to achieve the same result efficiently.
+
+---
+
+#### Dependencies
+
+- R (version 4.0 or later)
+- `dplyr` package
+
+Install `dplyr` if not already installed:
+
+```R
+install.packages("dplyr")
 ```
 
 ---
 
-### Step 3: View Basic Structure  
-Check the structure of the shapefile to understand the geometry type and attributes.
+#### How to Run
 
-```r
-# View structure of the shapefile
-str(shapefile_data)
-```
+1. Copy the code into an R script or R Markdown file.
+2. Load your dataset into a DataFrame named `df`.
+3. Run the script to filter the dataset and view the result.
 
----
-
-### Step 4: Plot the Shapefile  
-Create a basic plot of the shapefile using `ggplot2`.
-
-```r
-# Plot shapefile
-ggplot(data = shapefile_data) +
-  geom_sf() +
-  theme_minimal()
-```
-
----
-
-### Step 5: Perform Attribute Filtering  
-Filter the data for specific attributes or regions of interest.
-
-```r
-# Filter data
-filtered_data <- shapefile_data[shapefile_data$attribute_name == "value", ]
-```
-
----
-
-### Step 6: Perform Spatial Operations  
-Perform operations like buffer, intersection, or union using `sf` functions.
-
-```r
-# Example: Create a buffer
-buffered_data <- st_buffer(shapefile_data, dist = 1000)
-```
-
----
-
-### Step 7: Save the Modified Shapefile  
-Save the updated shapefile to a new file.
-
-```r
-# Save shapefile
-st_write(buffered_data, "path_to_save_modified_shapefile.shp")
-```
-
----
-
-## Output
-This step-by-step process enables you to load, analyze, and manipulate shapefile data effectively.  
-The output includes filtered or processed shapefiles, which can be saved or visualized using tools like `ggplot2`.
-
----
-
-### Notes
-- **Dependencies:** Ensure `sf` and `ggplot2` libraries are installed using `install.packages()`.  
-- For larger datasets, consider memory management techniques like sampling or chunk processing.
-
----
-
-Feel free to suggest improvements or add further details for Python or Stata integration!
